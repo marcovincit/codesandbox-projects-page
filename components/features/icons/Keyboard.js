@@ -1,4 +1,4 @@
-export default function Keyboard() {
+export function Keyboard() {
   return (
     <svg
       width="42"
@@ -10,14 +10,14 @@ export default function Keyboard() {
       <path
         d="M10 30.75H32C34.2091 30.75 36 28.9591 36 26.75V15.25C36 13.0409 34.2091 11.25 32 11.25H21H15.75H10C7.79086 11.25 6 13.0409 6 15.25V26.75C6 28.9591 7.79086 30.75 10 30.75Z"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M15.575 25.375H26.075"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <ellipse cx="13.65" cy="21" rx="0.875" ry="0.875004" fill="#F5F5F7" />
       <ellipse cx="18.55" cy="21" rx="0.875001" ry="0.875004" fill="#F5F5F7" />

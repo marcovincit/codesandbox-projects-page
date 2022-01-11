@@ -1,13 +1,8 @@
-import Hero from "components/hero";
-import { Header } from "components/header";
-import { Footer } from "components/footer";
-import { Features } from "components/features";
-import { styled } from "styles/stitches.config";
+import { Hero, Intro, Streamlined, Header, Footer, Features } from "components";
 
 export default function Home() {
   return (
     <>
-      <Header />
       {/* <img
         style={{
           position: "fixed",
@@ -20,8 +15,14 @@ export default function Home() {
         }}
         src="/grid.png"
       /> */}
-      <Features />
+
+      <Header />
       <Hero />
+      <Intro />
+      <Streamlined />
+
+      <Features />
+
       <Footer />
     </>
   );

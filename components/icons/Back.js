@@ -10,7 +10,7 @@ export default function Back() {
       <path
         d="M3.99996 7.5L0.570671 4.07071C0.531619 4.03166 0.531619 3.96834 0.570671 3.92929L3.99996 0.5M8.66658 4L1.14158 3.99998"
         stroke="#C0C0C0"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );

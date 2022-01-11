@@ -11,8 +11,8 @@ export default function Arrow() {
       <path
         d="M1.75 1.58496L6.17929 6.01425C6.21834 6.0533 6.21834 6.11662 6.17929 6.15567L1.75 10.585"
         stroke="#DCFF50"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

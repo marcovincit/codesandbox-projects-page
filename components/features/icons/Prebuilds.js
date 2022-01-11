@@ -1,4 +1,4 @@
-export default function Prebuilds() {
+export function Prebuilds() {
   return (
     <svg
       width="42"
@@ -10,8 +10,8 @@ export default function Prebuilds() {
       <path
         d="M21 28C24.866 28 28 24.866 28 21C28 17.134 24.866 14 21 14M21 28C17.134 28 14 24.866 14 21C14 17.134 17.134 14 21 14M21 28L21 35M21 14V7"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

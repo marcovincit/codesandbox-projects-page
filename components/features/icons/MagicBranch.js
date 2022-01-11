@@ -1,4 +1,4 @@
-export default function MagicBranch() {
+export function MagicBranch() {
   return (
     <svg
       width="42"
@@ -12,28 +12,28 @@ export default function MagicBranch() {
         cy="14"
         r="5.25"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <circle
         cx="28"
         cy="28"
         r="5.25"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M14 19.25V33.25"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M28 22.75L28 15.75V15.75C28 14.7835 27.2165 14 26.25 14V14L22.75 14"
         stroke="#F5F5F7"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

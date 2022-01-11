@@ -1,4 +1,4 @@
-export default function Preview() {
+export function Preview() {
   return (
     <svg
       width="42"
@@ -14,8 +14,8 @@ export default function Preview() {
         height="21"
         rx="3"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <rect
         x="6.82501"
@@ -24,14 +24,14 @@ export default function Preview() {
         height="21"
         rx="3"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M6.82501 15.5H34.825"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );
