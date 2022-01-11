@@ -19,6 +19,6 @@ export const Mask = styled(motion.div, {
   },
 
   "@small": {
-    left: "calc(50% + 13rem)",
+    left: "calc(50% + 13.5rem)",
   },
 });
