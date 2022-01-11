@@ -1,94 +1,26 @@
 import { styled, lightTheme } from "styles/stitches.config";
-import { Display, Heading } from "components/typography";
 
 import { useState, useLayoutEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 
-const Section = styled("section", {
-  overflow: "hidden",
-  position: "relative",
-
-  //   clip: "rect(0, auto, auto, 0)",
-  //   clipPath: "inset(0 0 0 0)",
-});
-const SubSection = styled(motion.div, {
-  minHeight: "100vh",
-});
-
-const Mask = styled(motion.div, {
-  top: 0,
-  left: "calc(50% + 38rem)",
-  width: "100%",
-  height: "100%",
-  background: "$background",
-
-  position: "fixed",
-});
-
-const Square = styled(motion.div, {
-  position: "fixed",
-  top: "calc(50% - 40rem)",
-  left: "calc(50% - 40rem)",
-  width: "80rem",
-  height: "80rem",
-  background: "transparent",
-  border: "solid 4rem $secondary",
-
-  "@large": {
-    top: "calc(50% - 30rem)",
-    left: "calc(50% - 30rem)",
-    width: "60rem",
-    height: "60rem",
-    border: "solid 3rem $secondary",
-  },
-
-  variants: {
-    right: {
-      true: {
-        border: "none",
-        borderRight: "solid 4rem $secondary",
-      },
-    },
-  },
-});
-
-const Text = styled(Display, {
-  color: "$title",
-  whiteSpace: "nowrap",
-
-  position: "fixed",
-  top: "calc(50% - 2rem)",
-  left: "0%",
-
-  variants: {
-    outline: {
-      true: {
-        WebkitTextStroke: "1px $colors-title",
-        color: "transparent",
-        background: "transparent",
-      },
-    },
-  },
-});
+import { Section } from "./Section";
+import { SubSection } from "./SubSection";
+import { Mask } from "./Mask";
+import { Text } from "./Text";
+import { Square } from "./Square";
+import { Title } from "./Title";
 
 export function Streamlined() {
   const { scrollY } = useViewportScroll();
 
+  // container
   const container = useRef(null);
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
-  const marqueeRange = [
-    containerTop - 300,
-    containerTop + containerHeight / 2.5,
-  ];
+  // marquee section
 
-  const scale = useTransform(scrollY, marqueeRange, [1, 0.8]);
-  const x = useTransform(scrollY, marqueeRange, ["100%", "-100%"]);
-  const maskX = useTransform(scrollY, marqueeRange, ["0%", "-4%"]);
-
-  // opacity
-  const opacity = useTransform(
+  const marqueeSectionOpacity = useTransform(
     scrollY,
     [
       containerTop - 300,
@@ -96,10 +28,21 @@ export function Streamlined() {
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
     ],
-    ["0", "1", "1", "0"]
+    [0, 1, 1, 0]
   );
 
-  const opacityTitle = useTransform(
+  // marquee
+  const marqueeRange = [
+    containerTop - 300,
+    containerTop + containerHeight / 2.5,
+  ];
+
+  const marqueeSquareScale = useTransform(scrollY, marqueeRange, [1, 0.8]);
+  const marqueeTextX = useTransform(scrollY, marqueeRange, ["100%", "-100%"]);
+  const marqueeMaskX = useTransform(scrollY, marqueeRange, ["0%", "-4%"]);
+
+  // title section
+  const titleSectionOpacity = useTransform(
     scrollY,
     [
       containerTop + containerHeight / 2.5,
@@ -107,10 +50,12 @@ export function Streamlined() {
       containerTop + containerHeight / 2.5 + 300,
       containerTop + (containerHeight / 4) * 3,
     ],
-    ["0", "1", "1", "0"]
+    [0, 1, 1, 0]
   );
 
-  const scaleTitle = useTransform(
+  // title
+
+  const titleScale = useTransform(
     scrollY,
     [
       containerTop + containerHeight / 2.5,
@@ -118,6 +63,8 @@ export function Streamlined() {
     ],
     [1, 0.8]
   );
+
+  // useLayoutEffect
 
   useLayoutEffect(() => {
     if (!container.current) return;
@@ -131,14 +78,16 @@ export function Streamlined() {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
+  // return
+
   return (
     <Section ref={container}>
-      <SubSection style={{ opacity }}>
+      <SubSection style={{ opacity: marqueeSectionOpacity }}>
         <Text
-          outline="true"
+          outline
           as={motion.span}
           style={{
-            x,
+            x: marqueeTextX,
             y: "-50%",
             zIndex: 3,
           }}
@@ -146,12 +95,12 @@ export function Streamlined() {
           Streamlined experience.
         </Text>
 
-        <Mask style={{ x: maskX, zIndex: 2 }} />
+        <Mask style={{ x: marqueeMaskX, zIndex: 2 }} />
 
         <Text
           as={motion.span}
           style={{
-            x,
+            x: marqueeTextX,
             y: "-50%",
             zIndex: 1,
           }}
@@ -162,37 +111,33 @@ export function Streamlined() {
         <Square
           right
           style={{
-            scale,
+            scale: marqueeSquareScale,
             zIndex: 4,
           }}
         />
 
         <Square
           style={{
-            scale,
+            scale: marqueeSquareScale,
             zIndex: 0,
           }}
         />
       </SubSection>
-      <SubSection>
-        <Heading
+      <SubSection
+        style={{
+          opacity: titleSectionOpacity,
+        }}
+      >
+        <Title
           as={motion.h2}
           style={{
-            opacity: opacityTitle,
-            scale: scaleTitle,
+            scale: titleScale,
             x: "-50%",
             y: "-50%",
           }}
-          css={{
-            textAlign: "center",
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
         >
           Streamlined <br /> experience.
-        </Heading>
+        </Title>
       </SubSection>
     </Section>
   );
