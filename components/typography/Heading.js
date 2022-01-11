@@ -9,6 +9,13 @@ export const Heading = styled("span", {
   letterSpacing: "-0.05em",
   margin: 0,
 
+  "@large": {
+    fontSize: "7.2rem",
+  },
+  "@small": {
+    fontSize: "4.8rem",
+  },
+
   variants: {
     size: {
       // heading1
