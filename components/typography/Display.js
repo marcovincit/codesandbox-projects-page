@@ -10,9 +10,9 @@ export const Display = styled("span", {
   margin: 0,
 
   "@medium": {
-    fontSize: "14.4rem",
+    fontSize: "20rem",
   },
   "@small": {
-    fontSize: "7.2rem",
+    fontSize: "9.6rem",
   },
 });

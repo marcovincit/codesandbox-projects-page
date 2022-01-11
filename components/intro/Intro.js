@@ -49,7 +49,10 @@ export function Intro() {
   return (
     <>
       <Section css={{ padding: 0, alignItems: "center" }}>
-        <img style={{ maxWidth: "161.8rem" }} src="/images/projects.png" />
+        <img
+          style={{ width: "100%", maxWidth: "161.8rem" }}
+          src="/images/projects.png"
+        />
       </Section>
       <Section>
         <Heading as="h3" size={3}>

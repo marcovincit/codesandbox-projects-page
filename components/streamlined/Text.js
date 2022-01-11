@@ -6,7 +6,7 @@ export const Text = styled(Display, {
   whiteSpace: "nowrap",
 
   position: "fixed",
-  top: "calc(50% - 2rem)",
+  top: "calc(50% - 1rem)",
   left: "0%",
 
   variants: {
