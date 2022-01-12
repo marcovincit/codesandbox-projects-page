@@ -50,7 +50,7 @@ export const Heading = styled("span", {
         },
         "@small": {
           fontSize: "3.6rem",
-          lineHeight: "100%",
+          lineHeight: "110%",
           letterSpacing: "-0.025em",
         },
       },
@@ -58,10 +58,11 @@ export const Heading = styled("span", {
       // heading4
       4: {
         fontSize: "3.6rem",
-        lineHeight: "100%",
+        lineHeight: "110%",
         letterSpacing: "-0.025em",
         "@large": {
           fontSize: "2.4rem",
+          lineHeight: "120%",
         },
       },
 

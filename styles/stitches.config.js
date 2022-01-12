@@ -10,7 +10,9 @@ export const { globalCss, styled, css } = createStitches({
   theme: {
     colors: {
       primary: "#DCFF50",
+      primary90: "#CEF144",
       secondary: "#7B61FF",
+      blue: "#427AE7",
       gray: "#DBDBDE",
       surface: "#151515",
 

@@ -3,20 +3,12 @@ import { motion } from "framer-motion";
 
 export const Square = styled(motion.div, {
   position: "fixed",
-  top: "calc(50% - 40rem)",
-  left: "calc(50% - 40rem)",
-  width: "80rem",
-  height: "80rem",
+  top: "calc(50% - 30rem)",
+  left: "calc(50% - 30rem)",
+  width: "60rem",
+  height: "60rem",
   background: "transparent",
-  border: "solid 4rem $secondary",
-
-  "@large": {
-    top: "calc(50% - 30rem)",
-    left: "calc(50% - 30rem)",
-    width: "60rem",
-    height: "60rem",
-    border: "solid 3rem $secondary",
-  },
+  border: "solid 3rem $primary90",
 
   "@medium": {
     top: "calc(50% - 25rem)",
@@ -30,21 +22,21 @@ export const Square = styled(motion.div, {
     left: "calc(50% - 15rem)",
     width: "30rem",
     height: "30rem",
-    border: "solid 2rem $secondary",
+    border: "solid 2rem $primary90",
   },
 
   variants: {
     right: {
       true: {
         border: "none",
-        borderRight: "solid 4rem $secondary",
+        borderRight: "solid 3rem $primary90",
 
         "@large": {
-          borderRight: "solid 3rem $secondary",
+          borderRight: "solid 3rem $primary90",
         },
 
         "@small": {
-          borderRight: "solid 2rem $secondary",
+          borderRight: "solid 2rem $primary90",
         },
       },
     },

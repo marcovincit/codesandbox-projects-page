@@ -1,5 +1,3 @@
-import { styled, lightTheme } from "styles/stitches.config";
-
 import { useState, useLayoutEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 
@@ -23,7 +21,7 @@ export function Streamlined() {
   const marqueeSectionOpacity = useTransform(
     scrollY,
     [
-      containerTop - 300,
+      containerTop - containerHeight / 4,
       containerTop,
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
@@ -33,11 +31,11 @@ export function Streamlined() {
 
   // marquee
   const marqueeRange = [
-    containerTop - 300,
+    containerTop - containerHeight / 4,
     containerTop + containerHeight / 2.5,
   ];
 
-  const marqueeSquareScale = useTransform(scrollY, marqueeRange, [1, 0.8]);
+  const marqueeSquareScale = useTransform(scrollY, marqueeRange, [1, 0.7]);
   const marqueeTextX = useTransform(scrollY, marqueeRange, ["100%", "-100%"]);
   const marqueeMaskX = useTransform(scrollY, marqueeRange, ["0%", "-4%"]);
 

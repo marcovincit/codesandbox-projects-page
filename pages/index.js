@@ -1,4 +1,13 @@
-import { Hero, Intro, Streamlined, Header, Footer, Features } from "components";
+import {
+  Hero,
+  Intro,
+  Streamlined,
+  Header,
+  Footer,
+  Features,
+  Tools,
+  Future,
+} from "components";
 
 export default function Home() {
   return (
@@ -20,9 +29,9 @@ export default function Home() {
       <Hero />
       <Intro />
       <Streamlined />
-
       <Features />
-
+      <Tools />
+      <Future />
       <Footer />
     </>
   );

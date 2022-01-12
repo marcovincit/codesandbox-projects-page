@@ -1,6 +1,6 @@
 import { styled } from "styles/stitches.config";
 
-export const Section = styled("section", {
+export const ContentSection = styled("div", {
   display: "flex",
   alignItems: "center",
 
@@ -13,7 +13,7 @@ export const Section = styled("section", {
 
   "@medium": {
     padding: "12.8rem 9.5rem",
-    alignItems: "flex-end",
+    alignItems: "flex-start",
   },
 
   "@small": {
