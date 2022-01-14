@@ -6,8 +6,12 @@ export const Text = styled(Display, {
   whiteSpace: "nowrap",
 
   position: "fixed",
-  top: "calc(50% - 1rem)",
+  top: "calc(50% - 2rem)",
   left: "0%",
+
+  "@small": {
+    top: "calc(50% - 1rem)",
+  },
 
   variants: {
     outline: {

@@ -13,9 +13,9 @@ export function Intro() {
       </Section>
       <Section>
         <Heading as="h3" size={3}>
-          Not only share
+          Not only
           <br />
-          environment.
+          share code.
         </Heading>
         <Heading as="h4" size={3} css={{ color: "$primary" }}>
           Share the <br /> context.

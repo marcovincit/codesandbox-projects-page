@@ -5,7 +5,7 @@ export const Display = styled("span", {
   fontFamily: "TWK Everett",
   fontSize: "28.8rem",
   fontWeight: 500,
-  lineHeight: "100%",
+  // lineHeight: "100%",
   letterSpacing: "-0.05em",
   margin: 0,
 

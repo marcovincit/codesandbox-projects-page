@@ -3,7 +3,6 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import { Section } from "./Section";
 import { SubSection } from "./SubSection";
-import { Mask } from "./Mask";
 import { Text } from "./Text";
 import { Square } from "./Square";
 import { Title } from "./Title";
@@ -37,7 +36,6 @@ export function Streamlined() {
 
   const marqueeSquareScale = useTransform(scrollY, marqueeRange, [1, 0.7]);
   const marqueeTextX = useTransform(scrollY, marqueeRange, ["100%", "-100%"]);
-  const marqueeMaskX = useTransform(scrollY, marqueeRange, ["0%", "-4%"]);
 
   // title section
   const titleSectionOpacity = useTransform(
@@ -81,6 +79,14 @@ export function Streamlined() {
   return (
     <Section ref={container}>
       <SubSection style={{ opacity: marqueeSectionOpacity }}>
+        <Square
+          type="right"
+          style={{
+            scale: marqueeSquareScale,
+            zIndex: 4,
+          }}
+        />
+
         <Text
           outline
           as={motion.span}
@@ -93,7 +99,13 @@ export function Streamlined() {
           Streamlined experience.
         </Text>
 
-        <Mask style={{ x: marqueeMaskX, zIndex: 2 }} />
+        <Square
+          type="mask"
+          style={{
+            scale: marqueeSquareScale,
+            zIndex: 2,
+          }}
+        />
 
         <Text
           as={motion.span}
@@ -105,14 +117,6 @@ export function Streamlined() {
         >
           Streamlined experience.
         </Text>
-
-        <Square
-          right
-          style={{
-            scale: marqueeSquareScale,
-            zIndex: 4,
-          }}
-        />
 
         <Square
           style={{

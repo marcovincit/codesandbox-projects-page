@@ -26,17 +26,33 @@ export const Square = styled(motion.div, {
   },
 
   variants: {
-    right: {
-      true: {
+    type: {
+      right: {
         border: "none",
         borderRight: "solid 3rem $primary90",
 
-        "@large": {
-          borderRight: "solid 3rem $primary90",
-        },
-
         "@small": {
           borderRight: "solid 2rem $primary90",
+        },
+      },
+
+      mask: {
+        borderColor: "transparent",
+
+        "&:after": {
+          content: "",
+          width: "50vw",
+          height: "100%",
+          background: "$background",
+
+          position: "absolute",
+          top: 0,
+          right: "-3rem",
+          "@small": {
+            right: "-2rem",
+          },
+
+          transform: "translateX(100%)",
         },
       },
     },
