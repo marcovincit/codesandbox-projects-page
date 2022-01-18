@@ -18,7 +18,7 @@ export const Section = styled("section", {
   },
 
   "@small": {
-    padding: "6.8rem 4.6rem",
+    padding: "6.2rem 4.5rem",
   },
 
   variants: {
@@ -36,7 +36,7 @@ export const Section = styled("section", {
         },
 
         "@small": {
-          padding: "6.8rem 4.6rem",
+          padding: "6.2rem 4.5rem",
         },
       },
     },

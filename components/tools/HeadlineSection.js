@@ -6,5 +6,9 @@ export const HeadlineSection = styled("section", {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "3rem",
+  padding: "6.7rem 3rem",
+
+  "@medium": {
+    minHeight: "auto",
+  },
 });

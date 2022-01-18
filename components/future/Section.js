@@ -7,4 +7,5 @@ export const Section = styled("section", {
   justifyContent: "center",
   alignItems: "center",
   padding: "3rem",
+  willChange: "transform",
 });

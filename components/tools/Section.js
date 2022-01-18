@@ -4,4 +4,5 @@ export const Section = styled("section", {
   background: "$background",
   position: "relative",
   zIndex: 9999,
+  overflow: "hidden",
 });
