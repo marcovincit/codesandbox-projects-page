@@ -56,8 +56,8 @@ export const SectionGrid = () => {
   // return
 
   return (
-    <Section as={motion.section} ref={container} style={{ opacity, y }}>
-      <Grid>
+    <Section ref={container}>
+      <Grid as={motion.div} style={{ opacity, y }}>
         {content.map(({ icon, title, body }, key) => {
           return (
             <Item key={key}>

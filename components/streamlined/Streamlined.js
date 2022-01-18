@@ -20,8 +20,6 @@ export function Streamlined() {
     mass: 0.2,
   });
 
-  // const scrollSpring = scrollY;
-
   // container
   const container = useRef(null);
   const [containerTop, setContainerTop] = useState(0);

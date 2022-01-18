@@ -1,7 +1,7 @@
 import { HeadlineSection } from "./HeadlineSection";
 import { HeadlineSubSection } from "./HeadlineSubSection";
 import { Heading, Body } from "../typography";
-import Lock from "../icons/Lock";
+import { Lock } from "../icons/Lock";
 
 export const Headline = () => {
   return (
