@@ -6,4 +6,5 @@ export const Title = styled(Heading, {
   position: "fixed",
   top: "50%",
   left: "50%",
+  willChange: "transform",
 });

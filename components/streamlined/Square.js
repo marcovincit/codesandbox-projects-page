@@ -9,6 +9,7 @@ export const Square = styled(motion.div, {
   height: "60rem",
   background: "transparent",
   border: "solid 3rem $primary90",
+  willChange: "transform",
 
   "@medium": {
     top: "calc(50% - 25rem)",

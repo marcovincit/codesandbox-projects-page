@@ -1,5 +1,10 @@
 import { useState, useLayoutEffect, useRef } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 
 import { Section } from "./Section";
 import { SubSection } from "./SubSection";
@@ -9,6 +14,11 @@ import { Title } from "./Title";
 
 export function Streamlined() {
   const { scrollY } = useViewportScroll();
+  const scrollSpring = useSpring(scrollY, {
+    stiffness: 700,
+    mass: 2,
+    damping: 80,
+  });
 
   // container
   const container = useRef(null);
@@ -18,7 +28,7 @@ export function Streamlined() {
   // marquee section
 
   const marqueeSectionOpacity = useTransform(
-    scrollY,
+    scrollSpring,
     [
       containerTop - containerHeight / 4,
       containerTop,
@@ -34,12 +44,17 @@ export function Streamlined() {
     containerTop + containerHeight / 2.5,
   ];
 
-  const marqueeSquareScale = useTransform(scrollY, marqueeRange, [1, 0.7]);
-  const marqueeTextX = useTransform(scrollY, marqueeRange, ["100%", "-100%"]);
+  const marqueeTextX = useTransform(scrollSpring, marqueeRange, [
+    "100%",
+    "-100%",
+  ]);
+
+  // square
+  const marqueeSquareScale = useTransform(scrollSpring, marqueeRange, [1, 0.7]);
 
   // title section
   const titleSectionOpacity = useTransform(
-    scrollY,
+    scrollSpring,
     [
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
@@ -52,7 +67,7 @@ export function Streamlined() {
   // title
 
   const titleScale = useTransform(
-    scrollY,
+    scrollSpring,
     [
       containerTop + containerHeight / 2.5,
       containerTop + (containerHeight / 4) * 3,

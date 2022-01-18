@@ -8,6 +8,7 @@ export const Text = styled(Display, {
   position: "fixed",
   top: "calc(50% - 2rem)",
   left: "0%",
+  willChange: "transform",
 
   "@small": {
     top: "calc(50% - 1rem)",

@@ -3,7 +3,7 @@ import { styled } from "styles/stitches.config";
 export const Section = styled("section", {
   display: "flex",
   alignItems: "center",
-  willChange: "transform",
+  willChange: "transform, opacity",
   minHeight: "100vh",
   padding: "27rem 32rem",
 
