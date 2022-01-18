@@ -1,0 +1,8 @@
+{
+  "previews": {
+    "3000": {
+      "name": "App",
+      "command": "yarn dev"
+    }
+  }
+}
