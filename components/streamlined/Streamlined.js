@@ -15,10 +15,12 @@ import { Title } from "./Title";
 export function Streamlined() {
   const { scrollY } = useViewportScroll();
   const scrollSpring = useSpring(scrollY, {
-    stiffness: 700,
-    mass: 2,
-    damping: 80,
+    stiffness: 200,
+    damping: 20,
+    mass: 0.2,
   });
+
+  // const scrollSpring = scrollY;
 
   // container
   const container = useRef(null);
