@@ -17,10 +17,10 @@ export const ContentSubSection = styled("div", {
   variants: {
     left: {
       true: {
-        padding: "9rem 32rem 9rem 8rem",
+        padding: "9rem 8rem 9rem 32rem",
 
         "@large": {
-          padding: "6.7rem 24rem 6.7rem 6rem",
+          padding: "6.7rem 6rem 6.7rem 24rem",
         },
       },
     },

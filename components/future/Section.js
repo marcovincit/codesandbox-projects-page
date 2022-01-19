@@ -8,4 +8,6 @@ export const Section = styled("section", {
   alignItems: "center",
   padding: "3rem",
   willChange: "transform, opacity",
+  position: "relative",
+  zIndex: 0,
 });

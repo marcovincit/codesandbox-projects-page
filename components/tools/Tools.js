@@ -1,3 +1,6 @@
+import { useState, useEffect, useRef } from "react";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
+
 import { lightTheme } from "styles/stitches.config";
 
 import { Section } from "./Section";
@@ -9,9 +12,9 @@ import { ContentSubSection } from "./ContentSubSection";
 import { MockupSection } from "./MockupSection";
 import { Heading, Body } from "../typography";
 import { AppStore } from "components/icons/AppStore";
+import { Phone } from "./Phone";
 
-import { useState, useLayoutEffect, useRef } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { FakeSection } from "./FakeSection";
 
 export function Tools() {
   const { scrollY } = useViewportScroll();
@@ -20,16 +23,56 @@ export function Tools() {
   const container = useRef(null);
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
+  const [position, setPosition] = useState("relative");
 
-  // opacity
-  const x = useTransform(
+  // y
+  const y = useTransform(
     scrollY,
-    [containerTop - containerHeight, containerTop + containerHeight],
-    [1, 0]
+    [
+      containerTop - containerHeight,
+      containerTop,
+      containerTop + containerHeight * 3,
+      containerTop + containerHeight * 4,
+    ],
+    ["100%", "0%", "0%", "-100%"]
   );
 
-  // useLayoutEffect
-  useLayoutEffect(() => {
+  const iPhoneX = useTransform(
+    scrollY,
+    [
+      containerTop + 100,
+      containerTop + containerHeight,
+      containerTop + containerHeight,
+      containerTop + containerHeight * 2.8,
+    ],
+    ["0vw", "-100vw", "-100vw", "0vw"]
+  );
+
+  const iPadX = useTransform(
+    scrollY,
+    [
+      containerTop + 100,
+      containerTop + containerHeight,
+
+      containerTop + containerHeight * 2.8,
+    ],
+    ["0%", "-120%", "0%"]
+  );
+
+  const VSCodeX = useTransform(
+    scrollY,
+    [
+      containerTop,
+      containerTop + containerHeight,
+      containerTop + containerHeight + 200,
+
+      containerTop + containerHeight * 2.8,
+    ],
+    ["0%", "0%", "0%", "150%"]
+  );
+
+  // useEffect
+  useEffect(() => {
     if (!container.current) return;
     const onResize = () => {
       setContainerTop(container.current.offsetTop);
@@ -41,70 +84,114 @@ export function Tools() {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
+  useEffect(() => {
+    scrollY.current > containerTop - containerHeight
+      ? setPosition("fixed")
+      : setPosition("relative");
+  }, [scrollY.current]);
+
   // return
   return (
-    <>
-      <Section className={lightTheme}>
-        <Headline />
+    <Section className={lightTheme}>
+      <Headline />
 
-        <motion.div
-          ref={container}
+      <FakeSection ref={container} hideMobile>
+        <SubSection
+          as={motion.div}
+          css={{
+            pointerEvents: "none",
+          }}
           style={{
-            x,
+            position,
+            y,
           }}
         >
-          <SubSection hideMobile>
-            <MockupSection left>
-              <Image src="/images/iPad.png" />
-            </MockupSection>
-            <MockupSection>
-              <Image src="/images/VSCode.jpg" />
-            </MockupSection>
-          </SubSection>
+          <MockupSection left>
+            <Image
+              as={motion.img}
+              style={{
+                x: iPadX,
+              }}
+              css={{
+                marginRight: "4rem",
+              }}
+              src="/images/iPad.png"
+            />
+            <Phone
+              as={motion.img}
+              style={{
+                x: iPhoneX,
+              }}
+              src="/images/iPhone.png"
+            />
+          </MockupSection>
 
-          <SubSection>
-            <ContentSection>
-              <ContentSubSection>
-                <Heading as="h3" size={4} css={{ color: "$blue" }}>
-                  Meet the new
-                  <br />
-                  CodeSandbox Extension
-                  <br />
-                  for VSCode.
-                </Heading>
-                <Heading as="p" size={4}>
-                  We are redefining
-                  <br />
-                  collaborative code.
-                </Heading>
-              </ContentSubSection>
-            </ContentSection>
-            <MockupSection hideDesktop>
-              <Image src="/images/VSCode.jpg" />
-            </MockupSection>
-          </SubSection>
+          <MockupSection
+            as={motion.div}
+            style={{
+              x: VSCodeX,
+            }}
+          >
+            <Image src="/images/VSCode.jpg" />
+          </MockupSection>
+        </SubSection>
+      </FakeSection>
 
-          <SubSection left>
-            <ContentSection>
-              <ContentSubSection left>
-                <Heading as="h3" size={4}>
-                  Code from your
-                  <br />
-                  iPad or iPhone.
-                </Heading>
-                <Heading as="p" size={4} css={{ color: "$secondary" }}>
-                  Contribute on the
-                  <br />
-                  go with Play.js
-                </Heading>
-              </ContentSubSection>
-            </ContentSection>
-            <MockupSection left hideDesktop>
-              <Image src="/images/iPad.png" />
-            </MockupSection>
-          </SubSection>
-        </motion.div>
-      </Section>
-    </>
+      <SubSection
+        css={{
+          marginBottom: "100vh",
+          "@medium": {
+            marginBottom: "0",
+          },
+        }}
+      >
+        <ContentSection>
+          <ContentSubSection>
+            <Heading as="h3" size={4} css={{ color: "$blue" }}>
+              Meet the new
+              <br />
+              CodeSandbox Extension
+              <br />
+              for VSCode.
+            </Heading>
+            <Heading as="p" size={4}>
+              We are redefining
+              <br />
+              collaborative code.
+            </Heading>
+          </ContentSubSection>
+        </ContentSection>
+        <MockupSection hideDesktop>
+          <Image src="/images/VSCode.jpg" />
+        </MockupSection>
+      </SubSection>
+
+      <SubSection left>
+        <ContentSection>
+          <ContentSubSection left>
+            <Heading as="h3" size={4}>
+              Code from your
+              <br />
+              iPad or iPhone.
+            </Heading>
+            <Heading as="p" size={4} css={{ color: "$secondary" }}>
+              Contribute on the
+              <br />
+              go with Play.js
+            </Heading>
+            <AppStore />
+          </ContentSubSection>
+        </ContentSection>
+        <MockupSection left hideDesktop>
+          <Image
+            css={{
+              marginLeft: "4rem",
+            }}
+            src="/images/iPad.png"
+          />
+          <Phone src="/images/iPhone.png" />
+        </MockupSection>
+      </SubSection>
+    </Section>
   );
 }

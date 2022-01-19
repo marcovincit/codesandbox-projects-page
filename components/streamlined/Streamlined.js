@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   motion,
   useViewportScroll,
@@ -75,9 +75,9 @@ export function Streamlined() {
     [1, 0.8]
   );
 
-  // useLayoutEffect
+  // useEffect
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!container.current) return;
     const onResize = () => {
       setContainerTop(container.current.offsetTop);

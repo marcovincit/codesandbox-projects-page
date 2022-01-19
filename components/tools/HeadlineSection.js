@@ -10,5 +10,10 @@ export const HeadlineSection = styled("section", {
 
   "@medium": {
     minHeight: "auto",
+    padding: "18rem 3rem 3rem",
+  },
+
+  "@small": {
+    padding: "10.2rem 3rem 3rem",
   },
 });

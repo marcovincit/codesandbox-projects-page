@@ -251,7 +251,7 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.1.0.tgz#7f698254aadf921e48dda8c0a6b304026b8a9323"
   integrity sha512-JLo+Y592QzIE+q7Dl2pMUtt4q8SKYI5jDrZxrozEQxnGVOyYE+GWK9eLkwTaeN9DDctlaRAQ3TBmzZ1qdLE30A==
 
-"@stitches/react@^1.2.6":
+"@stitches/react@1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.6.tgz#61f2a3d1110334ecd33bcb7463650127d42470cb"
   integrity sha512-gRVITYj8W4jJmoiVxWDv72yCvd12VvtUUAnTzs07EqmtvGCVgKZu3Dx0x5KVCcb0b6tfgvvNH2L84YrzdM4Mag==
@@ -703,11 +703,6 @@ colorette@^1.2.2:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.4.0.tgz#5190fbb87276259a86ad700bff2c6d6faa3fca40"
   integrity sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g==
-
-commander@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
-  integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -1318,10 +1313,10 @@ foreach@^2.0.5:
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
   integrity sha1-C+4AUBiusmDQo6865ljdATbsG5k=
 
-framer-motion@^5.5.6:
-  version "5.5.6"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.5.6.tgz#76dbf86e32423311c360eeba0f6673a028197071"
-  integrity sha512-n1PU7kR21siZl3HcNSqxqqxXOS1xZhBdVS3ZjgOAMgDySz3lt+00351MRm7O7WqeYHhonILxLolixnAIVSt0Wg==
+framer-motion@5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-5.6.0.tgz#8203b5bc4e172265d43dfe67c3c41346c67a3940"
+  integrity sha512-Y4FtwUU+LUWLKSzoT6Sq538qluvhpe6izdQK8/xZeVjQZ/ORKGfZzyhzcUxNfscqnfEa3dUOA47s+dwrSipdGA==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
@@ -2967,13 +2962,6 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
-
-yarn-upgrade-all@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/yarn-upgrade-all/-/yarn-upgrade-all-0.6.1.tgz#e5b4ef112c2037501dd50f6ea1cf218fb2018128"
-  integrity sha512-RWfx248OIY+ZdpDq0lR59bIcaV3X7rdAcLqgahowksm7I3j9NzTld3zqnEn0LWMd//v9V1PGu4hUCwlmUIe29w==
-  dependencies:
-    commander "^8.3.0"
 
 yocto-queue@^0.1.0:
   version "0.1.0"

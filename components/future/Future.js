@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import { Section } from "./Section";
@@ -28,9 +28,9 @@ export function Future() {
     [-containerHeight + 200, 0]
   );
 
-  // useLayoutEffect
+  // useEffect
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!container.current) return;
     const onResize = () => {
       setContainerTop(container.current.offsetTop);

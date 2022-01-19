@@ -1,5 +1,5 @@
 import { content } from "./content";
-import { useState, useLayoutEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Heading, Body } from "../typography";
 import { Section } from "./Section";
@@ -39,9 +39,9 @@ export const SectionGrid = () => {
     ["0%", "30%"]
   );
 
-  // useLayoutEffect
+  // useEffect
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!container.current) return;
     const onResize = () => {
       setContainerTop(container.current.offsetTop);
