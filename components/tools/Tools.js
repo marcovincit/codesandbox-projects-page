@@ -108,7 +108,7 @@ export function Tools() {
               marginRight: "4rem",
               willChange: "transform",
             }}
-            src="/images/iPad.png"
+            src="/images/iPad.jpg"
           />
           <Phone
             as={motion.img}
@@ -182,7 +182,7 @@ export function Tools() {
             css={{
               marginLeft: "4rem",
             }}
-            src="/images/iPad.png"
+            src="/images/iPad.jpg"
           />
           <Phone src="/images/iPhone.png" />
         </MockupSection>
