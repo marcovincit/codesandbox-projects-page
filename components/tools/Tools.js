@@ -1,8 +1,6 @@
+import { lightTheme } from "styles/stitches.config";
 import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-
-import { lightTheme } from "styles/stitches.config";
-
 import { Section } from "./Section";
 import { Image } from "./Image";
 import { Headline } from "./Headline";
@@ -14,59 +12,53 @@ import { Heading, Body } from "../typography";
 import { AppStore } from "components/icons/AppStore";
 import { Phone } from "./Phone";
 
-import { FakeSection } from "./FakeSection";
-
 export function Tools() {
   const { scrollY } = useViewportScroll();
 
   // container
   const container = useRef(null);
-  const [containerTop, setContainerTop] = useState(0);
+  const containerOffset = useRef(null);
+  const [containerOffsetTop, setContainerOffsetTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
-  const [position, setPosition] = useState("relative");
 
-  // y
+  // section y
   const y = useTransform(
     scrollY,
-    [
-      containerTop - containerHeight,
-      containerTop,
-      containerTop + containerHeight * 3,
-      containerTop + containerHeight * 4,
-    ],
-    ["100%", "0%", "0%", "-100%"]
+    [containerOffsetTop - containerHeight / 1.5, containerOffsetTop + 100],
+    ["20%", "0%"]
   );
 
+  // iPhone
   const iPhoneX = useTransform(
     scrollY,
     [
-      containerTop + 100,
-      containerTop + containerHeight,
-      containerTop + containerHeight,
-      containerTop + containerHeight * 2.8,
+      containerOffsetTop + 100,
+      containerOffsetTop + containerHeight,
+      containerOffsetTop + containerHeight,
+      containerOffsetTop + containerHeight * 2.8,
     ],
     ["0vw", "-100vw", "-100vw", "0vw"]
   );
 
+  // iPad
   const iPadX = useTransform(
     scrollY,
     [
-      containerTop + 100,
-      containerTop + containerHeight,
-
-      containerTop + containerHeight * 2.8,
+      containerOffsetTop + 100,
+      containerOffsetTop + containerHeight,
+      containerOffsetTop + containerHeight * 2.8,
     ],
     ["0%", "-120%", "0%"]
   );
 
+  // VSCode
   const VSCodeX = useTransform(
     scrollY,
     [
-      containerTop,
-      containerTop + containerHeight,
-      containerTop + containerHeight + 200,
-
-      containerTop + containerHeight * 2.8,
+      containerOffsetTop,
+      containerOffsetTop + containerHeight,
+      containerOffsetTop + containerHeight + 500,
+      containerOffsetTop + containerHeight * 2.8,
     ],
     ["0%", "0%", "0%", "150%"]
   );
@@ -74,8 +66,9 @@ export function Tools() {
   // useEffect
   useEffect(() => {
     if (!container.current) return;
+    if (!containerOffset.current) return;
     const onResize = () => {
-      setContainerTop(container.current.offsetTop);
+      setContainerOffsetTop(containerOffset.current.offsetTop);
       setContainerHeight(container.current.offsetHeight);
     };
 
@@ -84,58 +77,60 @@ export function Tools() {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
-  useEffect(() => {
-    scrollY.current > containerTop - containerHeight
-      ? setPosition("fixed")
-      : setPosition("relative");
-  }, [scrollY.current]);
-
   // return
   return (
     <Section className={lightTheme}>
       <Headline />
 
-      <FakeSection ref={container} hideMobile>
-        <SubSection
+      <div ref={containerOffset} />
+
+      <SubSection
+        as={motion.div}
+        ref={container}
+        hideMobile
+        css={{
+          pointerEvents: "none",
+          position: "sticky",
+          top: 0,
+          willChange: "transform",
+        }}
+        style={{
+          y,
+        }}
+      >
+        <MockupSection left>
+          <Image
+            as={motion.img}
+            style={{
+              x: iPadX,
+            }}
+            css={{
+              marginRight: "4rem",
+              willChange: "transform",
+            }}
+            src="/images/iPad.png"
+          />
+          <Phone
+            as={motion.img}
+            style={{
+              x: iPhoneX,
+            }}
+            src="/images/iPhone.png"
+          />
+        </MockupSection>
+
+        <MockupSection
           as={motion.div}
           css={{
-            pointerEvents: "none",
+            willChange: "transform",
           }}
           style={{
-            position,
-            y,
+            x: VSCodeX,
           }}
         >
-          <MockupSection left>
-            <Image
-              as={motion.img}
-              style={{
-                x: iPadX,
-              }}
-              css={{
-                marginRight: "4rem",
-              }}
-              src="/images/iPad.png"
-            />
-            <Phone
-              as={motion.img}
-              style={{
-                x: iPhoneX,
-              }}
-              src="/images/iPhone.png"
-            />
-          </MockupSection>
-
-          <MockupSection
-            as={motion.div}
-            style={{
-              x: VSCodeX,
-            }}
-          >
-            <Image src="/images/VSCode.jpg" />
-          </MockupSection>
-        </SubSection>
-      </FakeSection>
+          <Image src="/images/VSCode.jpg" />
+        </MockupSection>
+      </SubSection>
 
       <SubSection
         css={{

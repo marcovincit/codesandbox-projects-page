@@ -9,7 +9,7 @@ export const SubSection = styled("div", {
   padding: "3.4rem 0",
   top: 0,
   width: "100%",
-  willChange: "transform",
+  overflow: "hidden",
 
   "@medium": {
     minHeight: "auto",
@@ -27,6 +27,13 @@ export const SubSection = styled("div", {
     left: {
       true: {
         flexDirection: "row-reverse",
+      },
+    },
+    hideMobile: {
+      true: {
+        "@medium": {
+          display: "none",
+        },
       },
     },
   },

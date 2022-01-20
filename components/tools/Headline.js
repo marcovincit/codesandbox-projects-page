@@ -18,21 +18,11 @@ export const Headline = () => {
   const container = useRef(null);
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
-  const [position, setPosition] = useState("relative");
 
   // lock icon
-
-  const scrollSpring = useSpring(scrollY, {
-    duration: 200,
-    // bounce: 10,
-  });
-
   const lockProgress = useTransform(
-    scrollSpring,
-    [
-      containerTop - containerHeight / 2,
-      containerTop - containerHeight / 2 + 20,
-    ],
+    scrollY,
+    [containerTop - containerHeight / 2, containerTop],
     ["20px", "0px"]
   );
 
@@ -61,13 +51,16 @@ export const Headline = () => {
       <HeadlineSubSection>
         <Lock />
 
-        <Heading size={2} as="h1">
-          No lock-in.
-          <br />
-          Use the tools
-          <br />
-          you love.
-        </Heading>
+        <div>
+          <Heading size={2} as="h2">
+            No lock-in.
+          </Heading>
+          <Heading size={2} as="h3" css={{ color: "$support-text" }}>
+            Use the tools
+            <br />
+            you love.
+          </Heading>
+        </div>
 
         <Body size={1} as="p">
           With your CodeSandbox, you can code from any device,

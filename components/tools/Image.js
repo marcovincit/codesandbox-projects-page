@@ -1,4 +1,5 @@
 import { styled } from "styles/stitches.config";
+import { motion } from "framer-motion";
 
 export const Image = styled("img", {
   height: "37.5vw",

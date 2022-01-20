@@ -1,4 +1,5 @@
 import { styled } from "styles/stitches.config";
+import { motion } from "framer-motion";
 
 export const Phone = styled("img", {
   width: "31.2rem",

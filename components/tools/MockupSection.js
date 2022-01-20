@@ -5,7 +5,6 @@ export const MockupSection = styled("div", {
   display: "flex",
   alignItems: "center",
   overflow: "hidden",
-  willChange: "transform",
   pointerEvents: "none",
   position: "relative",
 
