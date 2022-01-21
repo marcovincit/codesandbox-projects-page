@@ -1,16 +1,13 @@
-import { styled } from "styles/stitches.config";
 import { Heading } from "components/typography";
 import { Section } from "./Section";
+import { Product } from "./Product";
 
 export function Intro() {
   return (
     <>
-      <Section css={{ padding: 0, alignItems: "center" }}>
-        <img
-          style={{ width: "100%", maxWidth: "161.8rem" }}
-          src="/images/projects.png"
-        />
-      </Section>
+      {/* <Section>
+        <Product />
+      </Section> */}
       <Section>
         <Heading as="h3" size={3}>
           Not only
