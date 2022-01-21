@@ -7,6 +7,7 @@ import {
   Features,
   Tools,
   Future,
+  Devtools,
 } from "components";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero />
       <Intro />
       <Streamlined />
+      <Devtools />
       <Features />
       <Tools />
       <Future />

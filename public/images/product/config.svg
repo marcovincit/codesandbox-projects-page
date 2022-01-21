@@ -1,0 +1,48 @@
+<svg width="1440" height="810" viewBox="0 0 1440 810" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="PRODUCT">
+<g id="project.json" clip-path="url(#clip0_0_198)">
+<g id="Tab">
+<path d="M343 62C343 60.8954 343.895 60 345 60H466C467.105 60 468 60.8954 468 62V83C468 84.1046 467.105 85 466 85H345C343.895 85 343 84.1046 343 83V62Z" fill="#151515"/>
+<g id="Tab_2">
+<text id="App.js" fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="0em"><tspan x="351" y="76.7273">renderScene.js</tspan></text>
+</g>
+</g>
+<g id="Tab_3">
+<g id="Tab_4">
+<text id="App.js_2" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="0em"><tspan x="476" y="76.7273">project.json</tspan></text>
+</g>
+</g>
+<g id="Frame 722">
+<rect width="610" height="888" transform="translate(240 97)" fill="#151515"/>
+<text id="lines" fill="#636363" xml:space="preserve" style="white-space: pre" font-family="Fira Code" font-size="11" font-weight="300" letter-spacing="0em"><tspan x="247.232" y="112.385">1&#10;</tspan><tspan x="247.232" y="136.385">2&#10;</tspan><tspan x="247.232" y="160.385">3&#10;</tspan><tspan x="247.232" y="184.385">4&#10;</tspan><tspan x="247.232" y="208.385">5&#10;</tspan><tspan x="247.232" y="232.385">6&#10;</tspan><tspan x="247.232" y="256.385">7&#10;</tspan><tspan x="247.232" y="280.385">8&#10;</tspan><tspan x="247.232" y="304.385">9&#10;</tspan><tspan x="240.465" y="328.385">10&#10;</tspan><tspan x="240.465" y="352.385">11&#10;</tspan><tspan x="240.465" y="376.385">12&#10;</tspan><tspan x="240.465" y="400.385">13&#10;</tspan><tspan x="240.465" y="424.385">14&#10;</tspan><tspan x="240.465" y="448.385">15&#10;</tspan><tspan x="240.465" y="472.385">16&#10;</tspan><tspan x="240.465" y="496.385">17&#10;</tspan><tspan x="240.465" y="520.385">18&#10;</tspan><tspan x="240.465" y="544.385">19&#10;</tspan><tspan x="240.465" y="568.385">20&#10;</tspan><tspan x="240.465" y="592.385">21&#10;</tspan><tspan x="240.465" y="616.385">22&#10;</tspan><tspan x="240.465" y="640.385">23&#10;</tspan><tspan x="240.465" y="664.385">24&#10;</tspan><tspan x="240.465" y="688.385">25&#10;</tspan><tspan x="240.465" y="712.385">26&#10;</tspan><tspan x="240.465" y="736.385">27&#10;</tspan><tspan x="240.465" y="760.385">28&#10;</tspan><tspan x="240.465" y="784.385">29&#10;</tspan><tspan x="240.465" y="808.385">30</tspan></text>
+<g id="Code snippet">
+<text fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Fira Code" font-size="14" letter-spacing="0em"><tspan x="276" y="113.308">{&#10;</tspan><tspan x="276" y="137.308">    &#34;previews&#34;: {&#10;</tspan><tspan x="276" y="161.308">        &#34;3000&#34;: {&#10;</tspan><tspan x="276" y="185.308">            &#34;name&#34;: </tspan><tspan x="560.238" y="185.308">,&#10;</tspan><tspan x="276" y="209.308">            &#34;command&#34;: </tspan><tspan x="276" y="233.308">        }&#10;</tspan><tspan x="276" y="257.308">    },&#10;</tspan><tspan x="276" y="281.308">    &#34;tasks&#34;: {&#10;</tspan><tspan x="276" y="305.308">        &#34;format&#34;: {&#10;</tspan><tspan x="276" y="329.308">            &#34;name&#34;: </tspan><tspan x="603.305" y="329.308">,&#10;</tspan><tspan x="276" y="353.308">            &#34;command&#34;: </tspan><tspan x="276" y="377.308">        },&#10;</tspan><tspan x="276" y="401.308">        &#34;fix&#34;: {&#10;</tspan><tspan x="276" y="425.308">            &#34;name&#34;: </tspan><tspan x="534.398" y="425.308">,&#10;</tspan><tspan x="276" y="449.308">            &#34;command&#34;: </tspan><tspan x="276" y="473.308">        },&#10;</tspan><tspan x="276" y="497.308">        &#34;testall&#34;: {&#10;</tspan><tspan x="276" y="521.308">            &#34;name&#34;: </tspan><tspan x="534.398" y="521.308">,&#10;</tspan><tspan x="276" y="545.308">            &#34;command&#34;: </tspan><tspan x="276" y="569.308">        },&#10;</tspan><tspan x="276" y="593.308">        &#34;testapp&#34;: {&#10;</tspan><tspan x="276" y="617.308">            &#34;name&#34;: </tspan><tspan x="534.398" y="617.308">,&#10;</tspan><tspan x="276" y="641.308">            &#34;command&#34;: </tspan><tspan x="276" y="665.308">        },&#10;</tspan><tspan x="276" y="689.308">        &#34;release&#34;: {&#10;</tspan><tspan x="276" y="713.308">            &#34;name&#34;: </tspan><tspan x="525.785" y="713.308">,&#10;</tspan><tspan x="276" y="737.308">            &#34;command&#34;: </tspan><tspan x="276" y="761.308">        }&#10;</tspan><tspan x="276" y="785.308">    },&#10;</tspan><tspan x="276" y="809.308">    &#34;setupTasks&#34;: [&#10;</tspan><tspan x="276" y="833.308">        {&#10;</tspan><tspan x="276" y="857.308">            &#34;name&#34;: </tspan><tspan x="663.598" y="857.308">,&#10;</tspan><tspan x="276" y="881.308">            &#34;command&#34;: </tspan><tspan x="276" y="905.308">        }&#10;</tspan><tspan x="276" y="929.308">    ]&#10;</tspan><tspan x="276" y="953.308">}&#10;</tspan></text>
+<text fill="#BFD084" xml:space="preserve" style="white-space: pre" font-family="Fira Code" font-size="14" letter-spacing="0em"><tspan x="448.266" y="185.308">&#34;Application&#34;</tspan><tspan x="474.105" y="209.308">&#34;yarn run start&#34;&#10;</tspan><tspan x="448.266" y="329.308">&#34;Format workspace&#34;</tspan><tspan x="474.105" y="353.308">&#34;yarn prettier&#34;&#10;</tspan><tspan x="448.266" y="425.308">&#34;Fix lint&#34;</tspan><tspan x="474.105" y="449.308">&#34;yarn fix:code&#34;&#10;</tspan><tspan x="448.266" y="521.308">&#34;Test all&#34;</tspan><tspan x="474.105" y="545.308">&#34;yarn test:all&#34;&#10;</tspan><tspan x="448.266" y="617.308">&#34;Test app&#34;</tspan><tspan x="474.105" y="641.308">&#34;yarn run test:app&#34;&#10;</tspan><tspan x="448.266" y="713.308">&#34;Release&#34;</tspan><tspan x="474.105" y="737.308">&#34;yarn run autorelease&#34;&#10;</tspan><tspan x="448.266" y="857.308">&#34;Installing Dependencies&#34;</tspan><tspan x="474.105" y="881.308">&#34;yarn install&#34;&#10;</tspan></text>
+</g>
+</g>
+<g id="File List">
+<path d="M26 136C26 133.791 27.7909 132 30 132H217C219.209 132 221 133.791 221 136V152C221 154.209 219.209 156 217 156H30C27.7909 156 26 154.209 26 152V136Z" fill="#151515"/>
+<g id="Text">
+<g id="16x16/file">
+<path id="Shape" fill-rule="evenodd" clip-rule="evenodd" d="M38 140.25C38 139.698 38.4477 139.25 39 139.25H42.2501V142.4C42.2501 142.731 42.5187 143 42.8501 143H46V148.5C46 149.052 45.5523 149.5 45 149.5H39C38.4477 149.5 38 149.052 38 148.5V140.25ZM47 142.51C47.0001 142.506 47.0001 142.503 47.0001 142.5C47.0001 142.497 47.0001 142.493 47 142.49V142.371C47 141.841 46.7893 141.332 46.4142 140.957L44.2929 138.836C43.9178 138.461 43.4091 138.25 42.8787 138.25H42.7501H39C37.8954 138.25 37 139.145 37 140.25V148.5C37 149.604 37.8954 150.5 39 150.5H45C46.1046 150.5 47 149.604 47 148.5V142.51ZM43.2501 139.321C43.3746 139.371 43.4891 139.446 43.5858 139.543L45.7071 141.664C45.8038 141.761 45.8787 141.875 45.9285 142H43.2501V139.321Z" fill="#E5E5E5"/>
+</g>
+<text id="public" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="0em"><tspan x="58" y="148.727">project.json</tspan></text>
+</g>
+</g>
+<g id="File List_2">
+<path d="M48 582C48 579.791 49.7909 578 52 578H188C190.209 578 192 579.791 192 582V598C192 600.209 190.209 602 188 602H52C49.7909 602 48 600.209 48 598V582Z" fill="#151515"/>
+<g id="Text_2">
+<g id="16x16/fileJs">
+<path id="Shape_2" fill-rule="evenodd" clip-rule="evenodd" d="M63.7095 584.985C63.8182 584.731 63.7007 584.437 63.4468 584.328C63.193 584.219 62.8991 584.337 62.7903 584.591L58.2903 595.091C58.1815 595.344 58.2991 595.638 58.5529 595.747C58.8067 595.856 59.1007 595.738 59.2095 595.485L63.7095 584.985ZM67.5001 586.25C67.5001 585.974 67.2762 585.75 67.0001 585.75C66.7239 585.75 66.5001 585.974 66.5001 586.25L66.5001 588.384L64.6518 587.317C64.4127 587.179 64.1069 587.261 63.9688 587.5C63.8307 587.739 63.9127 588.045 64.1518 588.183L65.9999 589.25L64.1519 590.317C63.9128 590.455 63.8308 590.761 63.9689 591C64.107 591.239 64.4128 591.321 64.6519 591.183L66.5001 590.116L66.5001 592.25C66.5001 592.526 66.7239 592.75 67.0001 592.75C67.2762 592.75 67.5001 592.526 67.5001 592.25L67.5001 590.116L69.348 591.183C69.5871 591.321 69.8929 591.239 70.031 591C70.169 590.761 70.0871 590.455 69.848 590.317L67.9999 589.25L69.8481 588.183C70.0872 588.045 70.1691 587.739 70.0311 587.5C69.893 587.261 69.5872 587.179 69.3481 587.317L67.5001 588.384L67.5001 586.25Z" fill="#999999"/>
+</g>
+<text id="public_2" fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="0em"><tspan x="80" y="594.727">renderScene.ts</tspan></text>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_198">
+<rect width="813" height="738" fill="white" transform="translate(13 60)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,150 @@
+<svg width="1440" height="810" viewBox="0 0 1440 810" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="PRODUCT">
+<g id="Devtools">
+<g id="Frame 688">
+<g id="Frame 688_2" filter="url(#filter0_dd_0_198)">
+<rect width="190" height="162" transform="translate(1012 47)" fill="#373737"/>
+<g id="Header">
+<text id="DevTools" opacity="0.8" fill="#999999" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="10" font-weight="500" letter-spacing="0.01em"><tspan x="1028" y="68.6364">DevTools</tspan></text>
+</g>
+<g id="Frame 688_3">
+<g id="List">
+<g id="Preview">
+<rect id="Rectangle 2426" x="1028" y="89" width="24" height="24" rx="4" fill="white"/>
+<path id="Shape" d="M1034 99H1046M1035 106H1045C1045.55 106 1046 105.552 1046 105V97C1046 96.4477 1045.55 96 1045 96H1035C1034.45 96 1034 96.4477 1034 97V105C1034 105.552 1034.45 106 1035 106Z" stroke="#151515"/>
+</g>
+<g id="Content">
+<g id="Title">
+<text id="Preview_2" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1060" y="105.727">Application</tspan></text>
+</g>
+<g id="Carrot">
+<path id="Shape_2" d="M1183.05 100.74C1183.25 100.856 1183.25 101.144 1183.05 101.26L1179.45 103.338C1179.25 103.454 1179 103.309 1179 103.078L1179 98.9215C1179 98.6906 1179.25 98.5463 1179.45 98.6617L1183.05 100.74Z" fill="#808080"/>
+</g>
+</g>
+</g>
+<g id="List_2">
+<rect width="190" height="40" transform="translate(1012 121)" fill="#E5E5E5" fill-opacity="0.1"/>
+<g id="Task">
+<rect id="Rectangle 2419" x="1028" y="129" width="24" height="24" rx="4" fill="#5C5C5C"/>
+<path id="Shape_3" d="M1041.15 140.35H1044.5C1045.05 140.35 1045.5 139.902 1045.5 139.35V136M1045.2 139.5C1044.48 137.461 1042.53 136 1040.25 136C1037.35 136 1035 138.351 1035 141.25C1035 144.149 1037.35 146.5 1040.25 146.5C1042.19 146.5 1043.89 145.444 1044.8 143.875" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_2">
+<g id="Title_2">
+<text id="Preview_3" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1060" y="145.727">Tasks</tspan></text>
+</g>
+<g id="Carrot_2">
+<path id="Shape_4" d="M1183.05 140.74C1183.25 140.856 1183.25 141.144 1183.05 141.26L1179.45 143.338C1179.25 143.454 1179 143.309 1179 143.078L1179 138.922C1179 138.691 1179.25 138.546 1179.45 138.662L1183.05 140.74Z" fill="#808080"/>
+</g>
+</g>
+</g>
+<g id="List_3">
+<g id="Terminal">
+<rect id="Rectangle 2419_2" x="1028" y="169" width="24" height="24" rx="4" fill="#131313"/>
+<path id="Shape_5" d="M1035 177L1039.08 180.398C1039.56 180.798 1039.56 181.535 1039.08 181.935L1035 185.333M1040 185.333H1045.83" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_3">
+<g id="Title_3">
+<text id="Preview_4" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1060" y="185.727">Terminals</tspan></text>
+</g>
+<g id="Carrot_3">
+<path id="Shape_6" d="M1183.05 180.74C1183.25 180.856 1183.25 181.144 1183.05 181.26L1179.45 183.338C1179.25 183.454 1179 183.309 1179 183.078L1179 178.922C1179 178.691 1179.25 178.546 1179.45 178.662L1183.05 180.74Z" fill="#808080"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Frame 688_4">
+<path id="Top, Right" d="M1182 47L1189.5 40L1197 47H1182Z" fill="#373737"/>
+</g>
+</g>
+<g id="Frame 689" filter="url(#filter1_dd_0_198)">
+<rect width="190" height="220" transform="translate(1194 120)" fill="#373737"/>
+<g id="List_4">
+<g id="Task_2">
+<rect id="Rectangle 2419_3" x="1210" y="138" width="24" height="24" rx="4" fill="#5C5C5C"/>
+<path id="Shape_7" d="M1223.15 149.35H1226.5C1227.05 149.35 1227.5 148.902 1227.5 148.35V145M1227.2 148.5C1226.48 146.461 1224.53 145 1222.25 145C1219.35 145 1217 147.351 1217 150.25C1217 153.149 1219.35 155.5 1222.25 155.5C1224.19 155.5 1225.89 154.444 1226.8 152.875" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_4">
+<g id="Title_4">
+<text id="Preview_5" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1242" y="154.727">Format workspace</tspan></text>
+</g>
+</g>
+</g>
+<g id="List_5">
+<g id="Task_3">
+<rect id="Rectangle 2419_4" x="1210" y="178" width="24" height="24" rx="4" fill="#5C5C5C"/>
+<path id="Shape_8" d="M1223.15 189.35H1226.5C1227.05 189.35 1227.5 188.902 1227.5 188.35V185M1227.2 188.5C1226.48 186.461 1224.53 185 1222.25 185C1219.35 185 1217 187.351 1217 190.25C1217 193.149 1219.35 195.5 1222.25 195.5C1224.19 195.5 1225.89 194.444 1226.8 192.875" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_5">
+<g id="Title_5">
+<text id="Preview_6" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1242" y="194.727">Fix lint</tspan></text>
+</g>
+</g>
+</g>
+<g id="List_6">
+<g id="Task_4">
+<rect id="Rectangle 2419_5" x="1210" y="218" width="24" height="24" rx="4" fill="#5C5C5C"/>
+<path id="Shape_9" d="M1223.15 229.35H1226.5C1227.05 229.35 1227.5 228.902 1227.5 228.35V225M1227.2 228.5C1226.48 226.461 1224.53 225 1222.25 225C1219.35 225 1217 227.351 1217 230.25C1217 233.149 1219.35 235.5 1222.25 235.5C1224.19 235.5 1225.89 234.444 1226.8 232.875" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_6">
+<g id="Title_6">
+<text id="Preview_7" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1242" y="234.727">Test all</tspan></text>
+</g>
+</g>
+</g>
+<g id="List_7">
+<g id="Task_5">
+<rect id="Rectangle 2419_6" x="1210" y="258" width="24" height="24" rx="4" fill="#5C5C5C"/>
+<path id="Shape_10" d="M1223.15 269.35H1226.5C1227.05 269.35 1227.5 268.902 1227.5 268.35V265M1227.2 268.5C1226.48 266.461 1224.53 265 1222.25 265C1219.35 265 1217 267.351 1217 270.25C1217 273.149 1219.35 275.5 1222.25 275.5C1224.19 275.5 1225.89 274.444 1226.8 272.875" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_7">
+<g id="Title_7">
+<text id="Preview_8" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1242" y="274.727">Test app</tspan></text>
+</g>
+</g>
+</g>
+<g id="List_8">
+<g id="Task_6">
+<rect id="Rectangle 2419_7" x="1210" y="298" width="24" height="24" rx="4" fill="#5C5C5C"/>
+<path id="Shape_11" d="M1223.15 309.35H1226.5C1227.05 309.35 1227.5 308.902 1227.5 308.35V305M1227.2 308.5C1226.48 306.461 1224.53 305 1222.25 305C1219.35 305 1217 307.351 1217 310.25C1217 313.149 1219.35 315.5 1222.25 315.5C1224.19 315.5 1225.89 314.444 1226.8 312.875" stroke="white" stroke-linecap="round"/>
+</g>
+<g id="Content_8">
+<g id="Title_8">
+<text id="Preview_9" fill="#E5E5E5" xml:space="preserve" style="white-space: pre" font-family="Inter" font-size="13" letter-spacing="-0.015em"><tspan x="1242" y="314.727">Release</tspan></text>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_dd_0_198" x="995" y="35" width="224" height="196" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="5"/>
+<feGaussianBlur stdDeviation="8.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_198"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="3.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_0_198" result="effect2_dropShadow_0_198"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_0_198" result="shape"/>
+</filter>
+<filter id="filter1_dd_0_198" x="1177" y="108" width="224" height="254" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="5"/>
+<feGaussianBlur stdDeviation="8.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_198"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="3.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_0_198" result="effect2_dropShadow_0_198"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_0_198" result="shape"/>
+</filter>
+</defs>
+</svg>
