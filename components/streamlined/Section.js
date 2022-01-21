@@ -1,7 +1,7 @@
 import { styled } from "styles/stitches.config";
 
 export const Section = styled("section", {
-  // pointerEvents: "none",
+  pointerEvents: "none",
   // overflow: "hidden",
   position: "relative",
   // clip: "rect(0, auto, auto, 0)",
