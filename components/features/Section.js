@@ -6,6 +6,8 @@ export const Section = styled("section", {
   willChange: "transform, opacity",
   minHeight: "100vh",
   padding: "27rem 32rem",
+  position: "relative",
+  zIndex: 0,
 
   "@large": {
     padding: "13.5rem 24rem",
