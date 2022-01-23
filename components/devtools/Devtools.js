@@ -1,124 +1,78 @@
-import { styled } from "styles/stitches.config";
 import { Heading } from "../typography";
 import { Section } from "./Section";
+import { ContentSection } from "./ContentSection";
+import { ContentSubSection } from "./ContentSubSection";
+import { ImageSection } from "./ImageSection";
+import { Image } from "./Image";
 
-export const ContentSection = styled("div", {
-  width: "50%",
-  display: "flex",
-  alignItems: "center",
+import { ImageBaseContainer } from "./ImageBaseContainer";
 
-  "@medium": {
-    width: "100%",
-  },
-});
+import { styled } from "styles/stitches.config";
 
-export const ContentSubSection = styled("div", {
-  display: "flex",
-  flexDirection: "column",
+export const MainSection = styled("div", {
+    position:"relative",
+    display: "flex",
+    alignItems: 'flex-start'
+  
 
-  padding: "9rem 8rem 9rem 32rem",
+  });
 
-  "@large": {
-    padding: "6.7rem 6rem 6.7rem 24rem",
-  },
 
-  "@medium": {
-    padding: "0!important",
-  },
+export const Stiky = styled("div", {
 
-  variants: {
-    left: {
-      true: {
-        padding: "9rem 8rem 9rem 32rem",
+  
+  width:'50%',
+    position: "sticky",
+    top: '0%',
+    overflow: "hidden",
+    minHeight: '100vh',
 
-        "@large": {
-          padding: "6.7rem 6rem 6.7rem 24rem",
-        },
-      },
-    },
-  },
-});
 
-export const ImageSection = styled("div", {
-  width: "50%",
-  display: "none",
-  alignItems: "center",
-  overflow: "hidden",
-  pointerEvents: "none",
-  position: "relative",
+    display:'flex',
+    alignItems: 'center',
 
-  "@medium": {
-    width: "100%",
-    overflow: "initial",
-  },
+    pointerEvents: "none",
 
-  variants: {
-    center: {
-      true: {
-        display: "flex",
-        justifyContent: "center",
-      },
-    },
 
-    left: {
-      true: {
-        display: "flex",
-        justifyContent: "flex-end",
-      },
-    },
-  },
-});
 
-const Image = styled("img", {
-  pointerEvents: "none",
 
-  // height: "37.5vw",
+    "@medium":{
+      display: "none"
+    }
+  
 
-  "@large": {
-    height: "75vh",
-  },
+  });
+
+export const StikyImage = styled("div", {
+    position: "relative"
+
+  });
+
+  
+export const Content = styled("div", {
+  width:'50%', 
 
   "@medium": {
-    height: "59.8rem",
-  },
+    width: "100%"
+  }
 
-  "@small": {
-    height: "47.3rem",
-  },
-
-  variants: {
-    layer: {
-      true: {
-        position: "absolute",
-        top: 0,
-        left: 0,
-      },
-    },
-
-    center: {
-      true: {
-        left: "50%",
-        transform: "translateX(-50%)",
-      },
-    },
-
-    left: {
-      true: {
-        left: "initial",
-        right: 0,
-      },
-    },
-  },
-});
+  });
 
 export const Devtools = () => {
   return (
-    <>
+    <MainSection>
+
+     
+
+<Content style={{
+
+}}>
       <Section>
-        <ImageSection hideDesktop>
+        <ImageSection>
           <Image src="/images/product/base.svg" />
           <Image src="/images/product/config.svg" layer />
         </ImageSection>
+
         <ContentSection>
           <ContentSubSection>
             <Heading as="h3" size={4} css={{ color: "$primary" }}>
@@ -133,9 +87,11 @@ export const Devtools = () => {
       </Section>
 
       <Section>
-        <ImageSection center hideDesktop>
+        <ImageSection center>
+        <ImageBaseContainer>
           <Image src="/images/product/base.svg" />
-          <Image src="/images/product/config.svg" layer center />
+        
+          <Image src="/images/product/config.svg" layer center /></ImageBaseContainer>
           <Image src="/images/product/command-pallete.svg" layer center />
         </ImageSection>
         <ContentSection>
@@ -152,9 +108,12 @@ export const Devtools = () => {
       </Section>
 
       <Section>
-        <ImageSection left hideDesktop>
+        <ImageSection left>
+        <ImageBaseContainer>
           <Image src="/images/product/base.svg" />
           <Image src="/images/product/config.svg" layer left />
+          <Image src="/images/product/new-branch.svg" layer left />
+          </ImageBaseContainer>
           <Image src="/images/product/devtools.svg" layer left />
         </ImageSection>
         <ContentSection>
@@ -169,6 +128,20 @@ export const Devtools = () => {
           </ContentSubSection>
         </ContentSection>
       </Section>
-    </>
+
+
+
+      </Content>
+
+
+
+      <Stiky>
+        <StikyImage>
+          <Image src="/images/product/base.svg" />
+          <Image src="/images/product/config.svg" layer />
+        </StikyImage>
+      </Stiky>
+
+    </MainSection>
   );
 };
