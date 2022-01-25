@@ -3,15 +3,22 @@ import { styled } from "styles/stitches.config";
 export const Section = styled("div", {
   minHeight: "100vh",
   display: "flex",
+
   alignItems: "center",
   gap: "16rem",
   flexBasis: 0,
   padding: "3.4rem 0",
-  top: 0,
-  width: "100%",
+
+  width: "50%",
   overflow: "hidden",
 
+  position: "sticky",
+  top: 0,
+
   "@medium": {
+    width: "100%",
+    position: "initial",
+    alignItems: "flex-start",
     minHeight: "auto",
     flexDirection: "column!important",
     gap: "8.5rem",
@@ -24,15 +31,15 @@ export const Section = styled("div", {
   },
 
   variants: {
-    left: {
-      true: {
-        flexDirection: "row-reverse",
-      },
-    },
-    hideMobile: {
-      true: {
+    position: {
+      center: {
         "@medium": {
-          display: "none",
+          alignItems: "center",
+        },
+      },
+      left: {
+        "@medium": {
+          alignItems: "flex-end",
         },
       },
     },

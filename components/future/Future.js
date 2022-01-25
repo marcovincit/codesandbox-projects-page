@@ -25,7 +25,7 @@ export function Future() {
   const y = useTransform(
     scrollY,
     [containerTop - containerHeight, containerTop],
-    [-containerHeight + 200, 0]
+    ["-50vh", "0vh"]
   );
 
   // useEffect

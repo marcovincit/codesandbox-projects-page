@@ -59,7 +59,7 @@ export function Streamlined() {
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
       containerTop + containerHeight / 2.5 + 300,
-      containerTop + (containerHeight / 4) * 3,
+      containerTop + (containerHeight / 4) * 3.2,
     ],
     [0, 1, 1, 0]
   );
@@ -70,7 +70,7 @@ export function Streamlined() {
     scrollSpring,
     [
       containerTop + containerHeight / 2.5,
-      containerTop + (containerHeight / 4) * 3,
+      containerTop + (containerHeight / 4) * 3.2,
     ],
     [1, 0.8]
   );

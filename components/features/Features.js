@@ -1,14 +1,9 @@
 import { data } from "./data";
 import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { Heading, Body } from "../typography";
-import { Section } from "./Section";
-import { Grid } from "./Grid";
-import { Item } from "./Item";
-import { IconContainer } from "./IconContainer";
-import { Content } from "./Content";
-
 import { useWindowSize } from "hooks/useWindowSize";
+import { Heading, Body } from "components/typography";
+import { Section, Grid, Item, IconContainer, Content } from "./styles";
 
 export const Features = () => {
   const windowSize = useWindowSize();
@@ -36,7 +31,7 @@ export const Features = () => {
       containerTop + containerHeight - windowSize.height,
       containerTop + containerHeight,
     ],
-    ["0%", "30%"]
+    ["0vh", "50vh"]
   );
 
   // useEffect
