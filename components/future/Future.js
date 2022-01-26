@@ -55,9 +55,13 @@ export const Future = () => {
           <br />
           the future.
         </Heading>
-        <Body size={1} as="p">
+        <Body
+          size={1}
+          as="p"
+          css={{ maxWidth: "50rem", "@small": { maxWidth: "32rem" } }}
+        >
           Experience the future of web development first and build projects
-          <br /> anywhere and anytime with your team.
+          anywhere and anytime with your team.
         </Body>
         <CTA as="a" href="#" target="_blank">
           Early access <Arrow />

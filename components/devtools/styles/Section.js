@@ -26,7 +26,7 @@ export const Section = styled("div", {
   },
 
   "@small": {
-    padding: "10.2rem 4.5rem",
+    padding: "10.2rem 3.2rem",
     gap: "6.8rem",
   },
 

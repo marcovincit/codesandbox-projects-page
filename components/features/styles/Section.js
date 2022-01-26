@@ -20,6 +20,6 @@ export const Section = styled("section", {
   },
 
   "@small": {
-    padding: "6.2rem 4.5rem",
+    padding: "6.2rem 3.2rem",
   },
 });

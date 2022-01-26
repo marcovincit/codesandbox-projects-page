@@ -190,7 +190,9 @@ export function Tools() {
           willChange: "opacity, transform",
 
           "@medium": {
-            marginBottom: "0",
+            marginTop: "0",
+            opacity: "1!important",
+            transform: "initial!important",
           },
         }}
         style={{ opacity: contentOpacity1, y: contentY1 }}
@@ -223,7 +225,10 @@ export function Tools() {
 
       <SubSection
         as={motion.div}
-        css={{ willChange: "opacity, transform" }}
+        css={{
+          willChange: "opacity, transform",
+          "@medium": { opacity: "1!important", transform: "initial!important" },
+        }}
         style={{ opacity: contentOpacity2, y: contentY2 }}
         left
       >

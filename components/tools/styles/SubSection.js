@@ -18,10 +18,11 @@ export const SubSection = styled("div", {
     flexDirection: "column-reverse!important",
     gap: "8.5rem",
     padding: "8.5rem 9.5rem",
+    position: "initial",
   },
 
   "@small": {
-    padding: "10.2rem 4.5rem",
+    padding: "10.2rem 3.2rem",
     gap: "6.8rem",
   },
 

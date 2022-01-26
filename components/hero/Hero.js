@@ -12,9 +12,13 @@ export function Hero() {
           reimagined.
         </Heading>
 
-        <Body size={1} as="p">
-          Experience the future of web development and build <br /> projects
-          anywhere and anytime with your team.
+        <Body
+          size={1}
+          as="p"
+          css={{ maxWidth: "50rem", "@small": { maxWidth: "32rem" } }}
+        >
+          Experience the future of web development and build projects anywhere
+          and anytime with your team.
         </Body>
         <CTA as="a" href="#" target="_blank">
           Early access <Arrow />

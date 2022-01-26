@@ -7,6 +7,8 @@ export const Link = styled(Body, {
   alignItems: "center",
   transition: "color .6s",
 
+  mixBlendMode: "difference",
+
   svg: {
     transition: "transform 1s",
   },

@@ -55,10 +55,18 @@ export const Headline = () => {
           </Heading>
         </div>
 
-        <Body size={1} as="p">
-          With your CodeSandbox, you can code from any device,
-          <br />
-          using VSCode, play.js, or your browser.
+        <Body
+          size={1}
+          as="p"
+          css={{
+            maxWidth: "50rem",
+            "@small": {
+              maxWidth: "28rem",
+            },
+          }}
+        >
+          With your CodeSandbox, you can code from any device, using VSCode,
+          play.js, or your browser.
         </Body>
       </HeadlineSubSection>
     </HeadlineSection>
