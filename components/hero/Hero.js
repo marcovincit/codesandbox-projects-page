@@ -1,11 +1,13 @@
 import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
 import { Container, Content } from "./styles";
+import { Logo } from "./Logo";
 
 export function Hero() {
   return (
     <Container>
       <Content>
+        <Logo />
         <Heading size={2} as="h1">
           Development
           <br />
