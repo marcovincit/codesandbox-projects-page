@@ -7,3 +7,4 @@ export { Streamlined } from "components/streamlined";
 export { Tools } from "components/tools";
 export { Future } from "components/future";
 export { Devtools } from "components/devtools";
+export { Avatar } from "components/avatar";

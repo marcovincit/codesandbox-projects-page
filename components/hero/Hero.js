@@ -1,28 +1,11 @@
-import { styled, lightTheme } from "styles/stitches.config";
-import { Heading, Body } from "../typography";
-import { CTA } from "../cta";
-
-const Section = styled("section", {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  padding: "9rem 3rem",
-});
-
-const SubSection = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  textAlign: "center",
-  gap: "3rem",
-});
+import { Heading, Body } from "components/typography";
+import { CTA, Arrow } from "components/cta";
+import { Container, Content } from "./styles";
 
 export function Hero() {
   return (
-    <Section>
-      <SubSection>
+    <Container>
+      <Content>
         <Heading size={2} as="h1">
           Development
           <br />
@@ -33,8 +16,10 @@ export function Hero() {
           Experience the future of web development and build <br /> projects
           anywhere and anytime with your team.
         </Body>
-        <CTA>Early access</CTA>
-      </SubSection>
-    </Section>
+        <CTA as="a" href="#" target="_blank">
+          Early access <Arrow />
+        </CTA>
+      </Content>
+    </Container>
   );
 }

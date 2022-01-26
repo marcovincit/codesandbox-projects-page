@@ -14,11 +14,13 @@ export const Features = () => {
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
+  const [windowHeight, setWindowHeight] = useState(0);
+
   // opacity
   const opacity = useTransform(
     scrollY,
     [
-      containerTop + containerHeight - windowSize.height,
+      containerTop + containerHeight - windowHeight,
       containerTop + containerHeight,
     ],
     [1, 0]
@@ -28,13 +30,18 @@ export const Features = () => {
   const y = useTransform(
     scrollY,
     [
-      containerTop + containerHeight - windowSize.height,
+      containerTop + containerHeight - windowHeight,
       containerTop + containerHeight,
     ],
     ["0vh", "50vh"]
   );
 
   // useEffect
+
+  useEffect(() => {
+    if (!windowSize.height) return;
+    setWindowHeight(windowSize.height);
+  }, [windowSize]);
 
   useEffect(() => {
     if (!container.current) return;

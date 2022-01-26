@@ -9,6 +9,11 @@ export const Body = styled("span", {
   letterSpacing: "-0.0125em",
   margin: 0,
 
+  "&::selection": {
+    color: "$background",
+    background: "$primary",
+  },
+
   "@small": {
     fontSize: "1.6rem",
   },

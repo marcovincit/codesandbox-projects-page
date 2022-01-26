@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-
-import { Section } from "./Section";
-import { SubSection } from "./SubSection";
+import { Section, SubSection } from "./styles";
 import { Heading, Body } from "components/typography";
-import { CTA } from "components/cta";
+import { CTA, Arrow } from "components/cta";
 
-export function Future() {
+export const Future = () => {
   const { scrollY } = useViewportScroll();
 
   // container
@@ -61,8 +59,10 @@ export function Future() {
           Experience the future of web development first and build projects
           <br /> anywhere and anytime with your team.
         </Body>
-        <CTA>Early access</CTA>
+        <CTA as="a" href="#" target="_blank">
+          Early access <Arrow />
+        </CTA>
       </SubSection>
     </Section>
   );
-}
+};

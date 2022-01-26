@@ -5,14 +5,9 @@ import {
   useTransform,
   useSpring,
 } from "framer-motion";
+import { Section, SubSection, Text, Square, Title } from "./styles";
 
-import { Section } from "./Section";
-import { SubSection } from "./SubSection";
-import { Text } from "./Text";
-import { Square } from "./Square";
-import { Title } from "./Title";
-
-export function Streamlined() {
+export const Streamlined = () => {
   const { scrollY } = useViewportScroll();
   const scrollSpring = useSpring(scrollY, {
     stiffness: 200,
@@ -158,4 +153,4 @@ export function Streamlined() {
       </SubSection>
     </Section>
   );
-}
+};

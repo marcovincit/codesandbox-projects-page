@@ -1,4 +1,4 @@
-export default function Branch() {
+export const Branch = () => {
   return (
     <svg
       width="30"
@@ -15,4 +15,4 @@ export default function Branch() {
       />
     </svg>
   );
-}
+};

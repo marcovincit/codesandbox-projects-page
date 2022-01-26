@@ -9,6 +9,12 @@ export const Heading = styled("span", {
   letterSpacing: "-0.05em",
   margin: 0,
 
+  "&::selection": {
+    "-webkit-text-stroke": "1px var(--colors-title)",
+    color: "transparent",
+    background: "transparent",
+  },
+
   "@large": {
     fontSize: "7.2rem",
   },

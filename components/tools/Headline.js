@@ -1,15 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useSpring,
-} from "framer-motion";
-
-import { HeadlineSection } from "./HeadlineSection";
-import { HeadlineSubSection } from "./HeadlineSubSection";
-import { Heading, Body } from "../typography";
-import { Lock } from "../icons/Lock";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { Lock } from "./icons/Lock";
+import { Heading, Body } from "components/typography";
+import { HeadlineSection, HeadlineSubSection } from "./styles";
 
 export const Headline = () => {
   const { scrollY } = useViewportScroll();

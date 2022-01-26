@@ -1,54 +1,60 @@
 import { lightTheme } from "styles/stitches.config";
 import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { Section } from "./Section";
-import { Image } from "./Image";
 import { Headline } from "./Headline";
-import { ContentSection } from "./ContentSection";
-import { SubSection } from "./SubSection";
-import { ContentSubSection } from "./ContentSubSection";
-import { MockupSection } from "./MockupSection";
-import { Heading, Body } from "../typography";
-import { AppStore } from "components/icons/AppStore";
-import { Phone } from "./Phone";
+import { Heading } from "components/typography";
+import {
+  Section,
+  Image,
+  ContentSection,
+  SubSection,
+  ContentSubSection,
+  MockupSection,
+  Phone,
+} from "./styles";
+import { AppStore } from "./AppStore";
 
 export function Tools() {
   const { scrollY } = useViewportScroll();
 
   // container
   const container = useRef(null);
-  const containerOffset = useRef(null);
   const [containerOffsetTop, setContainerOffsetTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
   // section y
   const y = useTransform(
     scrollY,
-    [containerOffsetTop - containerHeight / 1.5, containerOffsetTop + 100],
-    ["20%", "0%"]
+    [
+      containerOffsetTop,
+      containerOffsetTop + containerHeight / 6,
+      containerOffsetTop + (containerHeight / 6) * 2,
+    ],
+    ["-10vh", "10vh", "0vh"]
   );
 
   // iPhone
   const iPhoneX = useTransform(
     scrollY,
     [
-      containerOffsetTop + 100,
-      containerOffsetTop + containerHeight,
-      containerOffsetTop + containerHeight,
-      containerOffsetTop + containerHeight * 2.8,
+      containerOffsetTop + (containerHeight / 6) * 1.1,
+      containerOffsetTop + (containerHeight / 6) * 2,
+      containerOffsetTop + (containerHeight / 6) * 3.8,
+      containerOffsetTop + (containerHeight / 6) * 6,
     ],
-    ["0vw", "-100vw", "-100vw", "0vw"]
+    ["0vw", "-100vw", "-2vw", "0vw"]
   );
 
   // iPad
   const iPadX = useTransform(
     scrollY,
     [
-      containerOffsetTop + 100,
-      containerOffsetTop + containerHeight,
-      containerOffsetTop + containerHeight * 2.8,
+      containerOffsetTop + (containerHeight / 6) * 1.1,
+      containerOffsetTop + (containerHeight / 6) * 2,
+      containerOffsetTop + (containerHeight / 6) * 3.8,
+      containerOffsetTop + (containerHeight / 6) * 6,
     ],
-    ["0%", "-120%", "0%"]
+    ["0%", "-120%", "-2%", "0%"]
   );
 
   // VSCode
@@ -56,19 +62,61 @@ export function Tools() {
     scrollY,
     [
       containerOffsetTop,
-      containerOffsetTop + containerHeight,
-      containerOffsetTop + containerHeight + 500,
-      containerOffsetTop + containerHeight * 2.8,
+      containerOffsetTop + (containerHeight / 6) * 2,
+      containerOffsetTop + (containerHeight / 6) * 2 + 500,
+      containerOffsetTop + (containerHeight / 6) * 3.8,
     ],
     ["0%", "0%", "0%", "150%"]
+  );
+
+  // CONTENT 1
+  // content 1 opacity
+  const contentOpacity1 = useTransform(
+    scrollY,
+    [
+      containerOffsetTop + (containerHeight / 6) * 1.75,
+      containerOffsetTop + (containerHeight / 6) * 2,
+      containerOffsetTop + (containerHeight / 6) * 2.5,
+      containerOffsetTop + (containerHeight / 6) * 2.75,
+    ],
+    [0, 1, 1, 0]
+  );
+  // content 1 y
+  const contentY1 = useTransform(
+    scrollY,
+    [
+      containerOffsetTop + (containerHeight / 6) * 1.75,
+      containerOffsetTop + (containerHeight / 6) * 2.75,
+    ],
+    ["5%", "-5%"]
+  );
+
+  // CONTENT 2
+  // content 2 opacity
+  const contentOpacity2 = useTransform(
+    scrollY,
+    [
+      containerOffsetTop + (containerHeight / 6) * 3.25,
+      containerOffsetTop + (containerHeight / 6) * 3.5,
+    ],
+    [0, 1]
+  );
+  // content 2 y
+  const contentY2 = useTransform(
+    scrollY,
+    [
+      containerOffsetTop + (containerHeight / 6) * 3.25,
+      containerOffsetTop + (containerHeight / 6) * 5,
+    ],
+    ["5%", "0%"]
   );
 
   // useEffect
   useEffect(() => {
     if (!container.current) return;
-    if (!containerOffset.current) return;
+    if (!container.current) return;
     const onResize = () => {
-      setContainerOffsetTop(containerOffset.current.offsetTop);
+      setContainerOffsetTop(container.current.offsetTop);
       setContainerHeight(container.current.offsetHeight);
     };
 
@@ -79,19 +127,14 @@ export function Tools() {
 
   // return
   return (
-    <Section className={lightTheme}>
+    <Section className={lightTheme} ref={container}>
       <Headline />
-
-      <div ref={containerOffset} />
 
       <SubSection
         as={motion.div}
-        ref={container}
         hideMobile
         css={{
           pointerEvents: "none",
-          position: "sticky",
-          top: 0,
           willChange: "transform",
         }}
         style={{
@@ -100,18 +143,23 @@ export function Tools() {
       >
         <MockupSection left>
           <Image
+            alt="CodeSandbox for iOS - iPad"
             as={motion.img}
-            style={{
-              x: iPadX,
-            }}
             css={{
               marginRight: "4rem",
               willChange: "transform",
             }}
+            style={{
+              x: iPadX,
+            }}
             src="/images/iPad.jpg"
           />
           <Phone
+            alt="CodeSandbox for iOS - iPhone"
             as={motion.img}
+            css={{
+              willChange: "transform",
+            }}
             style={{
               x: iPhoneX,
             }}
@@ -128,17 +176,24 @@ export function Tools() {
             x: VSCodeX,
           }}
         >
-          <Image src="/images/VSCode.jpg" />
+          <Image
+            alt="CodeSandbox Extension for VSCode."
+            src="/images/VSCode.jpg"
+          />
         </MockupSection>
       </SubSection>
 
       <SubSection
+        as={motion.div}
         css={{
-          marginBottom: "100vh",
+          marginTop: "-100vh",
+          willChange: "opacity, transform",
+
           "@medium": {
             marginBottom: "0",
           },
         }}
+        style={{ opacity: contentOpacity1, y: contentY1 }}
       >
         <ContentSection>
           <ContentSubSection>
@@ -157,11 +212,21 @@ export function Tools() {
           </ContentSubSection>
         </ContentSection>
         <MockupSection hideDesktop>
-          <Image src="/images/VSCode.jpg" />
+          <Image
+            alt="CodeSandbox Extension for VSCode."
+            src="/images/VSCode.jpg"
+          />
         </MockupSection>
       </SubSection>
 
-      <SubSection left>
+      <SubSection hideMobile />
+
+      <SubSection
+        as={motion.div}
+        css={{ willChange: "opacity, transform" }}
+        style={{ opacity: contentOpacity2, y: contentY2 }}
+        left
+      >
         <ContentSection>
           <ContentSubSection left>
             <Heading as="h3" size={4}>
@@ -169,24 +234,28 @@ export function Tools() {
               <br />
               iPad or iPhone.
             </Heading>
-            <Heading as="p" size={4} css={{ color: "$secondary" }}>
+            <Heading as="p" size={4} css={{ color: "$primary" }}>
               Contribute on the
               <br />
               go with Play.js
             </Heading>
+
             <AppStore />
           </ContentSubSection>
         </ContentSection>
         <MockupSection left hideDesktop>
           <Image
+            alt="CodeSandbox for iOS - iPad"
             css={{
               marginLeft: "4rem",
             }}
             src="/images/iPad.jpg"
           />
-          <Phone src="/images/iPhone.png" />
+          <Phone alt="CodeSandbox for iOS - iPhone" src="/images/iPhone.png" />
         </MockupSection>
       </SubSection>
+
+      <SubSection css={{ height: "200vh" }} hideMobile />
     </Section>
   );
 }

@@ -1,5 +1,5 @@
 import { Heading } from "components/typography";
-import { Section } from "./Section";
+import { Section } from "./styles";
 import { Product } from "./Product";
 
 export function Intro() {

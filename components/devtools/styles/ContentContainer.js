@@ -4,6 +4,7 @@ export const ContentContainer = styled("div", {
   width: "100%",
   display: "flex",
   flexDirection: "column",
+  willChange: "transform opacity",
 
   padding: "9rem 8rem 9rem 32rem",
 

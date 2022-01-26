@@ -1,4 +1,4 @@
-export function MagicBranch() {
+export const MagicBranch = () => {
   return (
     <svg
       width="42"
@@ -37,4 +37,4 @@ export function MagicBranch() {
       />
     </svg>
   );
-}
+};

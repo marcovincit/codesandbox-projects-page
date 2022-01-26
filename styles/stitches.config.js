@@ -25,6 +25,10 @@ export const { globalCss, styled, css } = createStitches({
 
 export const lightTheme = createTheme({
   colors: {
+    primary: "#7B61FF",
+    primary90: "#E6DEFF",
+    secondary: "#DCFF50",
+
     background: "#FFFFFF",
     title: "#171618",
     support: "#454546",

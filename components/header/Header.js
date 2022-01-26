@@ -1,49 +1,27 @@
-import { styled } from "styles/stitches.config";
-import { Heading, Body } from "../typography";
+import { Container, Menu, Link } from "./styles";
+import { Back } from "./icons";
+import { Avatar } from "components";
 
-const Section = styled("header", {
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "3.8rem 4rem",
-
-  "@large": {
-    padding: "2.8rem 3rem",
-  },
-  "@medium": {
-    padding: "3.6rem 3.2rem",
-  },
-  "@small": {
-    padding: "2.8rem 1.5rem",
-  },
-});
-
-const Menu = styled("nav", {
-  display: "flex",
-  gap: "3rem",
-});
-
-const Link = styled(Body, {
-  display: "flex",
-  gap: "3rem",
-  "&:hover": {
-    color: "$primary",
-  },
-});
-
-export function Header() {
+export const Header = () => {
   return (
-    <Section>
-      <Link as="a" href="#" size={3}>
+    <Container>
+      <Link as="a" href="https://codesandbox.io/" size={3}>
+        <Back />
         Back
       </Link>
       <Menu>
-        <Link as="a" href="#" size={3}>
+        <Link as="a" href="https://codesandbox.io/pricing" size={3}>
           Pricing
         </Link>
-        <Link as="a" href="#" size={3}>
+        <Link
+          as="a"
+          href="https://codesandbox.io/signin?continue=https://projects.codesandbox.io/auth-test"
+          size={3}
+        >
           Sign In
         </Link>
+        <Avatar src="/avatars/0.jpg" />
       </Menu>
-    </Section>
+    </Container>
   );
-}
+};

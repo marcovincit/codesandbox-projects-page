@@ -1,4 +1,4 @@
-export function Keyboard() {
+export const Keyboard = () => {
   return (
     <svg
       width="42"
@@ -30,4 +30,4 @@ export function Keyboard() {
       <circle cx="30.8" cy="17.5" r="0.875" fill="#F5F5F7" />
     </svg>
   );
-}
+};

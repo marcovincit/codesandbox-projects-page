@@ -1,4 +1,4 @@
-export function IntelliSense() {
+export const IntelliSense = () => {
   return (
     <svg
       width="42"
@@ -15,4 +15,4 @@ export function IntelliSense() {
       />
     </svg>
   );
-}
+};

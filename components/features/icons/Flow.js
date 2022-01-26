@@ -1,4 +1,4 @@
-export function Flow() {
+export const Flow = () => {
   return (
     <svg
       width="42"
@@ -31,4 +31,4 @@ export function Flow() {
       />
     </svg>
   );
-}
+};

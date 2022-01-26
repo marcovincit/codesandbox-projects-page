@@ -1,4 +1,4 @@
-export function Prebuilds() {
+export const Prebuilds = () => {
   return (
     <svg
       width="42"
@@ -15,4 +15,4 @@ export function Prebuilds() {
       />
     </svg>
   );
-}
+};
