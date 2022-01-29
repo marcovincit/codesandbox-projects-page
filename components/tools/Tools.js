@@ -11,6 +11,7 @@ import {
   ContentSubSection,
   MockupSection,
   Phone,
+  FakeSection,
 } from "./styles";
 import { AppStore } from "./AppStore";
 
@@ -19,96 +20,100 @@ export function Tools() {
 
   // container
   const container = useRef(null);
-  const [containerOffsetTop, setContainerOffsetTop] = useState(0);
+  const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
-  // section y
-  const y = useTransform(
+  // keyframe
+  const keyframe = (value) => {
+    return containerTop + (containerHeight / 32) * value;
+  };
+
+  // progress
+  const progress = useTransform(
     scrollY,
-    [
-      containerOffsetTop,
-      containerOffsetTop + containerHeight / 6,
-      containerOffsetTop + (containerHeight / 6) * 2,
-    ],
-    ["-10vh", "10vh", "0vh"]
+    [keyframe(-3), keyframe(-2)],
+    [300, 0]
+  );
+  const progress2 = useTransform(
+    scrollY,
+    [keyframe(-2), keyframe(-1)],
+    [-140, 0]
+  );
+
+  // lock icon
+  const lockProgress = useTransform(
+    scrollY,
+    [keyframe(-1), keyframe(-1) + 1],
+    ["20px", "0px"]
   );
 
   // iPhone
   const iPhoneX = useTransform(
     scrollY,
-    [
-      containerOffsetTop + (containerHeight / 6) * 1.1,
-      containerOffsetTop + (containerHeight / 6) * 2,
-      containerOffsetTop + (containerHeight / 6) * 3.8,
-      containerOffsetTop + (containerHeight / 6) * 6,
-    ],
-    ["0vw", "-100vw", "-2vw", "0vw"]
+    [keyframe(4), keyframe(8), keyframe(15), keyframe(20), keyframe(28)],
+    ["0vw", "-48vw", "-48vw", "-2vw", "0vw"]
   );
 
   // iPad
   const iPadX = useTransform(
     scrollY,
-    [
-      containerOffsetTop + (containerHeight / 6) * 1.1,
-      containerOffsetTop + (containerHeight / 6) * 2,
-      containerOffsetTop + (containerHeight / 6) * 3.8,
-      containerOffsetTop + (containerHeight / 6) * 6,
-    ],
-    ["0%", "-120%", "-2%", "0%"]
+    [keyframe(4), keyframe(8), keyframe(15), keyframe(20), keyframe(28)],
+    ["0vw", "-60vw", "-60vw", "-4vw", "0vw"]
   );
 
   // VSCode
   const VSCodeX = useTransform(
     scrollY,
-    [
-      containerOffsetTop,
-      containerOffsetTop + (containerHeight / 6) * 2,
-      containerOffsetTop + (containerHeight / 6) * 2 + 500,
-      containerOffsetTop + (containerHeight / 6) * 3.8,
-    ],
-    ["0%", "0%", "0%", "150%"]
+    [keyframe(4), keyframe(15), keyframe(20)],
+    ["2vw", "0vw", "47vw"]
   );
 
-  // CONTENT 1
-  // content 1 opacity
+  // content 1
   const contentOpacity1 = useTransform(
     scrollY,
-    [
-      containerOffsetTop + (containerHeight / 6) * 1.75,
-      containerOffsetTop + (containerHeight / 6) * 2,
-      containerOffsetTop + (containerHeight / 6) * 2.5,
-      containerOffsetTop + (containerHeight / 6) * 2.75,
-    ],
+    [keyframe(8), keyframe(9), keyframe(10), keyframe(11)],
     [0, 1, 1, 0]
   );
-  // content 1 y
   const contentY1 = useTransform(
     scrollY,
-    [
-      containerOffsetTop + (containerHeight / 6) * 1.75,
-      containerOffsetTop + (containerHeight / 6) * 2.75,
-    ],
-    ["5%", "-5%"]
+    [keyframe(7), keyframe(12)],
+    ["-25%", "-75%"]
   );
 
-  // CONTENT 2
-  // content 2 opacity
+  // content 2
   const contentOpacity2 = useTransform(
     scrollY,
-    [
-      containerOffsetTop + (containerHeight / 6) * 3.25,
-      containerOffsetTop + (containerHeight / 6) * 3.5,
-    ],
-    [0, 1]
+    [keyframe(11), keyframe(12), keyframe(15), keyframe(16)],
+    [0, 1, 1, 0]
   );
-  // content 2 y
   const contentY2 = useTransform(
     scrollY,
-    [
-      containerOffsetTop + (containerHeight / 6) * 3.25,
-      containerOffsetTop + (containerHeight / 6) * 5,
-    ],
-    ["5%", "0%"]
+    [keyframe(11), keyframe(16)],
+    ["-25%", "-75%"]
+  );
+
+  // content 3
+  const contentOpacity3 = useTransform(
+    scrollY,
+    [keyframe(20), keyframe(21), keyframe(23), keyframe(24)],
+    [0, 1, 1, 0]
+  );
+  const contentY3 = useTransform(
+    scrollY,
+    [keyframe(20), keyframe(24)],
+    ["-25%", "-75%"]
+  );
+
+  // content 4
+  const contentOpacity4 = useTransform(
+    scrollY,
+    [keyframe(24), keyframe(25)],
+    [0, 1]
+  );
+  const contentY4 = useTransform(
+    scrollY,
+    [keyframe(24), keyframe(28)],
+    ["-25%", "-75%"]
   );
 
   // useEffect
@@ -116,7 +121,7 @@ export function Tools() {
     if (!container.current) return;
     if (!container.current) return;
     const onResize = () => {
-      setContainerOffsetTop(container.current.offsetTop);
+      setContainerTop(container.current.offsetTop);
       setContainerHeight(container.current.offsetHeight);
     };
 
@@ -127,7 +132,16 @@ export function Tools() {
 
   // return
   return (
-    <Section className={lightTheme} ref={container}>
+    <Section
+      as={motion.section}
+      className={lightTheme}
+      ref={container}
+      style={{
+        "--lock-progress": lockProgress,
+        "--progress": progress,
+        "--progress2": progress2,
+      }}
+    >
       <Headline />
 
       <SubSection
@@ -135,10 +149,6 @@ export function Tools() {
         hideMobile
         css={{
           pointerEvents: "none",
-          willChange: "transform",
-        }}
-        style={{
-          y,
         }}
       >
         <MockupSection left>
@@ -167,49 +177,70 @@ export function Tools() {
           />
         </MockupSection>
 
-        <MockupSection
-          as={motion.div}
-          css={{
-            willChange: "transform",
-          }}
-          style={{
-            x: VSCodeX,
-          }}
-        >
+        <MockupSection>
           <Image
+            as={motion.img}
+            css={{
+              willChange: "transform",
+            }}
+            style={{
+              x: VSCodeX,
+            }}
             alt="CodeSandbox Extension for VSCode."
             src="/images/VSCode.jpg"
           />
         </MockupSection>
       </SubSection>
 
-      <SubSection
-        as={motion.div}
-        css={{
-          marginTop: "-100vh",
-          willChange: "opacity, transform",
-
-          "@medium": {
-            marginTop: "0",
-            opacity: "1!important",
-            transform: "initial!important",
-          },
-        }}
-        style={{ opacity: contentOpacity1, y: contentY1 }}
-      >
+      <SubSection>
         <ContentSection>
           <ContentSubSection>
-            <Heading as="h3" size={4} css={{ color: "$blue" }}>
+            <Heading
+              size={4}
+              as={motion.p}
+              css={{
+                willChange: "opacity, transform",
+                position: "absolute",
+                top: "50%",
+
+                "@medium": {
+                  opacity: "1!important",
+                  transform: "initial!important",
+                  position: "initial",
+                  top: "initial",
+                },
+              }}
+              style={{ opacity: contentOpacity1, y: contentY1 }}
+            >
+              We are redefining
+              <br />
+              collaborative code.
+            </Heading>
+
+            <Heading
+              size={4}
+              as={motion.h3}
+              css={{
+                color: "$blue",
+                willChange: "opacity, transform",
+                position: "absolute",
+                top: "50%",
+
+                "@medium": {
+                  opacity: "1!important",
+                  transform: "initial!important",
+                  position: "initial",
+                  top: "initial",
+                },
+              }}
+              style={{ opacity: contentOpacity2, y: contentY2 }}
+            >
+              {" "}
               Meet the new
               <br />
               CodeSandbox Extension
               <br />
               for VSCode.
-            </Heading>
-            <Heading as="p" size={4}>
-              We are redefining
-              <br />
-              collaborative code.
             </Heading>
           </ContentSubSection>
         </ContentSection>
@@ -221,31 +252,56 @@ export function Tools() {
         </MockupSection>
       </SubSection>
 
-      <SubSection hideMobile />
+      <FakeSection />
 
-      <SubSection
-        as={motion.div}
-        css={{
-          willChange: "opacity, transform",
-          "@medium": { opacity: "1!important", transform: "initial!important" },
-        }}
-        style={{ opacity: contentOpacity2, y: contentY2 }}
-        left
-      >
+      <SubSection left>
         <ContentSection>
           <ContentSubSection left>
-            <Heading as="h3" size={4}>
+            <Heading
+              size={4}
+              as={motion.h3}
+              css={{
+                willChange: "opacity, transform",
+                position: "absolute",
+                top: "50%",
+
+                "@medium": {
+                  position: "initial",
+                  top: "initial",
+                  opacity: "1!important",
+                  transform: "initial!important",
+                },
+              }}
+              style={{ opacity: contentOpacity3, y: contentY3 }}
+            >
               Code from your
               <br />
               iPad or iPhone.
             </Heading>
-            <Heading as="p" size={4} css={{ color: "$primary" }}>
-              Contribute on the
-              <br />
-              go with Play.js
-            </Heading>
+            <Heading
+              size={4}
+              as={motion.h3}
+              css={{
+                color: "$primary",
+                willChange: "opacity, transform",
+                position: "absolute",
+                top: "50%",
 
-            <AppStore />
+                "@medium": {
+                  position: "initial",
+                  top: "initial",
+                  opacity: "1!important",
+                  transform: "initial!important",
+                },
+              }}
+              style={{ opacity: contentOpacity4, y: contentY4 }}
+            >
+              Meet the new
+              <br />
+              CodeSandbox for iOS.
+              <br />
+              <AppStore />
+            </Heading>
           </ContentSubSection>
         </ContentSection>
         <MockupSection left hideDesktop>
@@ -260,7 +316,7 @@ export function Tools() {
         </MockupSection>
       </SubSection>
 
-      <SubSection css={{ height: "200vh" }} hideMobile />
+      <FakeSection />
     </Section>
   );
 }

@@ -15,6 +15,9 @@ export const Section = styled("div", {
   position: "sticky",
   top: 0,
 
+  // background: "rgba(250, 255, 0, 0.2)",
+  // borderTop: "solid 1px black",
+
   "@medium": {
     width: "100%",
     position: "initial",

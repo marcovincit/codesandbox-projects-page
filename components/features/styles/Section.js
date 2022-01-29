@@ -5,7 +5,7 @@ export const Section = styled("section", {
   alignItems: "center",
   willChange: "transform, opacity",
   minHeight: "100vh",
-  padding: "27rem 32rem",
+  padding: "18rem 32rem 27rem 32rem",
   position: "relative",
   zIndex: 0,
   overflow: "hidden",

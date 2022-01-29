@@ -1,12 +1,11 @@
 import { styled } from "styles/stitches.config";
 
 export const SubSection = styled("div", {
-  minHeight: "100vh",
+  height: "100vh",
   display: "flex",
   alignItems: "center",
   gap: "16rem",
   flexBasis: 0,
-  padding: "3.4rem 0",
   top: 0,
   width: "100%",
   overflow: "hidden",
@@ -14,7 +13,7 @@ export const SubSection = styled("div", {
   position: "sticky",
 
   "@medium": {
-    minHeight: "auto",
+    height: "auto",
     flexDirection: "column-reverse!important",
     gap: "8.5rem",
     padding: "8.5rem 9.5rem",

@@ -14,17 +14,16 @@ export const Header = () => {
           <Link as="a" href="https://codesandbox.io/pricing" size={3}>
             Pricing
           </Link>
-          {/* <Link
+          <Link
             as="a"
             href="https://codesandbox.io/signin?continue=https://projects.codesandbox.io/auth-test"
             size={3}
           >
             Sign In
-          </Link> */}
+          </Link>
+          <Avatar alt="User image" src="/avatars/3.jpg" />
         </Menu>
       </Container>
-
-      <Avatar alt="User image" src="/avatars/3.jpg" />
     </>
   );
 };

@@ -2,19 +2,20 @@ import { styled } from "styles/stitches.config";
 import { motion } from "framer-motion";
 
 export const Image = styled("img", {
-  height: "37.5vw",
   width: "auto",
+  height: "66.8vh",
+  maxHeight: "72rem",
 
   "@large": {
     height: "75vh",
   },
 
   "@medium": {
-    height: "59.8rem",
+    height: "58.4vh",
     position: "relative",
   },
 
   "@small": {
-    height: "47.3rem",
+    height: "58.2vh",
   },
 });

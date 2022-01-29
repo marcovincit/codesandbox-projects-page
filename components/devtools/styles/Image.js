@@ -1,21 +1,29 @@
 import { styled } from "styles/stitches.config";
 
 export const Image = styled("img", {
+  width: "auto",
+  height: "66.8vh",
+  maxHeight: "72rem",
+
   pointerEvents: "none",
   zIndex: 0,
   position: "relative",
-  height: "37.5vw",
+
+  opacity: "var(--image-state)",
+  transform: "translateY(calc(var(--image-state)* -2%))",
+
+  transition: "opacity 150ms ease, transform 300ms ease",
 
   "@large": {
     height: "75vh",
   },
 
   "@medium": {
-    height: "59.8rem",
+    height: "58.4vh",
   },
 
   "@small": {
-    height: "47.3rem",
+    height: "58.2vh",
   },
 
   variants: {

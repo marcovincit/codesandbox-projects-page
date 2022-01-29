@@ -21,114 +21,67 @@ export const Devtools = () => {
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
 
-  // sticky x
-  const x = useTransform(
-    scrollY,
-    [
-      containerTop + containerHeight / 8,
-      containerTop + (containerHeight / 8) * 2,
-      containerTop + (containerHeight / 8) * 3,
-      containerTop + (containerHeight / 8) * 4,
-      containerTop + (containerHeight / 8) * 5,
-    ],
-    ["50%", "30%", "30%", "0%", "0%"]
-  );
+  // keyframe
+  const keyframe = (value) => {
+    return containerTop + (containerHeight / 16) * value;
+  };
 
-  // sticky y
-  const y = useTransform(
-    scrollY,
-    [containerTop, containerTop + containerHeight / 8],
-    ["5%", "0%"]
-  );
+  // sticky
+  const x = useTransform(scrollY, [keyframe(0), keyframe(10)], ["50%", "0%"]);
+  const y = useTransform(scrollY, [keyframe(12), keyframe(16)], ["0%", "0%"]);
+  const scale = useTransform(scrollY, [keyframe(11), keyframe(16)], [1, 1.1]);
 
-  // shadowOpacity
-  const shadowOpacity = useTransform(
-    scrollY,
-    [containerTop - 1, containerTop],
-    [0, 1]
-  );
-
-  // base opacity
   const opacity = useTransform(
     scrollY,
-    [
-      containerTop + containerHeight / 8,
-      containerTop + (containerHeight / 8) * 2,
-      containerTop + (containerHeight / 8) * 3,
-      containerTop + (containerHeight / 8) * 4,
-      containerTop + (containerHeight / 8) * 5,
-      containerTop + (containerHeight / 8) * 7,
-      containerTop + (containerHeight / 8) * 8,
-    ],
-    [1, 0.7, 0.7, 0.3, 0.3, 0.3, 0]
+    [keyframe(4), keyframe(5), keyframe(11), keyframe(12)],
+    [1, 0.1, 0.1, 1]
   );
 
-  // CONTENT 1
-  // content 1 opacity
+  // Preconfigured environments
+
   const contentOpacity1 = useTransform(
     scrollY,
-    [
-      containerTop + (containerHeight / 8) * 1.75,
-      containerTop + (containerHeight / 8) * 2,
-    ],
-    [1, 0]
+    [keyframe(0), keyframe(2), keyframe(3), keyframe(4)],
+    [0, 1, 1, 0]
   );
-  // content 1 y
   const contentY1 = useTransform(
     scrollY,
-    [
-      containerTop - containerHeight / 8,
-      containerTop + (containerHeight / 8) * 1.5,
-      containerTop + (containerHeight / 8) * 2,
-    ],
-    ["20%", "0%", "-10%"]
+    [keyframe(0), keyframe(4)],
+    ["10%", "-10%"]
   );
 
-  // CONTENT 2
-  // content 2 opacity
+  // Command Palette
+  const content2ImageValue = useTransform(
+    scrollY,
+    [keyframe(4), keyframe(4) + 1, keyframe(7) - 1, keyframe(7)],
+    [0, 1, 1, 0]
+  );
   const contentOpacity2 = useTransform(
     scrollY,
-    [
-      containerTop + (containerHeight / 8) * 2,
-      containerTop + (containerHeight / 8) * 2.25,
-      containerTop + (containerHeight / 8) * 3.75,
-      containerTop + (containerHeight / 8) * 4,
-    ],
+    [keyframe(4), keyframe(5), keyframe(6), keyframe(7)],
     [0, 1, 1, 0]
   );
-
-  // content 2 y
   const contentY2 = useTransform(
     scrollY,
-    [
-      containerTop + (containerHeight / 8) * 2,
-      containerTop + (containerHeight / 8) * 3.5,
-      containerTop + (containerHeight / 8) * 4,
-    ],
-    ["10%", "0%", "-10%"]
+    [keyframe(4), keyframe(8)],
+    ["10%", "-10%"]
   );
 
-  // CONTENT 3
-  // content 3 opacity
-  const contentOpacity3 = useTransform(
+  // Devtools
+  const content3ImageValue = useTransform(
     scrollY,
-    [
-      containerTop + (containerHeight / 8) * 4,
-      containerTop + (containerHeight / 8) * 4.25,
-      containerTop + (containerHeight / 8) * 6.5,
-      containerTop + (containerHeight / 8) * 7.5,
-    ],
+    [keyframe(8), keyframe(8) + 1, keyframe(11) - 1, keyframe(11)],
     [0, 1, 1, 0]
   );
-
-  // content 3 Y
+  const contentOpacity3 = useTransform(
+    scrollY,
+    [keyframe(8), keyframe(9), keyframe(10), keyframe(11)],
+    [0, 1, 1, 0]
+  );
   const contentY3 = useTransform(
     scrollY,
-    [
-      containerTop + (containerHeight / 8) * 4,
-      containerTop + (containerHeight / 8) * 6,
-    ],
-    ["10%", "0%"]
+    [keyframe(8), keyframe(11)],
+    ["10%", "-10%"]
   );
 
   // useEffect
@@ -149,12 +102,13 @@ export const Devtools = () => {
   return (
     <Container ref={container}>
       {/* sticky */}
-      <Sticky as={motion.div} style={{ "--shadow-opacity": shadowOpacity }}>
+      <Sticky>
         <StickyImage
           as={motion.div}
           style={{
             x,
             y,
+            scale,
           }}
         >
           <ImageBaseLayer
@@ -185,7 +139,7 @@ export const Devtools = () => {
             css={{
               willChange: "opacity",
             }}
-            style={{ opacity: contentOpacity2 }}
+            style={{ "--image-state": content2ImageValue }}
             src="/images/product/command-pallete.svg"
             layer
           />
@@ -196,7 +150,7 @@ export const Devtools = () => {
               willChange: "opacity",
             }}
             style={{
-              opacity: contentOpacity3,
+              "--image-state": content3ImageValue,
             }}
             src="/images/product/devtools.svg"
             layer
@@ -234,8 +188,8 @@ export const Devtools = () => {
               Preconfigured environments
             </Heading>
             <Heading as="p" size={4}>
-              We detect your environment so you don't need to fiddle with
-              configuration files.
+              We detect your environment <br /> so you don't need to fiddle{" "}
+              <br /> with configuration files.
             </Heading>
           </ContentContainer>
         </Section>

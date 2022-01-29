@@ -23,7 +23,7 @@ export const Arrow = () => {
 
 export const CTA = styled(Body, {
   color: "$primary!important",
-  fontWeight: 500,
+  fontWeight: 600,
   display: "flex",
   alignItems: "baseline",
   gap: "1rem",

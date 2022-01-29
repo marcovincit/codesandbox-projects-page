@@ -29,11 +29,6 @@ function MyApp({ Component, pageProps }) {
         <meta content="https://projects.codesandbox.io" name="og:url" />
 
         <link rel="icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
       <Component {...pageProps} />

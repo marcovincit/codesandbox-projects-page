@@ -6,6 +6,8 @@ export const Link = styled("a", {
   // transformOrigin: "0 50%",
   background: "black",
   borderRadius: 10,
+  display: "inline-block",
+  lineHeight: "0",
 
   "&:hover": {
     boxShadow: "2px 5px 10px rgba(0, 0, 0, 0.4)",

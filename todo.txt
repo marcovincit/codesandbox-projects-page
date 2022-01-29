@@ -4,3 +4,5 @@ review semantic architecture
 review component names
 review import/export
 put all component styles inside folder /styles 
+
+check all syntax, titles and sections

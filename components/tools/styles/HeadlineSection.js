@@ -8,6 +8,10 @@ export const HeadlineSection = styled("section", {
   alignItems: "center",
   padding: "18rem 3rem",
 
+  "@large": {
+    padding: "10rem 3rem",
+  },
+
   "@medium": {
     minHeight: "auto",
     padding: "18rem 3rem 3rem",

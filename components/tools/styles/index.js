@@ -7,3 +7,4 @@ export { MockupSection } from "./MockupSection";
 export { Phone } from "./Phone";
 export { HeadlineSection } from "./HeadlineSection";
 export { HeadlineSubSection } from "./HeadlineSubSection";
+export { FakeSection } from "./FakeSection";

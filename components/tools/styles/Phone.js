@@ -1,23 +1,28 @@
 import { styled } from "styles/stitches.config";
 
 export const Phone = styled("img", {
-  width: "31.2rem",
-  height: "auto",
+  width: "auto",
+  height: "58.3vh",
+  maxHeight: "63rem",
 
   position: "absolute",
   right: 0,
   bottom: 0,
 
   "@large": {
-    width: "23.3rem",
+    width: "auto",
+    height: "47.2rem",
   },
 
   "@medium": {
+    width: "auto",
+    height: "51vh",
     right: "auto",
     left: 0,
   },
 
   "@small": {
-    width: "18.3rem",
+    width: "auto",
+    height: "50.8vh",
   },
 });
