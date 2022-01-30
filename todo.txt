@@ -6,3 +6,5 @@ review import/export
 put all component styles inside folder /styles 
 
 check all syntax, titles and sections
+
+svg changes, use same images(jpg) all svg files

@@ -1,16 +1,20 @@
 import { styled } from "styles/stitches.config";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import lottie from "lottie-web";
 import animationData from "./lottie.json";
 
+import { useWindowSize } from "hooks/useWindowSize";
+
 export const Stage = styled("div", {
-  with: "100%",
-  height: "100%",
+  with: "100vw",
+  height: "100vh",
 
   position: "fixed",
-  top: 0,
-  left: 0,
+  top: "50%",
+  left: "50%",
+
+  transform: "translate(-50%, -50%)",
 
   "&>svg": {
     width: "auto!important",
@@ -21,9 +25,16 @@ export const Stage = styled("div", {
 
 export const Product = () => {
   const lottieRef = useRef(null);
+  const size = useWindowSize();
+
+  const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
-    const animDuration = 10000;
+    setWindowHeight(size.height);
+  }, [size.height]);
+
+  useEffect(() => {
+    const animDuration = 1080 * 8;
     const anim = lottie.loadAnimation({
       container: lottieRef.current,
       renderer: "svg",

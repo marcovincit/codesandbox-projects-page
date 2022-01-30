@@ -1,42 +1,46 @@
 import { styled } from "styles/stitches.config";
 
-export const Section = styled("section", {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "flex-start",
+export const Section = styled("div", {
   minHeight: "100vh",
-  padding: "24rem",
+  display: "flex",
 
-  "@large": {
-    padding: "18rem",
-  },
+  alignItems: "center",
+  gap: "16rem",
+  flexBasis: 0,
+  padding: "3.4rem 0",
+
+  overflow: "hidden",
+
+  position: "sticky",
+  top: 0,
 
   "@medium": {
-    padding: "8.5rem 9.6rem",
-    justifyContent: "flex-start",
+    width: "100%",
+    position: "initial",
+    alignItems: "flex-start",
+    minHeight: "auto",
+    flexDirection: "column!important",
+    gap: "8.5rem",
+    padding: "8.5rem 9.5rem",
   },
 
   "@small": {
-    padding: "6.2rem 3.2rem",
+    padding: "6.8rem 3.2rem",
+    gap: "6.8rem",
   },
 
   variants: {
-    side: {
+    position: {
+      center: {
+        "@medium": {
+          alignItems: "center",
+        },
+      },
       left: {
-        paddingLeft: "128rem",
         justifyContent: "flex-end",
 
-        "@large": {
-          paddingLeft: "96rem",
-        },
-
         "@medium": {
-          padding: "8.5rem 9.6rem",
-        },
-
-        "@small": {
-          padding: "6.2rem 3.2rem",
+          alignItems: "flex-end",
         },
       },
     },

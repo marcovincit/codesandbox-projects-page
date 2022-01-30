@@ -25,8 +25,8 @@ export const Streamlined = () => {
   const marqueeSectionOpacity = useTransform(
     scrollSpring,
     [
-      containerTop - containerHeight / 4,
-      containerTop,
+      containerTop - containerHeight / 6,
+      containerTop + containerHeight / 6,
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
     ],

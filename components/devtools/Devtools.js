@@ -53,12 +53,12 @@ export const Devtools = () => {
   // Command Palette
   const content2ImageValue = useTransform(
     scrollY,
-    [keyframe(4), keyframe(4) + 1, keyframe(7) - 1, keyframe(7)],
+    [keyframe(4), keyframe(4) + 1, keyframe(8) - 1, keyframe(8)],
     [0, 1, 1, 0]
   );
   const contentOpacity2 = useTransform(
     scrollY,
-    [keyframe(4), keyframe(5), keyframe(6), keyframe(7)],
+    [keyframe(4), keyframe(5), keyframe(7), keyframe(8)],
     [0, 1, 1, 0]
   );
   const contentY2 = useTransform(

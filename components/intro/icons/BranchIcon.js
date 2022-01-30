@@ -1,4 +1,4 @@
-export const Branch = () => {
+export const BranchIcon = () => {
   return (
     <svg
       width="30"
