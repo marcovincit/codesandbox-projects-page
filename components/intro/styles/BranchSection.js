@@ -23,6 +23,7 @@ export const BranchSection = styled("div", {
     flexDirection: "column",
     gap: "11rem",
     padding: "0 9.6rem",
+    opacity: "1!important",
   },
 
   "@small": {

@@ -15,11 +15,11 @@ export const BranchSectionItem = styled("div", {
 
   "@medium": {
     gap: "2.6rem",
-    padding: "8.5rem 0",
+    padding: "0",
   },
 
   "@small": {
-    padding: "6.8rem 0",
+    padding: "0",
   },
 
   "::selection": {

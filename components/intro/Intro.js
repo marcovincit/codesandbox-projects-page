@@ -176,19 +176,21 @@ export function Intro() {
             y: branchY,
           }}
         >
-          <Image
-            responsive
-            css={{ opacity: 0, "@medium": { opacity: 1 } }}
-            alt="CodeSandbox Projects - Interface Command Pallet"
-            src="/images/product/base.svg"
-          />
-          <Image
-            layer
-            css={{ opacity: 0, "@medium": { opacity: 1 } }}
-            responsive
-            alt="CodeSandbox Projects - Interface Command Pallet"
-            src="/images/product/original-branch.svg"
-          />
+          <ImageContainer>
+            <Image
+              responsive
+              css={{ opacity: 0, "@medium": { opacity: 1 } }}
+              alt="CodeSandbox Projects - Interface Command Pallet"
+              src="/images/product/base.svg"
+            />
+            <Image
+              layer
+              css={{ opacity: 0, "@medium": { opacity: 1 } }}
+              responsive
+              alt="CodeSandbox Projects - Interface Command Pallet"
+              src="/images/product/original-branch.svg"
+            />
+          </ImageContainer>
 
           <BranchLabel>
             <BranchIcon />
@@ -201,19 +203,21 @@ export function Intro() {
           </BranchLabel>
         </BranchSectionItem>
         <BranchSectionItem>
-          <Image
-            responsive
-            css={{ opacity: 0, "@medium": { opacity: 1 } }}
-            alt="CodeSandbox Projects - Interface Command Pallet"
-            src="/images/product/base.svg"
-          />
-          <Image
-            layer
-            css={{ opacity: 0, "@medium": { opacity: 1 } }}
-            responsive
-            alt="CodeSandbox Projects - Interface Command Pallet"
-            src="/images/product/new-branch.svg"
-          />
+          <ImageContainer>
+            <Image
+              responsive
+              css={{ opacity: 0, "@medium": { opacity: 1 } }}
+              alt="CodeSandbox Projects - Interface Command Pallet"
+              src="/images/product/base.svg"
+            />
+            <Image
+              layer
+              css={{ opacity: 0, "@medium": { opacity: 1 } }}
+              responsive
+              alt="CodeSandbox Projects - Interface Command Pallet"
+              src="/images/product/new-branch.svg"
+            />
+          </ImageContainer>
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Marco's branch</Heading>
