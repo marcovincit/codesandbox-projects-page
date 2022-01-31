@@ -9,11 +9,11 @@ import { Section, SubSection, Text, Square, Title } from "./styles";
 
 export const Streamlined = () => {
   const { scrollY } = useViewportScroll();
-  const scrollSpring = useSpring(scrollY, {
-    stiffness: 200,
-    damping: 20,
-    mass: 0.2,
-  });
+  // const scrollY = useSpring(scrollY, {
+  //   stiffness: 200,
+  //   damping: 20,
+  //   mass: 0.2,
+  // });
 
   // container
   const container = useRef(null);
@@ -23,7 +23,7 @@ export const Streamlined = () => {
   // marquee section
 
   const marqueeSectionOpacity = useTransform(
-    scrollSpring,
+    scrollY,
     [
       containerTop - containerHeight / 6,
       containerTop + containerHeight / 6,
@@ -39,17 +39,14 @@ export const Streamlined = () => {
     containerTop + containerHeight / 2.5,
   ];
 
-  const marqueeTextX = useTransform(scrollSpring, marqueeRange, [
-    "100%",
-    "-100%",
-  ]);
+  const marqueeTextX = useTransform(scrollY, marqueeRange, ["100%", "-100%"]);
 
   // square
-  const marqueeSquareScale = useTransform(scrollSpring, marqueeRange, [1, 0.7]);
+  const marqueeSquareScale = useTransform(scrollY, marqueeRange, [1, 0.7]);
 
   // title section
   const titleSectionOpacity = useTransform(
-    scrollSpring,
+    scrollY,
     [
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
@@ -62,7 +59,7 @@ export const Streamlined = () => {
   // title
 
   const titleScale = useTransform(
-    scrollSpring,
+    scrollY,
     [
       containerTop + containerHeight / 2.5,
       containerTop + (containerHeight / 4) * 3.2,
