@@ -19,8 +19,8 @@ export const Stage = styled("div", {
   transform: "translate(-50%, -50%)",
 
   "&>svg": {
-    width: "auto!important",
-    height: "100%!important",
+    width: "2400px!important",
+    height: "1080px!important",
     fill: "red",
   },
 });
@@ -33,7 +33,7 @@ export const Product = () => {
     const anim = lottie.loadAnimation(
       {
         container: lottieRef.current,
-        renderer: "svg",
+        renderer: "canvas",
         loop: false,
         autoplay: false,
 
