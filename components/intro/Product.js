@@ -10,6 +10,8 @@ export const Stage = styled("div", {
   with: "100vw",
   height: "100vh",
 
+  pointerEvents: "none",
+
   position: "fixed",
   top: "50%",
   left: "50%",
