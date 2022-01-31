@@ -165,8 +165,8 @@ export function Intro() {
         </ContentContainer>
       </Section>
 
-      <FakeSection css={{ background: "red" }} />
-      <FakeSection css={{ background: "red" }} />
+      <FakeSection />
+      <FakeSection />
 
       {/*  BranchSection */}
       <BranchSection as={motion.div} style={{ opacity: branchOpacity }}>
@@ -222,7 +222,7 @@ export function Intro() {
         </BranchSectionItem>
       </BranchSection>
 
-      <FakeSection css={{ background: "red" }} />
+      <FakeSection />
 
       {/* Prebuilt containers */}
       <Section>
@@ -250,7 +250,7 @@ export function Intro() {
         </ContentContainer>
       </Section>
 
-      <FakeSection css={{ background: "red" }} />
+      <FakeSection />
     </MainSection>
   );
 }

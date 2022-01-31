@@ -27,24 +27,20 @@ export const Stage = styled("div", {
 
 export const Product = () => {
   const lottieRef = useRef(null);
-  const size = useWindowSize();
-
-  const [windowHeight, setWindowHeight] = useState(0);
-
-  useEffect(() => {
-    setWindowHeight(size.height);
-  }, [size.height]);
 
   useEffect(() => {
     const animDuration = 1080 * 8;
-    const anim = lottie.loadAnimation({
-      container: lottieRef.current,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
+    const anim = lottie.loadAnimation(
+      {
+        container: lottieRef.current,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
 
-      animationData,
-    });
+        animationData,
+      },
+      []
+    );
 
     function animatebodymovin(duration) {
       const scrollPosition = window.scrollY;
