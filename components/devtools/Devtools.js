@@ -101,7 +101,7 @@ export const Devtools = () => {
   // return
   return (
     <Container ref={container}>
-      {/* sticky */}
+      {/* sticky - only desktop */}
       <Sticky>
         <StickyImage
           as={motion.div}
@@ -118,19 +118,13 @@ export const Devtools = () => {
             }}
           >
             <Image
-              alt="CodeSandbox Projects - Interface Base"
-              src="/images/product/base.svg"
+              alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/default.svg"
             />
             <Image
-              alt="CodeSandbox Projects - Interface Config"
-              src="/images/product/config.svg"
               layer
-            />
-            <Image
-              alt="CodeSandbox Projects - Interface Branch"
-              src="/images/product/new-branch.svg"
-              layer
-              left
+              alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/config-file.svg"
             />
           </ImageBaseLayer>
           <Image
@@ -140,7 +134,7 @@ export const Devtools = () => {
               willChange: "opacity",
             }}
             style={{ "--image-state": content2ImageValue }}
-            src="/images/product/command-pallete.svg"
+            src="/images/screenshots/product/command-palette.svg"
             layer
           />
           <Image
@@ -152,7 +146,7 @@ export const Devtools = () => {
             style={{
               "--image-state": content3ImageValue,
             }}
-            src="/images/product/devtools.svg"
+            src="/images/screenshots/product/devtools.svg"
             layer
           />
         </StickyImage>
@@ -164,19 +158,13 @@ export const Devtools = () => {
         <Section>
           <ImageContainer>
             <Image
-              alt="CodeSandbox Projects - Interface Base"
-              src="/images/product/base.svg"
+              alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/default.svg"
             />
             <Image
-              alt="CodeSandbox Projects - Interface Config"
-              src="/images/product/config.svg"
               layer
-            />
-            <Image
-              alt="CodeSandbox Projects - Interface Branch"
-              src="/images/product/new-branch.svg"
-              layer
-              left
+              alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/config-file.svg"
             />
           </ImageContainer>
 
@@ -199,27 +187,21 @@ export const Devtools = () => {
           <ImageContainer>
             <ImageBaseLayer>
               <Image
-                alt="CodeSandbox Projects - Interface Base"
-                src="/images/product/base.svg"
+                alt="CodeSandbox Projects - Interface"
+                src="/images/screenshots/product/default.svg"
               />
               <Image
-                alt="CodeSandbox Projects - Interface Config"
-                src="/images/product/config.svg"
                 layer
-                center
-              />
-              <Image
-                alt="CodeSandbox Projects - Interface Branch"
-                src="/images/product/new-branch.svg"
-                layer
-                left
+                alt="CodeSandbox Projects - Interface"
+                src="/images/screenshots/product/config-file.svg"
               />
             </ImageBaseLayer>
+
             <Image
-              alt="CodeSandbox Projects - Interface Command Pallet"
-              src="/images/product/command-pallete.svg"
               layer
               center
+              alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/command-palette.svg"
             />
           </ImageContainer>
 
@@ -242,27 +224,21 @@ export const Devtools = () => {
           <ImageContainer>
             <ImageBaseLayer>
               <Image
-                alt="CodeSandbox Projects - Interface Base"
-                src="/images/product/base.svg"
+                alt="CodeSandbox Projects - Interface"
+                src="/images/screenshots/product/default.svg"
               />
               <Image
-                alt="CodeSandbox Projects - Interface Config"
-                src="/images/product/config.svg"
                 layer
-                left
-              />
-              <Image
-                alt="CodeSandbox Projects - Interface Branch"
-                src="/images/product/new-branch.svg"
-                layer
-                left
+                alt="CodeSandbox Projects - Interface"
+                src="/images/screenshots/product/config-file.svg"
               />
             </ImageBaseLayer>
+
             <Image
-              alt="CodeSandbox Projects - Interface Devtools"
-              src="/images/product/devtools.svg"
               layer
-              left
+              center
+              alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/devtools.svg"
             />
           </ImageContainer>
 

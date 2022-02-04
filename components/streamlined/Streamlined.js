@@ -26,7 +26,7 @@ export const Streamlined = () => {
     scrollY,
     [
       containerTop - containerHeight / 6,
-      containerTop + containerHeight / 6,
+      containerTop,
       containerTop + containerHeight / 2.5,
       containerTop + containerHeight / 2.5 + 1,
     ],

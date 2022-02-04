@@ -1,5 +1,6 @@
 export { BranchSection } from "./BranchSection";
 export { BranchSectionItem } from "./BranchSectionItem";
+export { BranchImageContainer } from "./BranchImageContainer";
 export { BranchLabel } from "./BranchLabel";
 export { ContentContainer } from "./ContentContainer";
 export { Image } from "./Image";

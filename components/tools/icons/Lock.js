@@ -29,7 +29,7 @@ export const Lock = () => {
       />
       <path
         style={{
-          willChange: "strokeDasharray",
+          willChange: "stroke-dasharray",
           strokeDasharray: 300,
           strokeDashoffset: "var(--progress)",
         }}

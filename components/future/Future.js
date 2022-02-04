@@ -1,11 +1,22 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useSpring,
+  useViewportScroll,
+  useTransform,
+} from "framer-motion";
 import { Section, SubSection } from "./styles";
 import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
+import { LogoIcon } from "components/logo";
 
 export const Future = () => {
   const { scrollY } = useViewportScroll();
+  const springY = useSpring(scrollY, {
+    stiffness: 200,
+    damping: 20,
+    mass: 0.2,
+  });
 
   // container
   const container = useRef(null);
@@ -24,6 +35,13 @@ export const Future = () => {
     scrollY,
     [containerTop - containerHeight, containerTop],
     ["-50vh", "0vh"]
+  );
+
+  // logo progress
+  const progress = useTransform(
+    springY,
+    [containerTop - containerHeight / 4, containerTop],
+    [340, 0]
   );
 
   // useEffect
@@ -47,9 +65,11 @@ export const Future = () => {
       style={{
         opacity,
         y,
+        "--progress": progress,
       }}
     >
       <SubSection>
+        <LogoIcon />
         <Heading size={2} as="h1">
           Get ready for
           <br />

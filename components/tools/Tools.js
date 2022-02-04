@@ -162,7 +162,7 @@ export function Tools() {
             style={{
               x: iPadX,
             }}
-            src="/images/iPad.jpg"
+            src="/images/screenshots/tools/iPad.jpg"
           />
           <Phone
             alt="CodeSandbox for iOS - iPhone"
@@ -173,7 +173,7 @@ export function Tools() {
             style={{
               x: iPhoneX,
             }}
-            src="/images/iPhone.png"
+            src="/images/screenshots/tools/iPhone.png"
           />
         </MockupSection>
 
@@ -187,7 +187,7 @@ export function Tools() {
               x: VSCodeX,
             }}
             alt="CodeSandbox Extension for VSCode."
-            src="/images/VSCode.jpg"
+            src="/images/screenshots/tools/VSCode.jpg"
           />
         </MockupSection>
       </SubSection>
@@ -247,7 +247,7 @@ export function Tools() {
         <MockupSection hideDesktop>
           <Image
             alt="CodeSandbox Extension for VSCode."
-            src="/images/VSCode.jpg"
+            src="/images/screenshots/tools/VSCode.jpg"
           />
         </MockupSection>
       </SubSection>
@@ -296,11 +296,13 @@ export function Tools() {
               }}
               style={{ opacity: contentOpacity4, y: contentY4 }}
             >
-              Meet the new
+              Coming soon the <br /> new CodeSandbox <br />
+              for iOS.
+              {/* Meet the new
               <br />
               CodeSandbox for iOS.
               <br />
-              <AppStore />
+              <AppStore /> */}
             </Heading>
           </ContentSubSection>
         </ContentSection>
@@ -310,9 +312,12 @@ export function Tools() {
             css={{
               marginLeft: "4rem",
             }}
-            src="/images/iPad.jpg"
+            src="/images/screenshots/tools/iPad.jpg"
           />
-          <Phone alt="CodeSandbox for iOS - iPhone" src="/images/iPhone.png" />
+          <Phone
+            alt="CodeSandbox for iOS - iPhone"
+            src="/images/screenshots/tools/iPhone.png"
+          />
         </MockupSection>
       </SubSection>
 

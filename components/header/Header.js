@@ -21,7 +21,7 @@ export const Header = () => {
           >
             Sign In
           </Link> */}
-          <Avatar alt="User image" src="/avatars/3.jpg" />
+          <Avatar alt="User image" src="images/screenshots/avatars/user1.jpg" />
         </Menu>
       </Container>
     </>

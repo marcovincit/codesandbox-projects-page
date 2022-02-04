@@ -17,7 +17,10 @@ export const Link = styled("a", {
 
 export const AppStore = () => {
   return (
-    <Link href="#" target="_blank">
+    <Link
+      href="https://apps.apple.com/us/app/play-js/id1423330822"
+      target="_blank"
+    >
       <svg
         width="15rem"
         height="5.3rem"

@@ -1,7 +1,7 @@
 import { styled } from "styles/stitches.config";
 
 export const Section = styled("section", {
-  minHeight: "calc(100vh - 10rem)",
+  minHeight: "100vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",

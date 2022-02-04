@@ -1,9 +1,12 @@
 import { styled } from "styles/stitches.config";
 
-export const Container = styled("header", {
+export const Container = styled("footer", {
   display: "flex",
   justifyContent: "space-between",
+  alignItems: "center",
   padding: "3.8rem 24rem",
+
+  top: "-100%",
 
   "@large": {
     padding: "3rem 18rem",

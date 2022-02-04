@@ -1,5 +1,6 @@
 export { Features } from "components/features";
 export { Footer } from "components/footer";
+export { CTA } from "components/cta";
 export { Header } from "components/header";
 export { Hero } from "components/hero";
 export { Intro } from "components/intro";
@@ -8,3 +9,4 @@ export { Tools } from "components/tools";
 export { Future } from "components/future";
 export { Devtools } from "components/devtools";
 export { Avatar, AvatarContainer } from "components/avatar";
+export { Logo, LogoIcon, LogoSmall } from "components/logo";
