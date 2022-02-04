@@ -1,16 +1,13 @@
+import { useEffect, useRef } from "react";
 import { styled } from "styles/stitches.config";
 
-import { useRef, useEffect, useState } from "react";
-import lottie from "lottie-web";
-import animationData from "./lottie.json";
 
-import { useWindowSize } from "hooks/useWindowSize";
 
-export const Stage = styled("div", {
-  width: "100vw",
-  height: "100vh",
+export const Canvas = styled("canvas", {
+  maxWidth: "100vw",
+  maxHeight: "100vh",
 
-  pointerEvents: "none",
+  // pointerEvents: "none",
 
   position: "fixed",
   top: "50%",
@@ -18,51 +15,58 @@ export const Stage = styled("div", {
 
   transform: "translate(-50%, -50%)",
 
-  // "&>svg": {
-  //   width: "auto!important",
-  //   height: "100%!important",
-  //   fill: "red",
-  // },
+
 });
 
 export const Product = () => {
-  const lottieRef = useRef(null);
 
-  useEffect(() => {
-    const animDuration = 1080 * 13;
-    const anim = lottie.loadAnimation(
-      {
-        container: lottieRef.current,
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
+  const canvas = useRef();
 
-        animationData,
-      },
-      []
-    );
+  useEffect(()=>{
+    const context = canvas.current.getContext("2d");
 
-    function animatebodymovin(duration) {
-      const scrollPosition = window.scrollY < 0 ? 0 : window.scrollY;
-      const maxFrames = anim.totalFrames;
-
-      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
-
-      anim.goToAndStop(frame, true);
+  const frameCount = 148;
+  const currentFrame = index => (
+    `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index.toString().padStart(4, '0')}.jpg`
+  );
+  
+  const preloadImages = () => {
+    for (let i = 1; i < frameCount; i++) {
+      const img = new Image();
+      img.src = currentFrame(i);
     }
+  };
 
-    const onScroll = () => {
-      console.log("Scrolling");
-      animatebodymovin(animDuration);
-    };
+  const img = new Image()
+img.src = currentFrame(1);
+canvas.current.width=1158;
+canvas.current.height=770;
+img.onload=function(){
+  context.drawImage(img, 0, 0);
+}
 
-    document.addEventListener("scroll", onScroll);
+const updateImage = index => {
+  img.src = currentFrame(index);
+  context.drawImage(img, 0, 0);
+}
 
-    return () => {
-      anim.destroy();
-      document.removeEventListener("scroll", onScroll);
-    };
-  }, []);
 
-  return <Stage ref={lottieRef}></Stage>;
+window.addEventListener('scroll', () => {  
+  const scrollTop = window.scrollTop;
+  const maxScrollTop = 1080 * 13;
+  const scrollFraction = scrollTop / maxScrollTop;
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.ceil(scrollFraction * frameCount)
+  );
+  
+  requestAnimationFrame(() => updateImage(frameIndex + 1))
+});
+
+preloadImages()
+  },[])
+
+  
+
+  return <Canvas ref={canvas}></Canvas>;
 };
