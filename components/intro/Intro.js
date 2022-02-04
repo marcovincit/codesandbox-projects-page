@@ -26,7 +26,7 @@ export function Intro() {
 
   // keyframe
   const keyframe = (value) => {
-    return containerTop + (containerHeight / 44) * value;
+    return containerTop + (containerHeight / 48) * value;
   };
 
   // content 1
@@ -56,25 +56,25 @@ export function Intro() {
   // branch
   const branchY = useTransform(
     scrollY,
-    [keyframe(32), keyframe(36)],
+    [keyframe(36), keyframe(39)],
     ["0%", "-100%"]
   );
 
   const branchOpacity = useTransform(
     scrollY,
-    [keyframe(28), keyframe(29)],
+    [keyframe(32), keyframe(33)],
     [0, 1]
   );
 
   // content 3
   const contentOpacity3 = useTransform(
     scrollY,
-    [keyframe(36), keyframe(37)],
+    [keyframe(40), keyframe(41)],
     [0, 1]
   );
   const contentY3 = useTransform(
     scrollY,
-    [keyframe(36), keyframe(40)],
+    [keyframe(40), keyframe(44)],
     ["10%", "0%"]
   );
 
@@ -95,9 +95,11 @@ export function Intro() {
   // return
   return (
     <MainSection ref={container}>
-      <Section css={{ height: "200vh", "@medium": { display: "none" } }}>
+      <Section css={{ height: "100vh", "@medium": { display: "none" } }}>
         <Product />
       </Section>
+
+      <FakeSection />
 
       {/* Not only share code. */}
       <Section position="right" style={{ paddingTop: 0 }}>
@@ -165,6 +167,7 @@ export function Intro() {
         </ContentContainer>
       </Section>
 
+      <FakeSection />
       <FakeSection />
       <FakeSection />
 

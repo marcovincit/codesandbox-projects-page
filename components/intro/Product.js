@@ -7,7 +7,7 @@ import animationData from "./lottie.json";
 import { useWindowSize } from "hooks/useWindowSize";
 
 export const Stage = styled("div", {
-  with: "100vw",
+  width: "100vw",
   height: "100vh",
 
   pointerEvents: "none",
@@ -18,22 +18,22 @@ export const Stage = styled("div", {
 
   transform: "translate(-50%, -50%)",
 
-  "&>svg": {
-    width: "2400px!important",
-    height: "1080px!important",
-    fill: "red",
-  },
+  // "&>svg": {
+  //   width: "auto!important",
+  //   height: "100%!important",
+  //   fill: "red",
+  // },
 });
 
 export const Product = () => {
   const lottieRef = useRef(null);
 
   useEffect(() => {
-    const animDuration = 1080 * 8;
+    const animDuration = 1080 * 13;
     const anim = lottie.loadAnimation(
       {
         container: lottieRef.current,
-        renderer: "canvas",
+        renderer: "svg",
         loop: false,
         autoplay: false,
 
@@ -43,7 +43,7 @@ export const Product = () => {
     );
 
     function animatebodymovin(duration) {
-      const scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY < 0 ? 0 : window.scrollY;
       const maxFrames = anim.totalFrames;
 
       const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));

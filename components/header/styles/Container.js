@@ -7,9 +7,12 @@ export const Container = styled("header", {
 
   mixBlendMode: "difference",
 
-  position: "sticky",
+  position: "fixed",
   top: 0,
+  left: 0,
   zIndex: 9999,
+
+  width: "100%",
 
   "@large": {
     padding: "2.8rem 3rem",
