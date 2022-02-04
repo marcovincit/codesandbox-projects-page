@@ -10,6 +10,7 @@ export const Canvas = styled("canvas", {
   position: "fixed",
   top: "50%",
   left: "50%",
+  zIndex: -1,
 
   transform: "translate(-50%, -50%)",
 });
@@ -19,14 +20,14 @@ export const Product = () => {
 
   useEffect(() => {
     // maxFrames
-    const maxFrames = 147;
+    const maxFrames = 224;
 
     // canvas
     const canvas = canvasRef.current;
 
     // size
-    canvas.width = 1158;
-    canvas.height = 770;
+    canvas.width = 1920;
+    canvas.height = 1080;
 
     // context
     const context = canvas.getContext("2d");
@@ -34,17 +35,14 @@ export const Product = () => {
     // img
     const img = new Image();
 
-    img.src =
-      "https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/0001.jpg";
+    img.src = "sequence/sequence000.jpg";
 
     img.onload = function () {
       context.drawImage(img, 0, 0);
     };
 
     const updateImage = (index) => {
-      img.src = `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index
-        .toString()
-        .padStart(4, "0")}.jpg`;
+      img.src = `sequence/sequence${index.toString().padStart(3, "0")}.jpg`;
       context.drawImage(img, 0, 0);
     };
 
