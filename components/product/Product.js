@@ -1,9 +1,5 @@
 import { styled } from "styles/stitches.config";
-
 import { useRef, useEffect, useState } from "react";
-import lottie from "lottie-web";
-import animationData from "./lottie.json";
-
 import { useWindowSize } from "hooks/useWindowSize";
 
 export const Stage = styled("div", {
@@ -17,12 +13,6 @@ export const Stage = styled("div", {
   left: "50%",
 
   transform: "translate(-50%, -50%)",
-
-  // "&>svg": {
-  //   width: "auto!important",
-  //   height: "100%!important",
-  //   fill: "red",
-  // },
 });
 
 export const Product = () => {

@@ -13,7 +13,6 @@ import {
   ImageContainer,
   FakeSection,
 } from "./styles";
-import { Product } from "./Product";
 
 import { BranchIcon } from "./icons";
 

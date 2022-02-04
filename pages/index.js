@@ -8,26 +8,15 @@ import {
   Tools,
   Future,
   Devtools,
+  Product,
 } from "components";
 
 export default function Home() {
   return (
     <>
-      {/* <img
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-        }}
-        src="/grid.png"
-      /> */}
-
       <Header />
       <Hero />
+      <Product />
       <Intro />
       <Streamlined />
       <Devtools />
