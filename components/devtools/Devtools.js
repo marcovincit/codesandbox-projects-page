@@ -38,7 +38,6 @@ export const Devtools = () => {
   );
 
   // Preconfigured environments
-
   const contentOpacity1 = useTransform(
     scrollY,
     [keyframe(0), keyframe(2), keyframe(3), keyframe(4)],

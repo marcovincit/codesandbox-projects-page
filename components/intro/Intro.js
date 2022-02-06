@@ -26,30 +26,30 @@ export function Intro() {
 
   // keyframe
   const keyframe = (value) => {
-    return containerTop + (containerHeight / 48) * value;
+    return containerTop + (containerHeight / 52) * value;
   };
 
   // content 1
   const contentOpacity1 = useTransform(
     scrollY,
-    [keyframe(8), keyframe(9), keyframe(11), keyframe(12)],
+    [keyframe(12), keyframe(13), keyframe(15), keyframe(16)],
     [0, 1, 1, 0]
   );
   const contentY1 = useTransform(
     scrollY,
-    [keyframe(8), keyframe(12)],
+    [keyframe(12), keyframe(16)],
     ["5%", "-5%"]
   );
 
   // content 2
   const contentOpacity2 = useTransform(
     scrollY,
-    [keyframe(16), keyframe(17), keyframe(19), keyframe(20)],
+    [keyframe(20), keyframe(21), keyframe(23), keyframe(24)],
     [0, 1, 1, 0]
   );
   const contentY2 = useTransform(
     scrollY,
-    [keyframe(16), keyframe(20)],
+    [keyframe(20), keyframe(24)],
     ["5%", "-5%"]
   );
 
@@ -57,30 +57,30 @@ export function Intro() {
 
   const branchOpacity = useTransform(
     scrollY,
-    [keyframe(32), keyframe(33)],
+    [keyframe(36), keyframe(37)],
     [0, 1]
   );
 
   const branchOriginalY = useTransform(
     scrollY,
-    [keyframe(38), keyframe(40)],
+    [keyframe(42), keyframe(44)],
     ["0%", "-1%"]
   );
   const branchOriginalOpacity = useTransform(
     scrollY,
-    [keyframe(38), keyframe(40)],
+    [keyframe(42), keyframe(44)],
     [1, 0]
   );
 
   // content 3
   const contentOpacity3 = useTransform(
     scrollY,
-    [keyframe(40), keyframe(41)],
+    [keyframe(44), keyframe(45)],
     [0, 1]
   );
   const contentY3 = useTransform(
     scrollY,
-    [keyframe(40), keyframe(44)],
+    [keyframe(44), keyframe(48)],
     ["10%", "0%"]
   );
 
@@ -101,10 +101,8 @@ export function Intro() {
   // return
   return (
     <MainSection ref={container}>
-      <Section css={{ height: "100vh", "@medium": { display: "none" } }}>
-        {/* <Product /> */}
-      </Section>
-
+      <FakeSection />
+      <FakeSection />
       <FakeSection />
 
       {/* Not only share code. */}
