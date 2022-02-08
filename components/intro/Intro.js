@@ -61,11 +61,6 @@ export function Intro() {
     [0, 1]
   );
 
-  const branchOriginalY = useTransform(
-    scrollY,
-    [keyframe(42), keyframe(44)],
-    ["0%", "-1%"]
-  );
   const branchOriginalOpacity = useTransform(
     scrollY,
     [keyframe(42), keyframe(44)],
@@ -170,7 +165,6 @@ export function Intro() {
         <BranchSectionItem
           as={motion.div}
           style={{
-            y: branchOriginalY,
             opacity: branchOriginalOpacity,
           }}
         >

@@ -3,7 +3,7 @@ import { styled } from "styles/stitches.config";
 export const Image = styled("img", {
   width: "auto",
   height: "66.8vh",
-  maxHeight: "72rem",
+  maxHeight: "31.2rem",
 
   pointerEvents: "none",
   zIndex: 0,
@@ -20,6 +20,7 @@ export const Image = styled("img", {
 
   "@medium": {
     height: "58.4vh",
+    maxHeight: "initial",
   },
 
   "@small": {
