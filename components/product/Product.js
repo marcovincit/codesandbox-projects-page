@@ -7,10 +7,11 @@ import {
   easeInOutCubic,
   easeInCubic,
   easeOutCubic,
+  easeInOutQuint,
 } from "utils/easing";
 
 import { Image } from "./styles";
-import { Screenshot } from "./Screenshot";
+import { Users } from "./Users";
 
 export const Stage = styled("div", {
   width: "100vw",
@@ -21,6 +22,8 @@ export const Stage = styled("div", {
   position: "fixed",
   top: 0,
   left: 0,
+
+  zIndex: 9999,
 
   display: "flex",
   justifyContent: "center",
@@ -53,19 +56,19 @@ export const Product = () => {
   const scene1Scale = useTransform(
     scrollY,
     [keyframe(0), keyframe(1), keyframe(3), keyframe(4)],
-    [1, 2, 2, 1],
+    [1, 2.2, 2.2, 1],
     {
-      ease: [easeOutCubic, easeInOutCubic, easeInCubic],
+      ease: [easeInOutCubic, easeInOutCubic, easeInCubic],
     }
   );
 
   //   scene1X
   const scene1X = useTransform(
     scrollY,
-    [keyframe(0), keyframe(3)],
-    ["0%", "-40%"],
+    [keyframe(0), keyframe(0.8), keyframe(3)],
+    ["0%", "-40%", "-60%"],
     {
-      ease: [easeOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic],
     }
   );
 
@@ -73,9 +76,9 @@ export const Product = () => {
   const scene1Y = useTransform(
     scrollY,
     [keyframe(0), keyframe(1), keyframe(3)],
-    ["60rem", "45rem", "45rem"],
+    ["60rem", "55rem", "55rem"],
     {
-      ease: [easeOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic],
     }
   );
 
@@ -85,8 +88,8 @@ export const Product = () => {
     [
       keyframe(3),
       keyframe(3) + 1,
-      keyframe(8.5),
-      keyframe(8.5) + 1,
+      keyframe(8.7),
+      keyframe(8.7) + 1,
       keyframe(11.5),
       keyframe(12),
     ],
@@ -97,9 +100,10 @@ export const Product = () => {
   const scene2Scale = useTransform(
     scrollY,
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    [2.8, 1, 1, 0.5834861],
+    // [2.8, 1, 1, 0.5834861],
+    [2.8, 1, 1, 0.52],
     {
-      ease: [easeInCubic, easeOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeOutCubic, easeInOutCubic],
     }
   );
 
@@ -130,8 +134,8 @@ export const Product = () => {
     ],
     {
       ease: [
+        easeInOutCubic,
         easeInCubic,
-        easeOutCubic,
         easeInCubic,
         easeOutCubic,
         easeInOutCubic,
@@ -146,9 +150,9 @@ export const Product = () => {
   const scene2Y = useTransform(
     scrollY,
     [keyframe(3), keyframe(4)],
-    ["-49rem", "0rem"],
+    ["-49rem", "-2rem"],
     {
-      ease: [easeInCubic],
+      ease: [easeInOutCubic],
     }
   );
 
@@ -162,7 +166,7 @@ export const Product = () => {
   // scene3Opacity
   const scene3Opacity = useTransform(
     scrollY,
-    [keyframe(8.5), keyframe(8.5) + 1],
+    [keyframe(8.7), keyframe(8.7) + 1],
     [0, 1]
   );
 
@@ -170,7 +174,8 @@ export const Product = () => {
   const scene3Scale = useTransform(
     scrollY,
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    [2.8, 1, 1, 0.5834861],
+    // [2.8, 1, 1, 0.5834861],
+    [2.8, 1, 1, 0.52],
     {
       ease: [easeInCubic, easeOutCubic, easeInOutCubic],
     }
@@ -219,7 +224,7 @@ export const Product = () => {
   const scene3Y = useTransform(
     scrollY,
     [keyframe(3), keyframe(4), keyframe(13), keyframe(14)],
-    ["-49rem", "0rem", "0rem", "-100vh"],
+    ["-49rem", "-2rem", "-2rem", "-100vh"],
     {
       ease: [easeInCubic, linear, linear],
     }
@@ -235,7 +240,7 @@ export const Product = () => {
   // newBranchOpacity
   const newBranchOpacity = useTransform(
     scrollY,
-    [keyframe(10), keyframe(10) + 1],
+    [keyframe(10.5), keyframe(10.5) + 1],
     [0, 1]
   );
 
@@ -255,19 +260,7 @@ export const Product = () => {
           }}
         >
           <Image src="images/screenshots/product/default.svg" />
-          {/* <Image
-            
-            style={{
-              position: "fixed",
-              // top: "-57.21%",
-              // left: "79.4%",
-              top: 0,
-              left: 0,
-              opacity: 0.2,
-              // transform: "scale(1.312)",
-            }}
-            src="images/screenshots/product/default.svg"
-          /> */}
+          <Users />
         </motion.div>
       </Stage>
 
@@ -283,6 +276,7 @@ export const Product = () => {
           }}
         >
           <Image src="images/screenshots/product/default.svg" />
+          <Users />
         </motion.div>
       </Stage>
 

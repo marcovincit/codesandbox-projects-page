@@ -14,7 +14,7 @@ export const globalStyles = globalCss({
     margin: 0,
     "font-family": "Inter, TWK Everett, Helvetica Neue, sans-serif",
     "-webkit-font-smoothing": "antialiased",
-    // overscrollBehavior: "none",
+    overscrollBehavior: "none",
   },
 
   html: {

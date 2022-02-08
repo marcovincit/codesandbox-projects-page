@@ -38,8 +38,9 @@ export const Image = styled("img", {
 
     responsive: {
       true: {
-        width: "100%!important",
-        height: "auto",
+        width: "auto!important",
+        height: "39vh!important",
+        maxHeight: "24.96vw!important",
       },
     },
 
