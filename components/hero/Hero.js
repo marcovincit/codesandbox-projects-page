@@ -82,7 +82,12 @@ export function Hero() {
             CodeSandbox Projects Beta
           </Heading>
 
-          <Heading size={2} as={motion.h2} style={{ scale: scale2 }}>
+          <Heading
+            size={2}
+            as={motion.h2}
+            css={{ willChange: "transform" }}
+            style={{ scale: scale2 }}
+          >
             Development
             <br />
             reimagined.
@@ -91,7 +96,11 @@ export function Hero() {
           <Body
             size={1}
             as={motion.p}
-            css={{ maxWidth: "50rem", "@small": { maxWidth: "32rem" } }}
+            css={{
+              maxWidth: "50rem",
+              willChange: "transform",
+              "@small": { maxWidth: "32rem" },
+            }}
             style={{ scale: scale3 }}
           >
             Experience the future of web development and build projects anywhere

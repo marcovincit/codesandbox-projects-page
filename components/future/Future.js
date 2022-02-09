@@ -10,13 +10,10 @@ import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
 import { LogoIcon } from "components/logo";
 
+import { easeInOutCubic, easeOutCubic } from "utils/easing";
+
 export const Future = () => {
   const { scrollY } = useViewportScroll();
-  const springY = useSpring(scrollY, {
-    stiffness: 200,
-    damping: 20,
-    mass: 0.2,
-  });
 
   // container
   const container = useRef(null);
@@ -39,9 +36,10 @@ export const Future = () => {
 
   // logo progress
   const progress = useTransform(
-    springY,
-    [containerTop - containerHeight / 4, containerTop],
-    [340, 0]
+    scrollY,
+    [containerTop - containerHeight / 3, containerTop],
+    [340, 0],
+    { ease: easeOutCubic }
   );
 
   // useEffect
