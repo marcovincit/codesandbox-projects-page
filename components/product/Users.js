@@ -198,7 +198,7 @@ export const Users = (props) => {
         y={10}
         width={44}
         height={28}
-        rx={2}
+        rx={4}
         fill="#fff"
         fillOpacity={0.09}
         style={{
@@ -246,7 +246,7 @@ export const Users = (props) => {
         y={10}
         width={52}
         height={28}
-        rx={2}
+        rx={4}
         fill="#fff"
         fillOpacity={0.09}
         style={{ willChange: "opacity", opacity: button1Opacity }}
