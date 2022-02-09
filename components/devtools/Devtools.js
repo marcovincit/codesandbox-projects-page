@@ -29,7 +29,7 @@ export const Devtools = () => {
   // sticky
   const x = useTransform(scrollY, [keyframe(0), keyframe(10)], ["50%", "0%"]);
   const y = useTransform(scrollY, [keyframe(12), keyframe(16)], ["0%", "0%"]);
-  const scale = useTransform(scrollY, [keyframe(11), keyframe(16)], [1, 1.1]);
+  const scale = useTransform(scrollY, [keyframe(11), keyframe(16)], [1, 1.2]);
 
   const opacity = useTransform(
     scrollY,

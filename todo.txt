@@ -13,3 +13,5 @@ add motion into svg file
 
 
 check component names "container/section"
+
+display none/block images

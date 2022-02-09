@@ -96,9 +96,7 @@ export function Intro() {
   // return
   return (
     <MainSection ref={container}>
-      <FakeSection />
-      <FakeSection />
-      <FakeSection />
+      <FakeSection css={{ height: "300vh" }} />
 
       {/* Not only share code. */}
       <Section position="right" style={{ paddingTop: 0 }}>
@@ -156,9 +154,7 @@ export function Intro() {
         </ContentContainer>
       </Section>
 
-      <FakeSection />
-      <FakeSection />
-      <FakeSection />
+      <FakeSection css={{ height: "300vh" }} />
 
       {/*  BranchSection */}
       <BranchSection as={motion.div} style={{ opacity: branchOpacity }}>

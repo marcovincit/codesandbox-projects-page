@@ -17,7 +17,6 @@ export const LogoIcon = (props) => (
         strokeDasharray: 340,
         strokeDashoffset: "var(--progress)",
       }}
-      opacity="0.8"
       x="5"
       y="5"
       width="82"

@@ -38,7 +38,7 @@ export function Tools() {
   const progress2 = useTransform(
     scrollY,
     [keyframe(-2), keyframe(-1)],
-    [-140, 0]
+    [420, 560]
   );
 
   // lock icon
