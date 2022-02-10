@@ -176,9 +176,9 @@ export function Intro() {
             <BranchIcon />
             <Heading size={5}>Feature branch</Heading>
             <div>
-              <img src="/images/screenshots/avatars/avatar1.svg" />
-              <img src="/images/screenshots/avatars/avatar2.svg" />
-              <img src="/images/screenshots/avatars/avatar3.svg" />
+              <img width="35rem" src="/images/screenshots/avatars/avatar1.svg" />
+              <img width="35rem" src="/images/screenshots/avatars/avatar2.svg" />
+              <img width="35rem" src="/images/screenshots/avatars/avatar3.svg" />
             </div>
           </BranchLabel>
         </BranchSectionItem>
@@ -199,7 +199,7 @@ export function Intro() {
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Marco's branch</Heading>
-            <img src="/images/screenshots/avatars/avatar1.svg" />
+            <img width="35rem" src="/images/screenshots/avatars/avatar1.svg" />
           </BranchLabel>
         </BranchSectionItem>
       </BranchSection>

@@ -79,7 +79,7 @@ export function Hero() {
               display: "none",
             }}
           >
-            CodeSandbox Projects Beta
+            CodeSandbox Projects - The best online IDE editor alternative to code.
           </Heading>
 
           <Heading

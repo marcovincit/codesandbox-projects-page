@@ -149,10 +149,10 @@ export const Product = () => {
   //  scene2Y
   const scene2Y = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4)],
-    ["-49rem", "-2rem"],
+    [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
+    ["-49rem", "0rem", "0rem", "-2rem"],
     {
-      ease: [easeInOutCubic],
+      ease: [easeInOutCubic,linear,easeInOutCubic],
     }
   );
 
@@ -223,10 +223,19 @@ export const Product = () => {
   //  scene3Y
   const scene3Y = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4), keyframe(13), keyframe(14)],
-    ["-49rem", "-2rem", "-2rem", "-100vh"],
+    [keyframe(3), keyframe(4), keyframe(9),keyframe(10)],
+    ["-49rem", "0rem", "0rem", "-2rem"],
     {
-      ease: [easeInCubic, linear, linear],
+      ease: [easeInCubic, linear, easeInOutCubic],
+    }
+  );
+
+  const scene3StageY = useTransform(
+    scrollY,
+    [keyframe(13), keyframe(14)],
+    ["0%", "-100%"],
+    {
+      ease: [linear],
     }
   );
 
@@ -244,12 +253,16 @@ export const Product = () => {
     [0, 1]
   );
 
-  useEffect(() => {}, []);
+
 
   return (
-    <>
+    <section>
       {/* product 1 */}
-      <Stage>
+      <Stage css={{
+       "@large":{
+        marginTop: '-10rem'
+       }
+      }}>
         <motion.div
           style={{
             willChange: "transform, opacity",
@@ -257,6 +270,7 @@ export const Product = () => {
             y: scene1Y,
             x: scene1X,
             opacity: scene1Opacity,
+            
           }}
         >
           <Image src="images/screenshots/product/default.svg" />
@@ -282,7 +296,7 @@ export const Product = () => {
 
       {/* LOADING */}
 
-      <Stage>
+      <Stage as={motion.div} style={{y:scene3StageY}}>
         <motion.div
           style={{
             willChange: "transform, opacity",
@@ -307,6 +321,6 @@ export const Product = () => {
           </motion.div>
         </motion.div>
       </Stage>
-    </>
+    </section>
   );
 };

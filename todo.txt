@@ -15,3 +15,7 @@ add motion into svg file
 check component names "container/section"
 
 display none/block images
+
+w3c validator
+
+add cursor gradient

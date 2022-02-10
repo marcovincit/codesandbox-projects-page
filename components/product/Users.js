@@ -137,7 +137,7 @@ export const Users = (props) => {
   const cursorScale = useTransform(
     scrollY,
     [keyframe(7.9), keyframe(8.3), keyframe(8.5)],
-    [1, 1.3, 0.8],
+    [1.5, 2, 1.5],
     {
       ease: [easeInQuad, easeOutQuad],
     }
@@ -358,7 +358,15 @@ export const Users = (props) => {
         strokeLinecap="round"
       />
 
-      <path fill="#00A3FF" d="M555 458h2v20h-2z" />
+
+{/* user 2 - VSCODE */}
+<g>
+
+
+  {/* USER 2 CURSOR */}
+<path fill="#00A3FF" d="M555 458h2v20h-2z" />
+
+
       <rect x={214} y={459} width={18} height={18} rx={9} fill="url(#h)" />
       <rect
         x={214.562}
@@ -369,7 +377,21 @@ export const Users = (props) => {
         stroke="#00B2FF"
         strokeWidth={1.125}
       />
-      <path fill="#F90" d="M402 290h2v20h-2z" />
+</g>
+
+
+{/* user 3 - MOBILE*/}
+<g>
+
+   {/* USER 3 CURSOR */}
+
+   <rect x={403} y={290} width={300} height={20} fill="#151515">
+   <animate attributeName="x" values="403;403;380;380;403" keyTimes="0 ;0.1 ; 0.25; 0.26 ; 1" dur="1s" repeatCount="indefinite" />
+   </rect>
+<rect x={403} y={290} width={2} height={20} fill="#F90" />
+
+
+
       <rect x={214} y={291} width={18} height={18} rx={9} fill="url(#i)" />
       <rect
         x={214.562}
@@ -380,6 +402,7 @@ export const Users = (props) => {
         stroke="#F90"
         strokeWidth={1.125}
       />
+</g>
 
       {/* CURSOR */}
       <motion.g

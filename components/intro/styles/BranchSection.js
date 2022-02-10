@@ -14,7 +14,6 @@ export const BranchSection = styled("div", {
   top: 0,
 
   "@large": {
-    gap: "6rem",
     padding: "0 6rem",
   },
 
