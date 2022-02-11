@@ -154,7 +154,7 @@ export function Intro() {
           }}
         >
           <Heading as="h4" size={4}>
-            Sometimes it's
+            Sometimes it&apos;s
             <br />
             not about code.
           </Heading>
@@ -223,7 +223,7 @@ export function Intro() {
           </BranchImageContainer>
           <BranchLabel>
             <BranchIcon />
-            <Heading size={5}>Marco's branch</Heading>
+            <Heading size={5}>Marco&apos;s branch</Heading>
             <img width="35rem" src="/images/screenshots/avatars/avatar1.svg" />
           </BranchLabel>
         </BranchSectionItem>
