@@ -11,9 +11,9 @@ export const Header = () => {
           Back
         </Link>
         <Menu>
-          <Link as="a" href="https://codesandbox.io/pricing" size={3}>
+          {/* <Link as="a" href="https://codesandbox.io/pricing" size={3}>
             Pricing
-          </Link>
+          </Link> */}
           {/* <Link
             as="a"
             href="https://codesandbox.io/signin?continue=https://projects.codesandbox.io/auth-test"
