@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@stitches/react": "1.2.6",
-    "framer-motion": "6.2.5",
+    "framer-motion": "6.2.6",
     "lottie-web": "^5.8.1",
     "next": "12.0.10",
     "react": "17.0.2",
