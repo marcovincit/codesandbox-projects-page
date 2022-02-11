@@ -193,14 +193,17 @@ export function Intro() {
             <Heading size={5}>Feature branch</Heading>
             <div>
               <img
+                alt="User 1"
                 width="35rem"
                 src="/images/screenshots/avatars/avatar1.svg"
               />
               <img
+                alt="User 2"
                 width="35rem"
                 src="/images/screenshots/avatars/avatar2.svg"
               />
               <img
+                alt="User 3"
                 width="35rem"
                 src="/images/screenshots/avatars/avatar3.svg"
               />
