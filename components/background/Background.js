@@ -6,7 +6,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 export const Background = ({ active }) => {
   const { scrollY } = useViewportScroll();
   const windowSize = useWindowSize();
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const [cursor, setCursor] = useState({ x: 300, y: 500 });
 
   // opacity
   const opacity = useTransform(scrollY, [0, windowSize.height], [1, 0]);
