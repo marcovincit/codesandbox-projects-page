@@ -13,7 +13,7 @@ export const Background = ({ active }) => {
 
   // useEffect
   useEffect(() => {
-    if (!windowSize) return;
+    // if (!windowSize) return;
     const onMouseMove = (e) => {
       setCursor({ x: e.clientX, y: e.clientY });
     };

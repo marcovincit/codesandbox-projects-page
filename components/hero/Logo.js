@@ -25,8 +25,12 @@ export const Image = styled("img", {
 export function Logo() {
   return (
     <>
-      <Image src="/images/logo.svg" large />
-      <Image src="/images/logo-small.svg" small />
+      <Image alt="CodeSandbox Projects Logo" src="/images/logo.svg" large />
+      <Image
+        alt="CodeSandbox Projects Logo Small"
+        src="/images/logo-small.svg"
+        small
+      />
     </>
   );
 }

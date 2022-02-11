@@ -105,7 +105,7 @@ export const Product = () => {
     scrollY,
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
     // [2.8, 1, 1, 0.5834861],
-    [3.25, 1, 1, 0.52],
+    [2.5, 1, 1, 0.52],
     {
       ease: [easeInOutCubic, easeOutCubic, easeInOutCubic],
     }
@@ -126,13 +126,13 @@ export const Product = () => {
       keyframe(10),
     ],
     [
-      "calc(137.3% + 0rem)",
-      "calc(50% - 0rem)",
-      "calc(55% - 0rem)",
-      "calc(-50% - 0rem)",
-      "calc(-55% - 0rem)",
-      "calc(0% - 0rem)",
-      "calc(0% - 0rem)",
+      "-60%",
+      "50%",
+      "55%",
+      "-50%",
+      "-55%",
+      "0%",
+      "0%",
       "calc(0% - 0rem)",
       "calc(-50% - 4rem)",
     ],
@@ -154,12 +154,7 @@ export const Product = () => {
   const scene2Y = useTransform(
     scrollY,
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    [
-      "calc(70rem - 143.2%)",
-      "calc(0rem - 0%)",
-      "calc(0rem - 0%)",
-      "calc(-2rem - 0%)",
-    ],
+    ["calc(70rem)", "calc(0rem)", "calc(0rem)", "calc(-2rem)"],
     {
       ease: [easeInOutCubic, linear, easeInOutCubic],
     }
