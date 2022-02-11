@@ -45,6 +45,8 @@ export const Product = () => {
     return windowHeight * value;
   };
 
+  //  SCENE 1
+
   // scene1Opacity
   const scene1Opacity = useTransform(
     scrollY,
@@ -82,6 +84,8 @@ export const Product = () => {
     }
   );
 
+  // SCENE 2
+
   // scene2Opacity
   const scene2Opacity = useTransform(
     scrollY,
@@ -93,7 +97,7 @@ export const Product = () => {
       keyframe(11.5),
       keyframe(12),
     ],
-    [0, 1, 1, 0.5, 1, 0]
+    [0.4, 1, 1, 0.5, 1, 0]
   );
 
   // scene2Scale
@@ -101,7 +105,7 @@ export const Product = () => {
     scrollY,
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
     // [2.8, 1, 1, 0.5834861],
-    [2.8, 1, 1, 0.52],
+    [3.25, 1, 1, 0.52],
     {
       ease: [easeInOutCubic, easeOutCubic, easeInOutCubic],
     }
@@ -122,13 +126,13 @@ export const Product = () => {
       keyframe(10),
     ],
     [
-      "124.75%",
-      "50%",
-      "55%",
-      "-50%",
-      "-55%",
-      "0%",
-      "0%",
+      "calc(137.3% + 0rem)",
+      "calc(50% - 0rem)",
+      "calc(55% - 0rem)",
+      "calc(-50% - 0rem)",
+      "calc(-55% - 0rem)",
+      "calc(0% - 0rem)",
+      "calc(0% - 0rem)",
       "calc(0% - 0rem)",
       "calc(-50% - 4rem)",
     ],
@@ -150,7 +154,12 @@ export const Product = () => {
   const scene2Y = useTransform(
     scrollY,
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    ["-49rem", "0rem", "0rem", "-2rem"],
+    [
+      "calc(70rem - 143.2%)",
+      "calc(0rem - 0%)",
+      "calc(0rem - 0%)",
+      "calc(-2rem - 0%)",
+    ],
     {
       ease: [easeInOutCubic, linear, easeInOutCubic],
     }
@@ -162,6 +171,8 @@ export const Product = () => {
     [keyframe(9), keyframe(9) + 1],
     ["50% 50%", "100% 50%"]
   );
+
+  // SCENE 3
 
   // scene3Opacity
   const scene3Opacity = useTransform(
@@ -246,6 +257,8 @@ export const Product = () => {
     ["50% 50%", "0% 50%"]
   );
 
+  // NEW BRANCH
+
   // newBranchOpacity
   const newBranchOpacity = useTransform(
     scrollY,
@@ -255,7 +268,7 @@ export const Product = () => {
 
   return (
     <section>
-      {/* product 1 */}
+      {/* SCENE 1 */}
       <Stage
         css={{
           "@large": {
@@ -277,6 +290,7 @@ export const Product = () => {
         </motion.div>
       </Stage>
 
+      {/* SCENE 2 */}
       <Stage>
         <motion.div
           style={{
@@ -293,7 +307,7 @@ export const Product = () => {
         </motion.div>
       </Stage>
 
-      {/* LOADING */}
+      {/* LOADING / NEW BRANCH */}
 
       <Stage as={motion.div} style={{ y: scene3StageY }}>
         <motion.div
