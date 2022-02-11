@@ -29,7 +29,7 @@ export const Devtools = () => {
   // sticky
   const x = useTransform(scrollY, [keyframe(0), keyframe(10)], ["50%", "0%"]);
   const y = useTransform(scrollY, [keyframe(12), keyframe(16)], ["0%", "0%"]);
-  const scale = useTransform(scrollY, [keyframe(11), keyframe(16)], [1, 1.1]);
+  const scale = useTransform(scrollY, [keyframe(11), keyframe(16)], [1, 1.2]);
 
   const opacity = useTransform(
     scrollY,
@@ -38,7 +38,6 @@ export const Devtools = () => {
   );
 
   // Preconfigured environments
-
   const contentOpacity1 = useTransform(
     scrollY,
     [keyframe(0), keyframe(2), keyframe(3), keyframe(4)],
@@ -226,6 +225,11 @@ export const Devtools = () => {
               <Image
                 alt="CodeSandbox Projects - Interface"
                 src="/images/screenshots/product/default.svg"
+              />
+              <Image
+                layer
+                alt="CodeSandbox Projects - Original Branch"
+                src="/images/screenshots/product/users.svg"
               />
               <Image
                 layer

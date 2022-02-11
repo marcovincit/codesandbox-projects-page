@@ -1,19 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useSpring,
-} from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Section, SubSection, Text, Square, Title } from "./styles";
 
 export const Streamlined = () => {
   const { scrollY } = useViewportScroll();
-  // const scrollY = useSpring(scrollY, {
-  //   stiffness: 200,
-  //   damping: 20,
-  //   mass: 0.2,
-  // });
 
   // container
   const container = useRef(null);

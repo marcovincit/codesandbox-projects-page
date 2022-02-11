@@ -10,9 +10,8 @@ export const Heading = styled("span", {
   margin: 0,
 
   "&::selection": {
-    "-webkit-text-stroke": "1px var(--colors-title)",
-    color: "transparent",
-    background: "transparent",
+    color: "$background",
+    background: "$primary",
   },
 
   "@large": {
@@ -28,6 +27,7 @@ export const Heading = styled("span", {
       1: {
         fontSize: "14.4rem",
         letterSpacing: "-0.075em",
+
         "@large": {
           fontSize: "9.6rem",
           letterSpacing: "-0.05em",
@@ -39,6 +39,12 @@ export const Heading = styled("span", {
 
       // heading2
       2: {
+        "&::selection": {
+          "-webkit-text-stroke": "1px var(--colors-title)",
+          color: "transparent",
+          background: "transparent",
+        },
+
         fontSize: "9.6rem",
         "@large": {
           fontSize: "7.2rem",

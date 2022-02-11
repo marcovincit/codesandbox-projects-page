@@ -14,6 +14,7 @@ import {
   FakeSection,
 } from "./styles";
 import { AppStore } from "./AppStore";
+import { easeInOutQuad } from "utils/easing";
 
 export function Tools() {
   const { scrollY } = useViewportScroll();
@@ -37,7 +38,7 @@ export function Tools() {
   const progress2 = useTransform(
     scrollY,
     [keyframe(-2), keyframe(-1)],
-    [-140, 0]
+    [420, 560]
   );
 
   // lock icon
@@ -51,21 +52,24 @@ export function Tools() {
   const iPhoneX = useTransform(
     scrollY,
     [keyframe(4), keyframe(8), keyframe(15), keyframe(20), keyframe(28)],
-    ["0vw", "-48vw", "-48vw", "-2vw", "0vw"]
+    ["0vw", "-48vw", "-48vw", "-2vw", "0vw"],
+    { ease: easeInOutQuad }
   );
 
   // iPad
   const iPadX = useTransform(
     scrollY,
     [keyframe(4), keyframe(8), keyframe(15), keyframe(20), keyframe(28)],
-    ["0vw", "-60vw", "-60vw", "-4vw", "0vw"]
+    ["0vw", "-60vw", "-60vw", "-4vw", "0vw"],
+    { ease: easeInOutQuad }
   );
 
   // VSCode
   const VSCodeX = useTransform(
     scrollY,
     [keyframe(4), keyframe(15), keyframe(20)],
-    ["2vw", "0vw", "47vw"]
+    ["2vw", "0vw", "47vw"],
+    { ease: easeInOutQuad }
   );
 
   // content 1

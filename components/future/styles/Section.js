@@ -7,7 +7,10 @@ export const Section = styled("section", {
   justifyContent: "center",
   alignItems: "center",
   padding: "3rem",
-  willChange: "transform, opacity",
+
   position: "relative",
   zIndex: 0,
+
+  clip: "rect(0, auto, auto, 0)",
+  clipPath: "inset(0 0 0 0)",
 });

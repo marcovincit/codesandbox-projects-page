@@ -10,3 +10,5 @@ export { Future } from "components/future";
 export { Devtools } from "components/devtools";
 export { Avatar, AvatarContainer } from "components/avatar";
 export { Logo, LogoIcon, LogoSmall } from "components/logo";
+export { Product } from "components/Product";
+export { Background } from "components/Background";

@@ -17,13 +17,12 @@ export const LogoIcon = (props) => (
         strokeDasharray: 340,
         strokeDashoffset: "var(--progress)",
       }}
-      opacity="0.8"
       x="5"
       y="5"
       width="82"
       height="82"
       stroke="white"
-      stroke-width="10"
+      strokeWidth="10"
     />
   </SVG>
 );

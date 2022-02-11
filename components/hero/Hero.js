@@ -3,8 +3,11 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
-import { Container, Content } from "./styles";
+import { Background } from "components";
+import { Section, Container, Content } from "./styles";
 import { Logo } from "./Logo";
+
+import { easeInOutCubic } from "utils/easing";
 
 export function Hero() {
   const { scrollY } = useViewportScroll();
@@ -13,19 +16,35 @@ export function Hero() {
   const container = useRef(null);
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
+  const [active, setActive] = useState(0);
 
-  // title scale
+  //  scale
   const scale = useTransform(
     scrollY,
     [containerTop, containerTop + containerHeight],
-    [1, 0.9]
+    [1, 0.75],
+    { ease: easeInOutCubic }
   );
-
-  // title scale
-  const scaleBody = useTransform(
+  //  scale
+  const scale2 = useTransform(
     scrollY,
     [containerTop, containerTop + containerHeight],
-    [1, 1.05]
+    [1, 0.75],
+    { ease: easeInOutCubic }
+  );
+  //  scale
+  const scale3 = useTransform(
+    scrollY,
+    [containerTop, containerTop + containerHeight],
+    [1, 0.75],
+    { ease: easeInOutCubic }
+  );
+
+  //  opacity
+  const opacity = useTransform(
+    scrollY,
+    [containerTop, containerTop + containerHeight / 2],
+    [1, 0]
   );
 
   // useEffect
@@ -44,47 +63,66 @@ export function Hero() {
 
   // return
   return (
-    <Container ref={container}>
-      <Content>
-        <Logo />
+    <>
+      <Background active={active} />
+      <Section ref={container}>
+        <Container as={motion.div} style={{ scale, opacity }}>
+          <Content>
+            <Logo />
 
-        <Heading
-          as="h1"
-          css={{
-            fontSize: 1,
-            width: 0,
-            height: 0,
-            display: "none",
-          }}
-        >
-          CodeSandbox Projects Beta
-        </Heading>
+            <Heading
+              as="h1"
+              css={{
+                fontSize: 1,
+                width: 0,
+                height: 0,
+                display: "none",
+              }}
+            >
+              CodeSandbox Projects - The best online IDE editor alternative to
+              code.
+            </Heading>
 
-        <Heading
-          size={2}
-          as="h2"
-          as={motion.h1}
-          css={{ willChange: "transform" }}
-          style={{ scale }}
-        >
-          Development
-          <br />
-          reimagined.
-        </Heading>
+            <Heading
+              size={2}
+              as={motion.h2}
+              css={{
+                willChange: "transform",
+                "@medium": { transform: "initial!important" },
+              }}
+              style={{ scale: scale2 }}
+            >
+              Development
+              <br />
+              reimagined.
+            </Heading>
 
-        <Body
-          size={1}
-          as={motion.p}
-          css={{ maxWidth: "50rem", "@small": { maxWidth: "32rem" } }}
-          style={{ scale: scaleBody }}
-        >
-          Experience the future of web development and build projects anywhere
-          and anytime with your team.
-        </Body>
-        <CTA as="a" href="#" target="_blank">
-          Early access <Arrow />
-        </CTA>
-      </Content>
-    </Container>
+            <Body
+              size={1}
+              as={motion.p}
+              css={{
+                maxWidth: "50rem",
+                willChange: "transform",
+                "@medium": { transform: "initial!important" },
+                "@small": { maxWidth: "32rem" },
+              }}
+              style={{ scale: scale3 }}
+            >
+              Experience the future of web development and build projects
+              anywhere and anytime with your team.
+            </Body>
+            <CTA
+              as="a"
+              href="#"
+              target="_blank"
+              onMouseEnter={() => setActive(1)}
+              onMouseLeave={() => setActive(0)}
+            >
+              Early access <Arrow />
+            </CTA>
+          </Content>
+        </Container>
+      </Section>
+    </>
   );
 }

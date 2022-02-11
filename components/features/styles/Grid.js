@@ -16,6 +16,7 @@ export const Grid = styled("div", {
   },
 
   "@small": {
-    gridTemplateColumns: "repeat(1, 1fr)",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "6rem 2rem",
   },
 });

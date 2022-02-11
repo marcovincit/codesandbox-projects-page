@@ -13,7 +13,6 @@ import {
   ImageContainer,
   FakeSection,
 } from "./styles";
-import { Product } from "./Product";
 
 import { BranchIcon } from "./icons";
 
@@ -27,30 +26,30 @@ export function Intro() {
 
   // keyframe
   const keyframe = (value) => {
-    return containerTop + (containerHeight / 48) * value;
+    return containerTop + (containerHeight / 52) * value;
   };
 
   // content 1
   const contentOpacity1 = useTransform(
     scrollY,
-    [keyframe(8), keyframe(9), keyframe(11), keyframe(12)],
+    [keyframe(12), keyframe(13), keyframe(15), keyframe(16)],
     [0, 1, 1, 0]
   );
   const contentY1 = useTransform(
     scrollY,
-    [keyframe(8), keyframe(12)],
+    [keyframe(12), keyframe(16)],
     ["5%", "-5%"]
   );
 
   // content 2
   const contentOpacity2 = useTransform(
     scrollY,
-    [keyframe(16), keyframe(17), keyframe(19), keyframe(20)],
+    [keyframe(20), keyframe(21), keyframe(23), keyframe(24)],
     [0, 1, 1, 0]
   );
   const contentY2 = useTransform(
     scrollY,
-    [keyframe(16), keyframe(20)],
+    [keyframe(20), keyframe(24)],
     ["5%", "-5%"]
   );
 
@@ -58,30 +57,25 @@ export function Intro() {
 
   const branchOpacity = useTransform(
     scrollY,
-    [keyframe(32), keyframe(33)],
+    [keyframe(36), keyframe(37)],
     [0, 1]
   );
 
-  const branchOriginalY = useTransform(
-    scrollY,
-    [keyframe(38), keyframe(40)],
-    ["0%", "-1%"]
-  );
   const branchOriginalOpacity = useTransform(
     scrollY,
-    [keyframe(38), keyframe(40)],
+    [keyframe(42), keyframe(44)],
     [1, 0]
   );
 
   // content 3
   const contentOpacity3 = useTransform(
     scrollY,
-    [keyframe(40), keyframe(41)],
+    [keyframe(44), keyframe(45)],
     [0, 1]
   );
   const contentY3 = useTransform(
     scrollY,
-    [keyframe(40), keyframe(44)],
+    [keyframe(44), keyframe(48)],
     ["10%", "0%"]
   );
 
@@ -102,11 +96,7 @@ export function Intro() {
   // return
   return (
     <MainSection ref={container}>
-      <Section css={{ height: "100vh", "@medium": { display: "none" } }}>
-        {/* <Product /> */}
-      </Section>
-
-      <FakeSection />
+      <FakeSection css={{ height: "300vh" }} />
 
       {/* Not only share code. */}
       <Section position="right" style={{ paddingTop: 0 }}>
@@ -114,6 +104,11 @@ export function Intro() {
           <Image
             alt="CodeSandbox Projects"
             src="/images/screenshots/product/default.svg"
+          />
+          <Image
+            layer
+            alt="CodeSandbox Projects"
+            src="/images/screenshots/product/users.svg"
           />
         </ImageContainer>
 
@@ -144,6 +139,11 @@ export function Intro() {
             alt="CodeSandbox Projects  - Preview"
             src="/images/screenshots/product/default.svg"
           />
+          <Image
+            layer
+            alt="CodeSandbox Projects"
+            src="/images/screenshots/product/users.svg"
+          />
         </ImageContainer>
 
         <ContentContainer
@@ -164,16 +164,13 @@ export function Intro() {
         </ContentContainer>
       </Section>
 
-      <FakeSection />
-      <FakeSection />
-      <FakeSection />
+      <FakeSection css={{ height: "300vh" }} />
 
       {/*  BranchSection */}
       <BranchSection as={motion.div} style={{ opacity: branchOpacity }}>
         <BranchSectionItem
           as={motion.div}
           style={{
-            y: branchOriginalY,
             opacity: branchOriginalOpacity,
           }}
         >
@@ -183,15 +180,30 @@ export function Intro() {
               alt="CodeSandbox Projects - Original Branch"
               src="/images/screenshots/product/default.svg"
             />
+            <Image
+              layer
+              responsive
+              alt="CodeSandbox Projects - Original Branch"
+              src="/images/screenshots/product/users.svg"
+            />
           </BranchImageContainer>
 
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Feature branch</Heading>
             <div>
-              <img src="/images/screenshots/avatars/avatar1.svg" />
-              <img src="/images/screenshots/avatars/avatar2.svg" />
-              <img src="/images/screenshots/avatars/avatar3.svg" />
+              <img
+                width="35rem"
+                src="/images/screenshots/avatars/avatar1.svg"
+              />
+              <img
+                width="35rem"
+                src="/images/screenshots/avatars/avatar2.svg"
+              />
+              <img
+                width="35rem"
+                src="/images/screenshots/avatars/avatar3.svg"
+              />
             </div>
           </BranchLabel>
         </BranchSectionItem>
@@ -212,7 +224,7 @@ export function Intro() {
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Marco's branch</Heading>
-            <img src="/images/screenshots/avatars/avatar1.svg" />
+            <img width="35rem" src="/images/screenshots/avatars/avatar1.svg" />
           </BranchLabel>
         </BranchSectionItem>
       </BranchSection>

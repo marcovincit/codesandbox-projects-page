@@ -10,13 +10,10 @@ import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
 import { LogoIcon } from "components/logo";
 
+import { easeInOutCubic, easeOutCubic } from "utils/easing";
+
 export const Future = () => {
   const { scrollY } = useViewportScroll();
-  const springY = useSpring(scrollY, {
-    stiffness: 200,
-    damping: 20,
-    mass: 0.2,
-  });
 
   // container
   const container = useRef(null);
@@ -26,7 +23,7 @@ export const Future = () => {
   // opacity
   const opacity = useTransform(
     scrollY,
-    [containerTop - containerHeight / 2, containerTop],
+    [containerTop - containerHeight, containerTop],
     [0, 1]
   );
 
@@ -34,14 +31,15 @@ export const Future = () => {
   const y = useTransform(
     scrollY,
     [containerTop - containerHeight, containerTop],
-    ["-50vh", "0vh"]
+    ["10%", "-50%"]
   );
 
   // logo progress
   const progress = useTransform(
-    springY,
-    [containerTop - containerHeight / 4, containerTop],
-    [340, 0]
+    scrollY,
+    [containerTop - containerHeight / 2, containerTop],
+    [340, 0],
+    { ease: easeOutCubic }
   );
 
   // useEffect
@@ -59,16 +57,16 @@ export const Future = () => {
   }, [container]);
 
   return (
-    <Section
-      as={motion.section}
-      ref={container}
-      style={{
-        opacity,
-        y,
-        "--progress": progress,
-      }}
-    >
-      <SubSection>
+    <Section ref={container}>
+      <SubSection
+        as={motion.div}
+        style={{
+          opacity,
+          x: "-50%",
+          y,
+          "--progress": progress,
+        }}
+      >
         <LogoIcon />
         <Heading size={2} as="h1">
           Get ready for

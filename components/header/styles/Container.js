@@ -5,7 +5,7 @@ export const Container = styled("header", {
   justifyContent: "space-between",
   padding: "3.8rem 4rem",
 
-  mixBlendMode: "difference",
+  // mixBlendMode: "difference",
 
   position: "fixed",
   top: 0,

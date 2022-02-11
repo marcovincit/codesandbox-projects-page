@@ -9,6 +9,7 @@ export const globalStyles = globalCss({
 
   "html, body": {
     background: "$background",
+
     color: "$support",
     padding: 0,
     margin: 0,
