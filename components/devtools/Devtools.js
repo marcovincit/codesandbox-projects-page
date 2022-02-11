@@ -175,7 +175,7 @@ export const Devtools = () => {
               Preconfigured environments
             </Heading>
             <Heading as="p" size={4}>
-              We detect your environment <br /> so you don't need to fiddle{" "}
+              We detect your environment <br /> so you don&apos;t need to fiddle
               <br /> with configuration files.
             </Heading>
           </ContentContainer>
@@ -254,8 +254,8 @@ export const Devtools = () => {
               Devtools
             </Heading>
             <Heading as="p" size={4}>
-              We've bundled useful <br /> tools to help you get your <br /> work
-              done faster and <br /> more efficiently.
+              We&apos;ve bundled useful <br /> tools to help you get your <br />{" "}
+              work done faster and <br /> more efficiently.
             </Heading>
           </ContentContainer>
         </Section>
