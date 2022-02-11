@@ -61,10 +61,6 @@ export function Hero() {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
-  useEffect(() => {
-    console.log(active);
-  }, [active]);
-
   // return
   return (
     <>
