@@ -105,6 +105,11 @@ export function Intro() {
             alt="CodeSandbox Projects"
             src="/images/screenshots/product/default.svg"
           />
+          <Image
+            layer
+            alt="CodeSandbox Projects"
+            src="/images/screenshots/product/users.svg"
+          />
         </ImageContainer>
 
         <ContentContainer
@@ -133,6 +138,11 @@ export function Intro() {
           <Image
             alt="CodeSandbox Projects  - Preview"
             src="/images/screenshots/product/default.svg"
+          />
+          <Image
+            layer
+            alt="CodeSandbox Projects"
+            src="/images/screenshots/product/users.svg"
           />
         </ImageContainer>
 
@@ -170,15 +180,30 @@ export function Intro() {
               alt="CodeSandbox Projects - Original Branch"
               src="/images/screenshots/product/default.svg"
             />
+            <Image
+              layer
+              responsive
+              alt="CodeSandbox Projects - Original Branch"
+              src="/images/screenshots/product/users.svg"
+            />
           </BranchImageContainer>
 
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Feature branch</Heading>
             <div>
-              <img width="35rem" src="/images/screenshots/avatars/avatar1.svg" />
-              <img width="35rem" src="/images/screenshots/avatars/avatar2.svg" />
-              <img width="35rem" src="/images/screenshots/avatars/avatar3.svg" />
+              <img
+                width="35rem"
+                src="/images/screenshots/avatars/avatar1.svg"
+              />
+              <img
+                width="35rem"
+                src="/images/screenshots/avatars/avatar2.svg"
+              />
+              <img
+                width="35rem"
+                src="/images/screenshots/avatars/avatar3.svg"
+              />
             </div>
           </BranchLabel>
         </BranchSectionItem>

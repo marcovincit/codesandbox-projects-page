@@ -3,6 +3,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
+import { Background } from "components";
 import { Section, Container, Content } from "./styles";
 import { Logo } from "./Logo";
 
@@ -15,6 +16,7 @@ export function Hero() {
   const container = useRef(null);
   const [containerTop, setContainerTop] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
+  const [active, setActive] = useState(0);
 
   //  scale
   const scale = useTransform(
@@ -59,58 +61,72 @@ export function Hero() {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
+  useEffect(() => {
+    console.log(active);
+  }, [active]);
+
   // return
   return (
-    <Section ref={container}>
-      <Container
-        as={motion.div}
-        css={{ willChange: "transform, opacity", transformOrigin: "50% 20%" }}
-        style={{ scale, opacity }}
-      >
-        <Content>
-          <Logo />
+    <>
+      <Background active={active} />
+      <Section ref={container}>
+        <Container as={motion.div} style={{ scale, opacity }}>
+          <Content>
+            <Logo />
 
-          <Heading
-            as="h1"
-            css={{
-              fontSize: 1,
-              width: 0,
-              height: 0,
-              display: "none",
-            }}
-          >
-            CodeSandbox Projects - The best online IDE editor alternative to code.
-          </Heading>
+            <Heading
+              as="h1"
+              css={{
+                fontSize: 1,
+                width: 0,
+                height: 0,
+                display: "none",
+              }}
+            >
+              CodeSandbox Projects - The best online IDE editor alternative to
+              code.
+            </Heading>
 
-          <Heading
-            size={2}
-            as={motion.h2}
-            css={{ willChange: "transform" }}
-            style={{ scale: scale2 }}
-          >
-            Development
-            <br />
-            reimagined.
-          </Heading>
+            <Heading
+              size={2}
+              as={motion.h2}
+              css={{
+                willChange: "transform",
+                "@medium": { transform: "initial!important" },
+              }}
+              style={{ scale: scale2 }}
+            >
+              Development
+              <br />
+              reimagined.
+            </Heading>
 
-          <Body
-            size={1}
-            as={motion.p}
-            css={{
-              maxWidth: "50rem",
-              willChange: "transform",
-              "@small": { maxWidth: "32rem" },
-            }}
-            style={{ scale: scale3 }}
-          >
-            Experience the future of web development and build projects anywhere
-            and anytime with your team.
-          </Body>
-          <CTA as="a" href="#" target="_blank">
-            Early access <Arrow />
-          </CTA>
-        </Content>
-      </Container>
-    </Section>
+            <Body
+              size={1}
+              as={motion.p}
+              css={{
+                maxWidth: "50rem",
+                willChange: "transform",
+                "@medium": { transform: "initial!important" },
+                "@small": { maxWidth: "32rem" },
+              }}
+              style={{ scale: scale3 }}
+            >
+              Experience the future of web development and build projects
+              anywhere and anytime with your team.
+            </Body>
+            <CTA
+              as="a"
+              href="#"
+              target="_blank"
+              onMouseEnter={() => setActive(1)}
+              onMouseLeave={() => setActive(0)}
+            >
+              Early access <Arrow />
+            </CTA>
+          </Content>
+        </Container>
+      </Section>
+    </>
   );
 }

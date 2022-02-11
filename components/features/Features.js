@@ -7,6 +7,7 @@ import { Section, Grid, Item, IconContainer, Content } from "./styles";
 
 export const Features = () => {
   const windowSize = useWindowSize();
+
   const { scrollY } = useViewportScroll();
 
   // container

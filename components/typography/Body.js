@@ -31,6 +31,9 @@ export const Body = styled("span", {
       // body2
       2: {
         fontSize: "1.6rem",
+        "@small": {
+          fontSize: "1.4rem",
+        },
       },
 
       // body3

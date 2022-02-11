@@ -22,7 +22,7 @@ export const LogoIcon = (props) => (
       width="82"
       height="82"
       stroke="white"
-      stroke-width="10"
+      strokeWidth="10"
     />
   </SVG>
 );

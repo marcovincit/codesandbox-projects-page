@@ -1,5 +1,4 @@
 import { styled } from "styles/stitches.config";
-import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useWindowSize } from "hooks/useWindowSize";
 import {
@@ -7,7 +6,6 @@ import {
   easeInOutCubic,
   easeInCubic,
   easeOutCubic,
-  easeInOutQuint,
 } from "utils/easing";
 
 import { Image } from "./styles";
@@ -28,6 +26,8 @@ export const Stage = styled("div", {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+
+  lineHeight: 0,
 
   "@medium": {
     display: "none",
@@ -56,7 +56,7 @@ export const Product = () => {
   const scene1Scale = useTransform(
     scrollY,
     [keyframe(0), keyframe(1), keyframe(3), keyframe(4)],
-    [1, 2.2, 2.2, 1],
+    [1, 2.5, 2.5, 1],
     {
       ease: [easeInOutCubic, easeInOutCubic, easeInCubic],
     }
@@ -76,7 +76,7 @@ export const Product = () => {
   const scene1Y = useTransform(
     scrollY,
     [keyframe(0), keyframe(1), keyframe(3)],
-    ["60rem", "55rem", "55rem"],
+    ["60rem", "70rem", "70rem"],
     {
       ease: [easeInOutCubic, easeInOutCubic],
     }
@@ -152,7 +152,7 @@ export const Product = () => {
     [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
     ["-49rem", "0rem", "0rem", "-2rem"],
     {
-      ease: [easeInOutCubic,linear,easeInOutCubic],
+      ease: [easeInOutCubic, linear, easeInOutCubic],
     }
   );
 
@@ -223,7 +223,7 @@ export const Product = () => {
   //  scene3Y
   const scene3Y = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4), keyframe(9),keyframe(10)],
+    [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
     ["-49rem", "0rem", "0rem", "-2rem"],
     {
       ease: [easeInCubic, linear, easeInOutCubic],
@@ -253,16 +253,16 @@ export const Product = () => {
     [0, 1]
   );
 
-
-
   return (
     <section>
       {/* product 1 */}
-      <Stage css={{
-       "@large":{
-        marginTop: '-10rem'
-       }
-      }}>
+      <Stage
+        css={{
+          "@large": {
+            marginTop: "-10rem",
+          },
+        }}
+      >
         <motion.div
           style={{
             willChange: "transform, opacity",
@@ -270,7 +270,6 @@ export const Product = () => {
             y: scene1Y,
             x: scene1X,
             opacity: scene1Opacity,
-            
           }}
         >
           <Image src="images/screenshots/product/default.svg" />
@@ -296,7 +295,7 @@ export const Product = () => {
 
       {/* LOADING */}
 
-      <Stage as={motion.div} style={{y:scene3StageY}}>
+      <Stage as={motion.div} style={{ y: scene3StageY }}>
         <motion.div
           style={{
             willChange: "transform, opacity",

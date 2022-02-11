@@ -13,6 +13,9 @@ export const Container = styled("div", {
   top: 0,
   left: 0,
 
+  willChange: "transform, opacity",
+  transformOrigin: "50% 20%",
+
   "@large": {
     padding: "13.5rem 3rem",
   },
@@ -21,6 +24,8 @@ export const Container = styled("div", {
     position: "relative",
     height: "auto",
     padding: "17rem 3rem ",
+    opacity: "1!important",
+    transform: "initial!important",
   },
 
   "@small": {

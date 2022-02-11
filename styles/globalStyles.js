@@ -9,12 +9,13 @@ export const globalStyles = globalCss({
 
   "html, body": {
     background: "$background",
+
     color: "$support",
     padding: 0,
     margin: 0,
     "font-family": "Inter, TWK Everett, Helvetica Neue, sans-serif",
     "-webkit-font-smoothing": "antialiased",
-    // overscrollBehavior: "none",
+    overscrollBehavior: "none",
   },
 
   html: {
