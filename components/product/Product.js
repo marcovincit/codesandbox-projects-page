@@ -9,7 +9,7 @@ import {
 } from "utils/easing";
 
 import { Image } from "./styles";
-import { Users } from "./Users";
+import { Interactions } from "./Interactions";
 
 export const Stage = styled("div", {
   width: "100vw",
@@ -277,11 +277,23 @@ export const Product = () => {
             scale: scene1Scale,
             y: scene1Y,
             x: scene1X,
+            z: 0,
             opacity: scene1Opacity,
           }}
         >
-          <Image src="images/screenshots/product/default.svg" />
-          <Users />
+          <Image
+            css={
+              {
+                // transform: "translateZ(0)",
+                // "backface-visibility": "hidden",
+                // "-webkit-font-smoothing": "subpixel-antialiased",
+                // "image-rendering": "-webkit-optimize-contrast",
+              }
+            }
+            src="images/screenshots/product/default.svg"
+          />
+
+          <Interactions />
         </motion.div>
       </Stage>
 
@@ -298,7 +310,7 @@ export const Product = () => {
           }}
         >
           <Image src="images/screenshots/product/default.svg" />
-          <Users />
+          <Interactions />
         </motion.div>
       </Stage>
 

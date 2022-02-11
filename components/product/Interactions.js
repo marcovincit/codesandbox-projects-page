@@ -8,6 +8,7 @@ import {
   easeInOutQuad,
   easeInOutCubic,
   easeOutCubic,
+  easeInCubic,
 } from "utils/easing";
 
 // USER CURRENT CURSOR
@@ -89,7 +90,7 @@ const Avatar3PointerY = styled("g", {
   `,
 });
 
-export const Users = (props) => {
+export const Interactions = (props) => {
   const { scrollY } = useViewportScroll();
 
   const windowSize = useWindowSize();
@@ -150,10 +151,10 @@ export const Users = (props) => {
 
   const avatar2IconScale = useTransform(
     scrollY,
-    [keyframe(0.75), keyframe(1.25)],
+    [keyframe(1), keyframe(1.25)],
     [0, 1],
     {
-      ease: [easeInOutCubic],
+      ease: [easeOutCubic],
     }
   );
 
@@ -181,7 +182,7 @@ export const Users = (props) => {
     [keyframe(1.75), keyframe(2)],
     [0, 1],
     {
-      ease: [easeInOutCubic],
+      ease: [easeOutCubic],
     }
   );
 
@@ -222,9 +223,9 @@ export const Users = (props) => {
     }
   );
 
-  // BUTTON 1
+  // BUTTON SHARE
 
-  const button1Opacity = useTransform(
+  const buttonShareOpacity = useTransform(
     scrollY,
     [keyframe(7.75), keyframe(7.8), keyframe(7.9)],
     [0, 1, 0],
@@ -233,9 +234,9 @@ export const Users = (props) => {
     }
   );
 
-  // BUTTON 2
+  // BUTTON FORK
 
-  const button2Opacity = useTransform(
+  const buttonForkOpacity = useTransform(
     scrollY,
     [keyframe(7.9), keyframe(8), keyframe(8.7), keyframe(8.7)],
     [0, 1, 1, 0],
@@ -244,11 +245,10 @@ export const Users = (props) => {
     }
   );
 
-  // BUTTON 2 ACTIVE
-  const button3Opacity = useTransform(
+  const buttonForkStrokeOpacity = useTransform(
     scrollY,
     [keyframe(8.3), keyframe(8.5), keyframe(8.7)],
-    [0, 1, 0],
+    [0, 0.1, 0],
     {
       ease: [easeInQuad, easeOutQuad],
     }
@@ -271,6 +271,27 @@ export const Users = (props) => {
         height: "auto",
       }}
     >
+      {/* MOUSE CURSOR ARROW */}
+      <motion.g
+        style={{
+          willChange: "transform, opacity",
+          x: cursorX,
+          y: cursorY,
+          scale: cursorScale,
+          opacity: cursorOpacity,
+        }}
+      >
+        <path
+          d="M767 206v16.015l3.225-3.131 2.254 5.34 3.605-1.535-2.1-5.07h4.607L767 206Z"
+          fill="#fff"
+        />
+        <path
+          d="M768 219.595v-11.188l8.165 8.183h-3.694l2.28 5.419-1.844.774-2.37-5.637-2.537 2.449Z"
+          fill="#000"
+        />
+      </motion.g>
+
+      {/* FORK BUTTON */}
       <motion.rect
         x={1366}
         y={10}
@@ -279,12 +300,72 @@ export const Users = (props) => {
         rx={4}
         fill="#fff"
         fillOpacity={0.09}
+        stroke="#fff"
+        strokeOpacity={0.05}
         style={{
-          opacity: button2Opacity,
+          willChange: "opacity, stroke-opacity",
+          opacity: buttonForkOpacity,
+          strokeOpacity: buttonForkStrokeOpacity,
         }}
       />
 
-      {/* CURRENT USER CURSOR */}
+      {/* SHARE BUTTON */}
+
+      <motion.rect
+        x={1304}
+        y={10}
+        width={52}
+        height={28}
+        rx={4}
+        fill="#fff"
+        fillOpacity={0.09}
+        style={{ willChange: "opacity", opacity: buttonShareOpacity }}
+      />
+
+      {/* EDITOR CURSOR 2 - VSCODE USER   */}
+      <g>
+        <Cursor2Pointer>
+          <rect x={555} y={460} width={2} height={20} fill="#00A3FF" />
+        </Cursor2Pointer>
+
+        <circle
+          cx={223}
+          cy={468}
+          r={9}
+          fill="url(#user2pic)"
+          stroke="#00B2FF"
+          strokeWidth={1.125}
+        />
+      </g>
+
+      {/* EDITOR CURSOR 3 - MOBILE USER   */}
+      <g>
+        <Cursor3PointerX>
+          <rect x={396} y={290} width={300} height={20} fill="#151515" />
+          <path
+            d="M399.971 302.807C400.175 302.807 400.36 302.856 400.524 302.953C400.688 303.047 400.817 303.176 400.911 303.34C401.004 303.5 401.051 303.678 401.051 303.873C401.051 304.038 401.031 304.202 400.991 304.367C400.951 304.531 400.884 304.716 400.791 304.92L399.711 307.393H398.697L399.337 304.76C399.204 304.662 399.097 304.536 399.017 304.38C398.942 304.22 398.904 304.051 398.904 303.873C398.904 303.678 398.951 303.5 399.044 303.34C399.137 303.176 399.264 303.047 399.424 302.953C399.588 302.856 399.771 302.807 399.971 302.807Z"
+            fill="#86897A"
+          />
+          <Cursor3PointerY>
+            <rect x={396} y={290} width={2} height={20} fill="#F90" />
+          </Cursor3PointerY>
+        </Cursor3PointerX>
+
+        <Avatar3PointerY>
+          <rect x={214} y={291} width={18} height={18} rx={9} fill="url(#i)" />
+          <rect
+            x={214.562}
+            y={291.562}
+            width={16.875}
+            height={16.875}
+            rx={8.438}
+            stroke="#F90"
+            strokeWidth={1.125}
+          />
+        </Avatar3PointerY>
+      </g>
+
+      {/* EDITOR CURSOR - CURRENT USER   */}
       <CurrentUserCursorGroup>
         <rect
           id="highlight"
@@ -307,31 +388,7 @@ export const Users = (props) => {
         </CurrentUserPointer>
       </CurrentUserCursorGroup>
 
-      {/* BUTTON ACTIVE */}
-      <motion.rect
-        x={1366.5}
-        y={10.5}
-        width={43}
-        height={27}
-        rx={1.5}
-        stroke="#fff"
-        strokeOpacity={0.05}
-        style={{ opacity: button3Opacity }}
-      />
-
-      {/* BUTTON 1 HOVER */}
-      <motion.rect
-        x={1304}
-        y={10}
-        width={52}
-        height={28}
-        rx={4}
-        fill="#fff"
-        fillOpacity={0.09}
-        style={{ willChange: "opacity", opacity: button1Opacity }}
-      />
-
-      {/* AVATAR 3 */}
+      {/* HEADER AVATAR 3 - MOBILE */}
       <motion.g
         style={{
           willChange: "opacity",
@@ -372,7 +429,7 @@ export const Users = (props) => {
         </motion.g>
       </motion.g>
 
-      {/* AVATAR 2 */}
+      {/* HEADER AVATAR 2 - VSCODE USER */}
       <motion.g
         style={{
           willChange: "transform, opacity",
@@ -393,8 +450,7 @@ export const Users = (props) => {
           fill="url(#d)"
         />
 
-        {/* VSCODE */}
-
+        {/* VSCODE ICON */}
         <motion.g style={{ willChange: "transform", scale: avatar2IconScale }}>
           <circle cx={1220.5} cy={31.5} r={7.5} fill="#0F0E0E" />
           <path
@@ -406,27 +462,24 @@ export const Users = (props) => {
         </motion.g>
       </motion.g>
 
-      {/* AVATAR 1 */}
+      {/* HEADER AVATAR 1 - CURRENT USER */}
       <motion.g
         style={{
           willChange: "transform",
           x: avatar1X,
         }}
       >
-        <rect x={1163} y={11} width={24} height={24} rx={12} fill="url(#b)" />
-
-        <rect
-          x={1163.75}
-          y={11.75}
-          width={22.5}
-          height={22.5}
-          rx={11.25}
+        <circle
+          cx={1175}
+          cy={23}
+          r={12}
           stroke="#7B61FF"
           strokeWidth={1.5}
+          fill="url(#b)"
         />
       </motion.g>
 
-      {/* DEVTOOLS BUTTON */}
+      {/* HEADER DEVTOOLS BUTTON + */}
       <motion.path
         style={{
           willChange: "transform",
@@ -437,72 +490,7 @@ export const Users = (props) => {
         strokeLinecap="round"
       />
 
-      {/* user 2 - VSCODE */}
-      <g>
-        {/* USER 2 CURSOR */}
-        <Cursor2Pointer>
-          <rect x={555} y={460} width={2} height={20} fill="#00A3FF" />
-        </Cursor2Pointer>
-
-        {/* USER 2 AVATAR */}
-        <circle
-          cx={223}
-          cy={468}
-          r={9}
-          fill="url(#user2pic)"
-          stroke="#00B2FF"
-          strokeWidth={1.125}
-        />
-      </g>
-
-      {/* user 3 - MOBILE*/}
-      <g>
-        {/* USER 3 CURSOR */}
-
-        <Cursor3PointerX>
-          <rect x={396} y={290} width={300} height={20} fill="#151515" />
-          <path
-            d="M399.971 302.807C400.175 302.807 400.36 302.856 400.524 302.953C400.688 303.047 400.817 303.176 400.911 303.34C401.004 303.5 401.051 303.678 401.051 303.873C401.051 304.038 401.031 304.202 400.991 304.367C400.951 304.531 400.884 304.716 400.791 304.92L399.711 307.393H398.697L399.337 304.76C399.204 304.662 399.097 304.536 399.017 304.38C398.942 304.22 398.904 304.051 398.904 303.873C398.904 303.678 398.951 303.5 399.044 303.34C399.137 303.176 399.264 303.047 399.424 302.953C399.588 302.856 399.771 302.807 399.971 302.807Z"
-            fill="#86897A"
-          />
-          <Cursor3PointerY>
-            <rect x={396} y={290} width={2} height={20} fill="#F90" />
-          </Cursor3PointerY>
-        </Cursor3PointerX>
-
-        <Avatar3PointerY>
-          <rect x={214} y={291} width={18} height={18} rx={9} fill="url(#i)" />
-          <rect
-            x={214.562}
-            y={291.562}
-            width={16.875}
-            height={16.875}
-            rx={8.438}
-            stroke="#F90"
-            strokeWidth={1.125}
-          />
-        </Avatar3PointerY>
-      </g>
-
-      {/* CURSOR */}
-      <motion.g
-        style={{
-          willChange: "transform, opacity",
-          x: cursorX,
-          y: cursorY,
-          scale: cursorScale,
-          opacity: cursorOpacity,
-        }}
-      >
-        <path
-          d="M767 206v16.015l3.225-3.131 2.254 5.34 3.605-1.535-2.1-5.07h4.607L767 206Z"
-          fill="#fff"
-        />
-        <path
-          d="M768 219.595v-11.188l8.165 8.183h-3.694l2.28 5.419-1.844.774-2.37-5.637-2.537 2.449Z"
-          fill="#000"
-        />
-      </motion.g>
+      {/* DEFS */}
 
       <defs>
         <pattern
