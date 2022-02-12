@@ -26,30 +26,30 @@ export function Intro() {
 
   // keyframe
   const keyframe = (value) => {
-    return containerTop + (containerHeight / 52) * value;
+    return containerTop + (containerHeight / 56) * value;
   };
 
   // content 1
   const contentOpacity1 = useTransform(
     scrollY,
-    [keyframe(12), keyframe(13), keyframe(15), keyframe(16)],
+    [keyframe(16), keyframe(17), keyframe(19), keyframe(20)],
     [0, 1, 1, 0]
   );
   const contentY1 = useTransform(
     scrollY,
-    [keyframe(12), keyframe(16)],
+    [keyframe(16), keyframe(20)],
     ["5%", "-5%"]
   );
 
   // content 2
   const contentOpacity2 = useTransform(
     scrollY,
-    [keyframe(20), keyframe(21), keyframe(23), keyframe(24)],
+    [keyframe(24), keyframe(25), keyframe(27), keyframe(28)],
     [0, 1, 1, 0]
   );
   const contentY2 = useTransform(
     scrollY,
-    [keyframe(20), keyframe(24)],
+    [keyframe(24), keyframe(28)],
     ["5%", "-5%"]
   );
 
@@ -57,25 +57,25 @@ export function Intro() {
 
   const branchOpacity = useTransform(
     scrollY,
-    [keyframe(36), keyframe(37)],
+    [keyframe(40), keyframe(41)],
     [0, 1]
   );
 
   const branchOriginalOpacity = useTransform(
     scrollY,
-    [keyframe(42), keyframe(44)],
+    [keyframe(46), keyframe(48)],
     [1, 0]
   );
 
   // content 3
   const contentOpacity3 = useTransform(
     scrollY,
-    [keyframe(44), keyframe(45)],
+    [keyframe(48), keyframe(49)],
     [0, 1]
   );
   const contentY3 = useTransform(
     scrollY,
-    [keyframe(44), keyframe(48)],
+    [keyframe(48), keyframe(52)],
     ["10%", "0%"]
   );
 
@@ -96,7 +96,7 @@ export function Intro() {
   // return
   return (
     <MainSection ref={container}>
-      <FakeSection css={{ height: "300vh" }} />
+      <FakeSection css={{ height: "400vh" }} />
 
       {/* Not only share code. */}
       <Section position="right" style={{ paddingTop: 0 }}>

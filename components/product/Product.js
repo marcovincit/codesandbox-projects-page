@@ -47,40 +47,47 @@ export const Product = () => {
 
   //  SCENE 1
 
+  // scene1Display
+  const scene1Display = useTransform(
+    scrollY,
+    [keyframe(4.5), keyframe(4.5) + 1],
+    [1, 0]
+  );
+
   // scene1Opacity
   const scene1Opacity = useTransform(
     scrollY,
-    [keyframe(3), keyframe(3) + 1],
+    [keyframe(3), keyframe(4) + 1],
     [1, 0]
   );
 
   // scene1Scale
   const scene1Scale = useTransform(
     scrollY,
-    [keyframe(0), keyframe(1), keyframe(3), keyframe(4)],
-    [1, 2.5, 2.5, 1],
+    [keyframe(0), keyframe(1), keyframe(3), keyframe(4.5), keyframe(5)],
+    [1, 2.5, 2.5, 2.5, 0.75],
     {
-      ease: [easeInOutCubic, easeInOutCubic, easeInCubic],
+      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic, easeInOutCubic],
     }
   );
 
   //   scene1X
   const scene1X = useTransform(
     scrollY,
-    [keyframe(0), keyframe(0.8), keyframe(3)],
-    ["0%", "-40%", "-60%"],
+    [keyframe(0), keyframe(0.8), keyframe(4.5), keyframe(5)],
+    ["0%", "-50%", "-80%", "-10%"],
     {
-      ease: [easeInOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic],
     }
   );
 
   //  scene1Y
   const scene1Y = useTransform(
     scrollY,
-    [keyframe(0), keyframe(1), keyframe(3)],
-    ["60rem", "70rem", "70rem"],
+    [keyframe(0), keyframe(1), keyframe(3), keyframe(4.5), keyframe(5)],
+    ["60rem", "70rem", "70rem", "70rem", "30.4rem"],
     {
-      ease: [easeInOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic, easeInOutCubic],
     }
   );
 
@@ -90,12 +97,12 @@ export const Product = () => {
   const scene2Opacity = useTransform(
     scrollY,
     [
-      keyframe(3),
-      keyframe(3) + 1,
-      keyframe(8.7),
-      keyframe(8.7) + 1,
-      keyframe(11.5),
-      keyframe(12),
+      keyframe(4),
+      keyframe(4.5),
+      keyframe(9.7),
+      keyframe(9.7) + 1,
+      keyframe(12.5),
+      keyframe(13),
     ],
     [0, 1, 1, 0.5, 1, 0]
   );
@@ -103,11 +110,10 @@ export const Product = () => {
   // scene2Scale
   const scene2Scale = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    // [2.8, 1, 1, 0.5834861],
-    [2.5, 1, 1, 0.52],
+    [keyframe(4.5), keyframe(5), keyframe(10), keyframe(11)],
+    [3.25, 1, 1, 0.52],
     {
-      ease: [easeInOutCubic, easeOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic],
     }
   );
 
@@ -115,8 +121,8 @@ export const Product = () => {
   const scene2X = useTransform(
     scrollY,
     [
-      keyframe(3),
-      keyframe(4),
+      keyframe(0.8),
+      keyframe(4.5),
       keyframe(5),
       keyframe(6),
       keyframe(7),
@@ -124,27 +130,30 @@ export const Product = () => {
       keyframe(9),
       keyframe(9) + 1,
       keyframe(10),
+      keyframe(11),
     ],
     [
-      "-60%",
-      "50%",
-      "55%",
-      "-50%",
-      "-55%",
-      "0%",
-      "0%",
+      "calc(180% + 0rem)",
+      "calc(117.3% + 0rem)",
+      "calc(50% - 0rem)",
+      "calc(55% - 0rem)",
+      "calc(-50% - 0rem)",
+      "calc(-55% - 0rem)",
+      "calc(0% - 0rem)",
+      "calc(0% - 0rem)",
       "calc(0% - 0rem)",
       "calc(-50% - 4rem)",
     ],
     {
       ease: [
         easeInOutCubic,
-        easeInCubic,
-        easeInCubic,
-        easeOutCubic,
         easeInOutCubic,
-        linear,
-        linear,
+        easeInOutCubic,
+        easeInOutCubic,
+        easeInOutCubic,
+        easeInOutCubic,
+        easeInOutCubic,
+        easeInOutCubic,
         easeInOutCubic,
       ],
     }
@@ -153,17 +162,23 @@ export const Product = () => {
   //  scene2Y
   const scene2Y = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    ["calc(70rem)", "calc(0rem)", "calc(0rem)", "calc(-2rem)"],
+    [keyframe(3), keyframe(4.5), keyframe(5), keyframe(10), keyframe(11)],
+    [
+      "calc(70rem - 143.2%)",
+      "calc(70rem - 143.2%)",
+      "calc(0rem - 0%)",
+      "calc(0rem - 0%)",
+      "calc(-2rem - 0%)",
+    ],
     {
-      ease: [easeInOutCubic, linear, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic, easeInOutCubic],
     }
   );
 
   // scene2Origin
   const scene2Origin = useTransform(
     scrollY,
-    [keyframe(9), keyframe(9) + 1],
+    [keyframe(10), keyframe(10) + 1],
     ["50% 50%", "100% 50%"]
   );
 
@@ -172,73 +187,43 @@ export const Product = () => {
   // scene3Opacity
   const scene3Opacity = useTransform(
     scrollY,
-    [keyframe(8.7), keyframe(8.7) + 1],
+    [keyframe(9.7), keyframe(9.7) + 1],
     [0, 1]
   );
 
   // scene3Scale
   const scene3Scale = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    // [2.8, 1, 1, 0.5834861],
-    [2.8, 1, 1, 0.52],
+    [keyframe(10), keyframe(11)],
+    [1, 0.52],
     {
-      ease: [easeInCubic, easeOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic],
     }
   );
 
   //   scene3X
   const scene3X = useTransform(
     scrollY,
-    [
-      keyframe(3),
-      keyframe(4),
-      keyframe(5),
-      keyframe(6),
-      keyframe(7),
-      keyframe(8),
-      keyframe(9),
-      keyframe(9) + 1,
-      keyframe(10),
-    ],
-    [
-      "124.75%",
-      "50%",
-      "55%",
-      "-50%",
-      "-55%",
-      "0%",
-      "0%",
-      "calc(0% + 0rem)",
-      "calc(50% + 4rem)",
-    ],
+    [keyframe(10), keyframe(11)],
+    ["calc(0% + 0rem)", "calc(50% + 4rem)"],
     {
-      ease: [
-        easeInCubic,
-        easeOutCubic,
-        easeInCubic,
-        easeOutCubic,
-        easeInOutCubic,
-        linear,
-        linear,
-        easeInOutCubic,
-      ],
+      ease: [easeInOutCubic],
     }
   );
 
   //  scene3Y
   const scene3Y = useTransform(
     scrollY,
-    [keyframe(3), keyframe(4), keyframe(9), keyframe(10)],
-    ["-49rem", "0rem", "0rem", "-2rem"],
+    [keyframe(10), keyframe(11)],
+    ["0rem", "-2rem"],
     {
-      ease: [easeInCubic, linear, easeInOutCubic],
+      ease: [easeInOutCubic],
     }
   );
 
   const scene3StageY = useTransform(
     scrollY,
-    [keyframe(13), keyframe(14)],
+    [keyframe(14), keyframe(15)],
     ["0%", "-100%"],
     {
       ease: [linear],
@@ -248,7 +233,7 @@ export const Product = () => {
   // scene3Origin
   const scene3Origin = useTransform(
     scrollY,
-    [keyframe(9), keyframe(9) + 1],
+    [keyframe(10), keyframe(10) + 1],
     ["50% 50%", "0% 50%"]
   );
 
@@ -257,7 +242,7 @@ export const Product = () => {
   // newBranchOpacity
   const newBranchOpacity = useTransform(
     scrollY,
-    [keyframe(10.5), keyframe(10.5) + 1],
+    [keyframe(11.5), keyframe(11.5) + 1],
     [0, 1]
   );
 
@@ -265,7 +250,9 @@ export const Product = () => {
     <section>
       {/* SCENE 1 */}
       <Stage
+        as={motion.div}
         css={{
+          zIndex: 200,
           "@large": {
             marginTop: "-10rem",
           },
@@ -278,10 +265,14 @@ export const Product = () => {
             y: scene1Y,
             x: scene1X,
             z: 0,
-            opacity: scene1Opacity,
           }}
         >
           <Image
+            as={motion.img}
+            style={{
+              willChange: "transform, opacity",
+              opacity: scene1Opacity,
+            }}
             css={
               {
                 // transform: "translateZ(0)",
@@ -293,12 +284,16 @@ export const Product = () => {
             src="images/screenshots/product/default.svg"
           />
 
-          <Interactions />
+          <Interactions hideEditorUsers />
         </motion.div>
       </Stage>
 
       {/* SCENE 2 */}
-      <Stage>
+      <Stage
+        css={{
+          zIndex: 100,
+        }}
+      >
         <motion.div
           style={{
             willChange: "transform, opacity",

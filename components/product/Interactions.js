@@ -91,6 +91,7 @@ const Avatar3PointerY = styled("g", {
 });
 
 export const Interactions = (props) => {
+  const { hideEditorUsers } = props;
   const { scrollY } = useViewportScroll();
 
   const windowSize = useWindowSize();
@@ -104,30 +105,63 @@ export const Interactions = (props) => {
   // devtools
   const devtoolsX = useTransform(
     scrollY,
-    [keyframe(0.5), keyframe(1.25), keyframe(2), keyframe(2.75)],
-    ["72px", "36px", "0px", "0px"],
+    [keyframe(0.5), keyframe(1.25), keyframe(2)],
+    ["72px", "36px", "0px"],
     {
-      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic],
+    }
+  );
+
+  const devtoolsScale = useTransform(
+    scrollY,
+    [keyframe(3.2), keyframe(3.7)],
+    [1, 0],
+    {
+      ease: [easeInOutCubic],
     }
   );
 
   // avatar 1
   const avatar1X = useTransform(
     scrollY,
-    [keyframe(0.5), keyframe(1.25), keyframe(2), keyframe(2.75)],
-    ["72px", "36px", "0px", "0px"],
+    [keyframe(0.5), keyframe(1.25), keyframe(2)],
+    ["72px", "36px", "0px"],
     {
-      ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic, easeInOutCubic],
+    }
+  );
+
+  const avatar1CircleScale = useTransform(
+    scrollY,
+    [keyframe(3.3), keyframe(3.6)],
+    [1, 0],
+    {
+      ease: [easeInCubic],
+    }
+  );
+
+  const avatar1Scale = useTransform(
+    scrollY,
+    [keyframe(3.3), keyframe(3.6)],
+    [1, 0],
+    {
+      ease: [easeInOutCubic],
     }
   );
 
   // avatar 2
+  const avatar2Opacity = useTransform(
+    scrollY,
+    [keyframe(0.5), keyframe(1.25), keyframe(4.5), keyframe(5)],
+    [0, 1, 1, 0]
+  );
+
   const avatar2X = useTransform(
     scrollY,
-    [keyframe(1.25), keyframe(2), keyframe(2.75)],
-    ["36px", "0px", "0px"],
+    [keyframe(1.25), keyframe(2)],
+    ["36px", "0px"],
     {
-      ease: [easeInOutCubic, easeInOutCubic],
+      ease: [easeInOutCubic],
     }
   );
 
@@ -151,45 +185,45 @@ export const Interactions = (props) => {
 
   const avatar2IconScale = useTransform(
     scrollY,
-    [keyframe(1), keyframe(1.25)],
-    [0, 1],
+    [keyframe(1), keyframe(1.25), keyframe(3), keyframe(3.5)],
+    [0, 1, 1, 0],
     {
-      ease: [easeOutCubic],
+      ease: [easeOutCubic, linear, easeInOutCubic],
     }
   );
 
   // avatar 3
   const avatar3CircleScale = useTransform(
     scrollY,
-    [keyframe(1.25), keyframe(2)],
-    [0, 1],
+    [keyframe(1.25), keyframe(2), keyframe(3.2), keyframe(3.5)],
+    [0, 1, 1, 0],
     {
-      ease: [easeOutCubic],
+      ease: [easeOutCubic, linear, easeInCubic],
     }
   );
 
   const avatar3Scale = useTransform(
     scrollY,
-    [keyframe(1.25), keyframe(2)],
-    [0, 1],
+    [keyframe(1.25), keyframe(2), keyframe(3.2), keyframe(3.5)],
+    [0, 1, 1, 0],
     {
-      ease: [easeInOutCubic],
+      ease: [easeInOutCubic, linear, easeInOutCubic],
     }
   );
 
   const avatar3IconScale = useTransform(
     scrollY,
-    [keyframe(1.75), keyframe(2)],
-    [0, 1],
+    [keyframe(1.75), keyframe(2), keyframe(3), keyframe(3.2)],
+    [0, 1, 1, 0],
     {
-      ease: [easeOutCubic],
+      ease: [easeOutCubic, linear, easeInCubic],
     }
   );
 
   // CURSOR
   const cursorOpacity = useTransform(
     scrollY,
-    [keyframe(6.5), keyframe(7.5), keyframe(8.7), keyframe(8.7) + 1],
+    [keyframe(7.5), keyframe(8.5), keyframe(9.7), keyframe(9.7) + 1],
     [0, 1, 1, 0],
     {
       ease: [easeInOutQuad, linear, linear],
@@ -198,7 +232,7 @@ export const Interactions = (props) => {
 
   const cursorX = useTransform(
     scrollY,
-    [keyframe(7), keyframe(8)],
+    [keyframe(8), keyframe(9)],
     ["0px", "620px"],
     {
       ease: [easeInOutQuad],
@@ -207,7 +241,7 @@ export const Interactions = (props) => {
 
   const cursorY = useTransform(
     scrollY,
-    [keyframe(7), keyframe(8)],
+    [keyframe(8), keyframe(9)],
     ["0px", "-178px"],
     {
       ease: [easeOutQuad],
@@ -216,8 +250,8 @@ export const Interactions = (props) => {
 
   const cursorScale = useTransform(
     scrollY,
-    [keyframe(7.9), keyframe(8.3), keyframe(8.5)],
-    [1.5, 2, 1.5],
+    [keyframe(8.9), keyframe(9.3), keyframe(9.5)],
+    [1.3, 2, 1.3],
     {
       ease: [easeInQuad, easeOutQuad],
     }
@@ -227,7 +261,7 @@ export const Interactions = (props) => {
 
   const buttonShareOpacity = useTransform(
     scrollY,
-    [keyframe(7.75), keyframe(7.8), keyframe(7.9)],
+    [keyframe(8.75), keyframe(8.8), keyframe(8.9)],
     [0, 1, 0],
     {
       ease: [linear, linear],
@@ -238,7 +272,7 @@ export const Interactions = (props) => {
 
   const buttonForkOpacity = useTransform(
     scrollY,
-    [keyframe(7.9), keyframe(8), keyframe(8.7), keyframe(8.7)],
+    [keyframe(8.9), keyframe(9), keyframe(9.7), keyframe(9.7)],
     [0, 1, 1, 0],
     {
       ease: [linear, linear, linear],
@@ -247,7 +281,7 @@ export const Interactions = (props) => {
 
   const buttonForkStrokeOpacity = useTransform(
     scrollY,
-    [keyframe(8.3), keyframe(8.5), keyframe(8.7)],
+    [keyframe(9.3), keyframe(9.5), keyframe(9.7)],
     [0, 0.1, 0],
     {
       ease: [easeInQuad, easeOutQuad],
@@ -264,6 +298,7 @@ export const Interactions = (props) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
       style={{
+        willChange: "transform",
         position: "absolute",
         top: 0,
         left: 0,
@@ -322,72 +357,6 @@ export const Interactions = (props) => {
         style={{ willChange: "opacity", opacity: buttonShareOpacity }}
       />
 
-      {/* EDITOR CURSOR 2 - VSCODE USER   */}
-      <g>
-        <Cursor2Pointer>
-          <rect x={555} y={460} width={2} height={20} fill="#00A3FF" />
-        </Cursor2Pointer>
-
-        <circle
-          cx={223}
-          cy={468}
-          r={9}
-          fill="url(#user2pic)"
-          stroke="#00B2FF"
-          strokeWidth={1.125}
-        />
-      </g>
-
-      {/* EDITOR CURSOR 3 - MOBILE USER   */}
-      <g>
-        <Cursor3PointerX>
-          <rect x={396} y={290} width={300} height={20} fill="#151515" />
-          <path
-            d="M399.971 302.807C400.175 302.807 400.36 302.856 400.524 302.953C400.688 303.047 400.817 303.176 400.911 303.34C401.004 303.5 401.051 303.678 401.051 303.873C401.051 304.038 401.031 304.202 400.991 304.367C400.951 304.531 400.884 304.716 400.791 304.92L399.711 307.393H398.697L399.337 304.76C399.204 304.662 399.097 304.536 399.017 304.38C398.942 304.22 398.904 304.051 398.904 303.873C398.904 303.678 398.951 303.5 399.044 303.34C399.137 303.176 399.264 303.047 399.424 302.953C399.588 302.856 399.771 302.807 399.971 302.807Z"
-            fill="#86897A"
-          />
-          <Cursor3PointerY>
-            <rect x={396} y={290} width={2} height={20} fill="#F90" />
-          </Cursor3PointerY>
-        </Cursor3PointerX>
-
-        <Avatar3PointerY>
-          <rect x={214} y={291} width={18} height={18} rx={9} fill="url(#i)" />
-          <rect
-            x={214.562}
-            y={291.562}
-            width={16.875}
-            height={16.875}
-            rx={8.438}
-            stroke="#F90"
-            strokeWidth={1.125}
-          />
-        </Avatar3PointerY>
-      </g>
-
-      {/* EDITOR CURSOR - CURRENT USER   */}
-      <CurrentUserCursorGroup>
-        <rect
-          id="highlight"
-          x="276"
-          y="649"
-          width="550"
-          height="24"
-          fill="white"
-          fillOpacity="0.03"
-        />
-        <CurrentUserPointer>
-          <rect x="379" y="651" width="1" height="20" fill="#AEAFAD">
-            <animate
-              attributeName="fill-opacity"
-              values="1;0;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </rect>
-        </CurrentUserPointer>
-      </CurrentUserCursorGroup>
-
       {/* HEADER AVATAR 3 - MOBILE */}
       <motion.g
         style={{
@@ -434,7 +403,7 @@ export const Interactions = (props) => {
         style={{
           willChange: "transform, opacity",
           x: avatar2X,
-          opacity: avatar2Scale,
+          opacity: avatar2Opacity,
           scale: avatar2CircleScale,
         }}
       >
@@ -446,8 +415,10 @@ export const Interactions = (props) => {
           }}
           cx={1210.5}
           cy={23}
-          r={10.5}
+          r={12}
           fill="url(#d)"
+          stroke="#00B2FF"
+          strokeWidth={1.5}
         />
 
         {/* VSCODE ICON */}
@@ -467,9 +438,15 @@ export const Interactions = (props) => {
         style={{
           willChange: "transform",
           x: avatar1X,
+          scale: avatar1CircleScale,
         }}
       >
-        <circle
+        <circle cx={1175} cy={23} r={12} fill="#7B61FF" />
+        <motion.circle
+          style={{
+            willChange: "transform",
+            scale: avatar1Scale,
+          }}
           cx={1175}
           cy={23}
           r={12}
@@ -484,11 +461,90 @@ export const Interactions = (props) => {
         style={{
           willChange: "transform",
           x: devtoolsX,
+          scale: devtoolsScale,
         }}
         d="M1104.5 24h14m-7-7v14"
         stroke="#999"
         strokeLinecap="round"
       />
+
+      {/* EDITOR CURSOR 2 - VSCODE USER   */}
+      <g
+        style={{
+          opacity: hideEditorUsers ? 0 : 1,
+        }}
+      >
+        <Cursor2Pointer>
+          <rect x={555} y={460} width={2} height={20} fill="#00A3FF" />
+        </Cursor2Pointer>
+
+        <circle
+          cx={223}
+          cy={468}
+          r={9}
+          fill="url(#user2pic)"
+          stroke="#00B2FF"
+          strokeWidth={1.125}
+        />
+      </g>
+
+      {/* EDITOR CURSOR 3 - MOBILE USER   */}
+      <g
+        style={{
+          opacity: hideEditorUsers ? 0 : 1,
+        }}
+      >
+        <Cursor3PointerX>
+          <rect x={396} y={290} width={300} height={20} fill="#151515" />
+          <path
+            d="M399.971 302.807C400.175 302.807 400.36 302.856 400.524 302.953C400.688 303.047 400.817 303.176 400.911 303.34C401.004 303.5 401.051 303.678 401.051 303.873C401.051 304.038 401.031 304.202 400.991 304.367C400.951 304.531 400.884 304.716 400.791 304.92L399.711 307.393H398.697L399.337 304.76C399.204 304.662 399.097 304.536 399.017 304.38C398.942 304.22 398.904 304.051 398.904 303.873C398.904 303.678 398.951 303.5 399.044 303.34C399.137 303.176 399.264 303.047 399.424 302.953C399.588 302.856 399.771 302.807 399.971 302.807Z"
+            fill="#86897A"
+          />
+          <Cursor3PointerY>
+            <rect x={396} y={290} width={2} height={20} fill="#F90" />
+          </Cursor3PointerY>
+        </Cursor3PointerX>
+
+        <Avatar3PointerY>
+          <rect x={214} y={291} width={18} height={18} rx={9} fill="url(#i)" />
+          <rect
+            x={214.562}
+            y={291.562}
+            width={16.875}
+            height={16.875}
+            rx={8.438}
+            stroke="#F90"
+            strokeWidth={1.125}
+          />
+        </Avatar3PointerY>
+      </g>
+
+      {/* EDITOR CURSOR - CURRENT USER   */}
+      <CurrentUserCursorGroup
+        style={{
+          opacity: hideEditorUsers ? 0 : 1,
+        }}
+      >
+        <rect
+          id="highlight"
+          x="276"
+          y="649"
+          width="550"
+          height="24"
+          fill="white"
+          fillOpacity="0.03"
+        />
+        <CurrentUserPointer>
+          <rect x="379" y="651" width="1" height="20" fill="#AEAFAD">
+            <animate
+              attributeName="fill-opacity"
+              values="1;0;1"
+              dur="1s"
+              repeatCount="indefinite"
+            />
+          </rect>
+        </CurrentUserPointer>
+      </CurrentUserCursorGroup>
 
       {/* DEFS */}
 
