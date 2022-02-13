@@ -90,8 +90,7 @@ const Avatar3PointerY = styled("g", {
   `,
 });
 
-export const Interactions = (props) => {
-  const { hideEditorUsers } = props;
+export const Scene2 = (props) => {
   const { scrollY } = useViewportScroll();
 
   const windowSize = useWindowSize();
@@ -102,128 +101,26 @@ export const Interactions = (props) => {
     return windowHeight * value;
   };
 
-  // devtools
-  const devtoolsX = useTransform(
-    scrollY,
-    [keyframe(0.5), keyframe(1.25), keyframe(2)],
-    ["72px", "36px", "0px"],
-    {
-      ease: [easeInOutCubic, easeInOutCubic],
-    }
-  );
+  // AVATAR 2 EDITOR
 
-  const devtoolsScale = useTransform(
-    scrollY,
-    [keyframe(3.2), keyframe(3.7)],
-    [1, 0],
-    {
-      ease: [easeInOutCubic],
-    }
-  );
-
-  // avatar 1
-  const avatar1X = useTransform(
-    scrollY,
-    [keyframe(0.5), keyframe(1.25), keyframe(2)],
-    ["72px", "36px", "0px"],
-    {
-      ease: [easeInOutCubic, easeInOutCubic],
-    }
-  );
-
-  const avatar1CircleScale = useTransform(
-    scrollY,
-    [keyframe(3.3), keyframe(3.6)],
-    [1, 0],
-    {
-      ease: [easeInCubic],
-    }
-  );
-
-  const avatar1Scale = useTransform(
-    scrollY,
-    [keyframe(3.3), keyframe(3.6)],
-    [1, 0],
-    {
-      ease: [easeInOutCubic],
-    }
-  );
-
-  // avatar 2
   const avatar2Opacity = useTransform(
     scrollY,
-    [keyframe(0.5), keyframe(1.25), keyframe(4.5), keyframe(5)],
-    [0, 1, 1, 0]
+    [keyframe(5) - 1, keyframe(5)],
+    [0, 1]
   );
 
-  const avatar2X = useTransform(
-    scrollY,
-    [keyframe(1.25), keyframe(2)],
-    ["36px", "0px"],
-    {
-      ease: [easeInOutCubic],
-    }
-  );
+  // AVATAR 3 EDITOR
 
   const avatar2Scale = useTransform(
     scrollY,
-    [keyframe(0.5), keyframe(1.25)],
-    [0, 1],
-    {
-      ease: [easeInOutCubic],
-    }
-  );
-
-  const avatar2CircleScale = useTransform(
-    scrollY,
-    [keyframe(0.5), keyframe(1.25)],
-    [0, 1],
-    {
-      ease: [easeInOutCubic],
-    }
-  );
-
-  const avatar2IconScale = useTransform(
-    scrollY,
-    [keyframe(1), keyframe(1.25), keyframe(3), keyframe(3.5)],
-    [0, 1, 1, 0],
-    {
-      ease: [easeOutCubic, linear, easeInOutCubic],
-    }
-  );
-
-  // avatar 3
-  const avatar3CircleScale = useTransform(
-    scrollY,
-    [keyframe(1.25), keyframe(2), keyframe(3.2), keyframe(3.5)],
-    [0, 1, 1, 0],
-    {
-      ease: [easeOutCubic, linear, easeInCubic],
-    }
-  );
-
-  const avatar3Scale = useTransform(
-    scrollY,
-    [keyframe(1.25), keyframe(2), keyframe(3.2), keyframe(3.5)],
-    [0, 1, 1, 0],
-    {
-      ease: [easeInOutCubic, linear, easeInOutCubic],
-    }
-  );
-
-  const avatar3IconScale = useTransform(
-    scrollY,
-    [keyframe(1.75), keyframe(2), keyframe(3), keyframe(3.2)],
-    [0, 1, 1, 0],
-    {
-      ease: [easeOutCubic, linear, easeInCubic],
-    }
+    [keyframe(4), keyframe(4.8)],
+    [1, 1]
   );
 
   // CURSOR
   const cursorOpacity = useTransform(
     scrollY,
-    [keyframe(7.5), keyframe(8.5), keyframe(9.7), keyframe(9.7) + 1],
+    [keyframe(8), keyframe(8.2), keyframe(9.7), keyframe(9.7) + 1],
     [0, 1, 1, 0],
     {
       ease: [easeInOutQuad, linear, linear],
@@ -358,34 +255,11 @@ export const Interactions = (props) => {
       />
 
       {/* HEADER AVATAR 3 - MOBILE */}
-      <motion.g
-        style={{
-          willChange: "opacity",
-          opacity: avatar3CircleScale,
-        }}
-      >
-        <motion.circle
-          style={{
-            willChange: "transform",
-            scale: avatar3CircleScale,
-          }}
-          cx={1246.8}
-          cy={23}
-          r={12}
-          fill="#F90"
-        />
-        <motion.circle
-          style={{
-            willChange: "transform",
-            scale: avatar3Scale,
-          }}
-          cx={1246.8}
-          cy={23}
-          r={10.5}
-          fill="url(#f)"
-        />
+      <g>
+        <circle cx={1246.8} cy={23} r={12} fill="#F90" />
+        <circle cx={1246.8} cy={23} r={10.5} fill="url(#user3)" />
 
-        <motion.g style={{ willChange: "transform", scale: avatar3IconScale }}>
+        <g>
           <circle cx={1257.25} cy={31.5} r={7.5} fill="#0F0E0E" />
           <path
             xmlns="http://www.w3.org/2000/svg"
@@ -395,34 +269,23 @@ export const Interactions = (props) => {
             d="M1254.25 28.125C1254.25 27.2966 1254.92 26.625 1255.75 26.625H1258.75C1259.58 26.625 1260.25 27.2966 1260.25 28.125V34.875C1260.25 35.7034 1259.58 36.375 1258.75 36.375H1255.75C1254.92 36.375 1254.25 35.7034 1254.25 34.875V28.125ZM1259.25 28.3125H1255.25V34.6875H1259.25V28.3125Z"
             fill="#999999"
           />
-        </motion.g>
-      </motion.g>
+        </g>
+      </g>
 
       {/* HEADER AVATAR 2 - VSCODE USER */}
-      <motion.g
-        style={{
-          willChange: "transform, opacity",
-          x: avatar2X,
-          opacity: avatar2Opacity,
-          scale: avatar2CircleScale,
-        }}
-      >
+      <g>
         <circle cx={1210.5} cy={23} r={12} fill="#00B2FF" />
-        <motion.circle
-          style={{
-            willChange: "transform",
-            scale: avatar2Scale,
-          }}
+        <circle
           cx={1210.5}
           cy={23}
           r={12}
-          fill="url(#d)"
+          fill="url(#user2)"
           stroke="#00B2FF"
           strokeWidth={1.5}
         />
 
         {/* VSCODE ICON */}
-        <motion.g style={{ willChange: "transform", scale: avatar2IconScale }}>
+        <g>
           <circle cx={1220.5} cy={31.5} r={7.5} fill="#0F0E0E" />
           <path
             fillRule="evenodd"
@@ -430,48 +293,30 @@ export const Interactions = (props) => {
             d="M1222.33 36.301c.16.064.35.06.51-.02l2.13-1.03a.643.643 0 0 0 .37-.585V27.68c0-.25-.14-.477-.37-.586l-2.13-1.03a.629.629 0 0 0-.65.06.363.363 0 0 0-.08.066l-4.07 3.74-1.78-1.356a.428.428 0 0 0-.55.025l-.57.52a.431.431 0 0 0 0 .641l1.54 1.413-1.54 1.412a.431.431 0 0 0 0 .641l.57.521c.15.14.38.15.55.025l1.78-1.355 4.07 3.739a.61.61 0 0 0 .22.145Zm.43-7.489-3.1 2.36 3.1 2.362v-4.722Z"
             fill="#209EF0"
           />
-        </motion.g>
-      </motion.g>
+        </g>
+      </g>
 
       {/* HEADER AVATAR 1 - CURRENT USER */}
-      <motion.g
-        style={{
-          willChange: "transform",
-          x: avatar1X,
-          scale: avatar1CircleScale,
-        }}
-      >
+      <g>
         <circle cx={1175} cy={23} r={12} fill="#7B61FF" />
-        <motion.circle
-          style={{
-            willChange: "transform",
-            scale: avatar1Scale,
-          }}
+        <circle
           cx={1175}
           cy={23}
           r={12}
           stroke="#7B61FF"
           strokeWidth={1.5}
-          fill="url(#b)"
+          fill="url(#user1)"
         />
-      </motion.g>
+      </g>
 
       {/* HEADER DEVTOOLS BUTTON + */}
-      <motion.path
-        style={{
-          willChange: "transform",
-          x: devtoolsX,
-          scale: devtoolsScale,
-        }}
-        d="M1104.5 24h14m-7-7v14"
-        stroke="#999"
-        strokeLinecap="round"
-      />
+      <path d="M1104.5 24h14m-7-7v14" stroke="#999" strokeLinecap="round" />
 
       {/* EDITOR CURSOR 2 - VSCODE USER   */}
-      <g
+      <motion.g
         style={{
-          opacity: hideEditorUsers ? 0 : 1,
+          willTransform: "opacity",
+          opacity: avatar2Opacity,
         }}
       >
         <Cursor2Pointer>
@@ -482,49 +327,48 @@ export const Interactions = (props) => {
           cx={223}
           cy={468}
           r={9}
-          fill="url(#user2pic)"
+          fill="url(#user2)"
           stroke="#00B2FF"
           strokeWidth={1.125}
         />
-      </g>
+      </motion.g>
 
       {/* EDITOR CURSOR 3 - MOBILE USER   */}
-      <g
-        style={{
-          opacity: hideEditorUsers ? 0 : 1,
-        }}
-      >
+      <g>
         <Cursor3PointerX>
           <rect x={396} y={290} width={300} height={20} fill="#151515" />
+
+          <Cursor3PointerY>
+            <rect x={396} y={290} width={2} height={20} fill="#F90" />
+          </Cursor3PointerY>
+
+          {/* COMMA */}
           <path
             d="M399.971 302.807C400.175 302.807 400.36 302.856 400.524 302.953C400.688 303.047 400.817 303.176 400.911 303.34C401.004 303.5 401.051 303.678 401.051 303.873C401.051 304.038 401.031 304.202 400.991 304.367C400.951 304.531 400.884 304.716 400.791 304.92L399.711 307.393H398.697L399.337 304.76C399.204 304.662 399.097 304.536 399.017 304.38C398.942 304.22 398.904 304.051 398.904 303.873C398.904 303.678 398.951 303.5 399.044 303.34C399.137 303.176 399.264 303.047 399.424 302.953C399.588 302.856 399.771 302.807 399.971 302.807Z"
             fill="#86897A"
           />
-          <Cursor3PointerY>
-            <rect x={396} y={290} width={2} height={20} fill="#F90" />
-          </Cursor3PointerY>
         </Cursor3PointerX>
 
         <Avatar3PointerY>
-          <rect x={214} y={291} width={18} height={18} rx={9} fill="url(#i)" />
-          <rect
-            x={214.562}
-            y={291.562}
-            width={16.875}
-            height={16.875}
-            rx={8.438}
+          <motion.circle
+            style={{
+              willChange: "transform",
+              scale: avatar2Scale,
+            }}
+            width={18}
+            height={18}
+            cx={223}
+            cy={300}
+            r={9}
             stroke="#F90"
             strokeWidth={1.125}
+            fill="url(#user3)"
           />
         </Avatar3PointerY>
       </g>
 
       {/* EDITOR CURSOR - CURRENT USER   */}
-      <CurrentUserCursorGroup
-        style={{
-          opacity: hideEditorUsers ? 0 : 1,
-        }}
-      >
+      <CurrentUserCursorGroup>
         <rect
           id="highlight"
           x="276"
@@ -545,55 +389,6 @@ export const Interactions = (props) => {
           </rect>
         </CurrentUserPointer>
       </CurrentUserCursorGroup>
-
-      {/* DEFS */}
-
-      <defs>
-        <pattern
-          id="b"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
-          <use xlinkHref="#k" transform="scale(.01042)" />
-        </pattern>
-        <pattern
-          id="d"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
-          <use xlinkHref="#l" transform="scale(.01042)" />
-        </pattern>
-        <pattern
-          id="f"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
-          <use xlinkHref="#m" transform="scale(.01042)" />
-        </pattern>
-        <pattern
-          id="user2pic"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
-          <use xlinkHref="#l" transform="scale(.01042)" />
-        </pattern>
-        <pattern
-          id="i"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
-          <use xlinkHref="#m" transform="scale(.01042)" />
-        </pattern>
-
-        <image id="k" xlinkHref="images/screenshots/avatars/user1.jpg" />
-        <image id="l" xlinkHref="images/screenshots/avatars/user2.jpg" />
-        <image id="m" xlinkHref="images/screenshots/avatars/user3.jpg" />
-      </defs>
     </svg>
   );
 };
