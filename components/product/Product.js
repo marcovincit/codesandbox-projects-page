@@ -58,7 +58,7 @@ export const Product = () => {
   const scene1Opacity = useTransform(
     scrollY,
     [keyframe(2), keyframe(3)],
-    [1, 0]
+    ["1", "0"]
   );
 
   // scene1Scale
@@ -114,7 +114,7 @@ export const Product = () => {
       keyframe(12.5),
       keyframe(13),
     ],
-    [0, 1, 1, 0.5, 1, 0]
+    ["0", "1", "1", "0.5", "1", "0"]
   );
 
   // scene2Scale
@@ -178,7 +178,7 @@ export const Product = () => {
       "calc(-2rem - 0%)",
     ],
     {
-      ease: [easeOutCubic, easeInOutCubic, easeOutCubic],
+      ease: [easeOutCubic, easeInOutCubic, easeInOutCubic],
     }
   );
 
@@ -195,7 +195,7 @@ export const Product = () => {
   const scene3Opacity = useTransform(
     scrollY,
     [keyframe(9.7), keyframe(9.7) + 1],
-    [0, 1]
+    ["0", "1"]
   );
 
   // scene3Scale
@@ -250,11 +250,11 @@ export const Product = () => {
   const newBranchOpacity = useTransform(
     scrollY,
     [keyframe(11.5), keyframe(11.5) + 1],
-    [0, 1]
+    ["0", "1"]
   );
 
   return (
-    <section>
+    <section id="product-presentation">
       {/* SCENE 1 */}
       <Stage
         as={motion.div}

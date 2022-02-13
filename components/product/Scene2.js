@@ -94,6 +94,7 @@ export const Scene2 = (props) => {
   const { scrollY } = useViewportScroll();
 
   const windowSize = useWindowSize();
+
   const windowHeight = windowSize.height;
 
   // keyframe
@@ -106,7 +107,7 @@ export const Scene2 = (props) => {
   const avatar2Opacity = useTransform(
     scrollY,
     [keyframe(5) - 1, keyframe(5)],
-    [0, 1]
+    ["0", "1"]
   );
 
   // AVATAR 3 EDITOR
@@ -114,14 +115,14 @@ export const Scene2 = (props) => {
   const avatar2Scale = useTransform(
     scrollY,
     [keyframe(4), keyframe(4.8)],
-    [1, 1]
+    ["1", "1"]
   );
 
   // CURSOR
   const cursorOpacity = useTransform(
     scrollY,
     [keyframe(8), keyframe(8.2), keyframe(9.7), keyframe(9.7) + 1],
-    [0, 1, 1, 0],
+    ["0", "1", "1", "0"],
     {
       ease: [easeInOutQuad, linear, linear],
     }
@@ -148,7 +149,7 @@ export const Scene2 = (props) => {
   const cursorScale = useTransform(
     scrollY,
     [keyframe(8.9), keyframe(9.3), keyframe(9.5)],
-    [1.3, 2, 1.3],
+    ["1.3", "2", "1.3"],
     {
       ease: [easeInQuad, easeOutQuad],
     }
@@ -159,10 +160,7 @@ export const Scene2 = (props) => {
   const buttonShareOpacity = useTransform(
     scrollY,
     [keyframe(8.75), keyframe(8.8), keyframe(8.9)],
-    [0, 1, 0],
-    {
-      ease: [linear, linear],
-    }
+    ["0", "1", "0"]
   );
 
   // BUTTON FORK
@@ -170,19 +168,13 @@ export const Scene2 = (props) => {
   const buttonForkOpacity = useTransform(
     scrollY,
     [keyframe(8.9), keyframe(9), keyframe(9.7), keyframe(9.7)],
-    [0, 1, 1, 0],
-    {
-      ease: [linear, linear, linear],
-    }
+    ["0", "1", "1", "0"]
   );
 
   const buttonForkStrokeOpacity = useTransform(
     scrollY,
     [keyframe(9.3), keyframe(9.5), keyframe(9.7)],
-    [0, 0.1, 0],
-    {
-      ease: [easeInQuad, easeOutQuad],
-    }
+    ["0", "0.1", "0"]
   );
 
   return (

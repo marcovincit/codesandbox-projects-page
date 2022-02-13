@@ -36,7 +36,7 @@ export const Scene1 = (props) => {
   const devtoolsScale = useTransform(
     scrollY,
     [keyframe(2.2), keyframe(2.8)],
-    [1, 0],
+    ["1", "0"],
     {
       ease: [easeInOutCubic],
     }
@@ -55,7 +55,7 @@ export const Scene1 = (props) => {
   const avatar1CircleScale = useTransform(
     scrollY,
     [keyframe(2.2), keyframe(2.6)],
-    [1, 0],
+    ["1", "0"],
     {
       ease: [easeInCubic],
     }
@@ -64,7 +64,7 @@ export const Scene1 = (props) => {
   const avatar1Scale = useTransform(
     scrollY,
     [keyframe(2.2), keyframe(2.6)],
-    [1, 0],
+    ["1", " 0"],
     {
       ease: [easeInOutCubic],
     }
@@ -74,7 +74,7 @@ export const Scene1 = (props) => {
   const avatar2Opacity = useTransform(
     scrollY,
     [keyframe(0.5), keyframe(1.25), keyframe(5), keyframe(5) + 10],
-    [0, 1, 1, 0]
+    ["0", "1", "1", "0"]
   );
 
   const avatar2X = useTransform(
@@ -98,7 +98,7 @@ export const Scene1 = (props) => {
   const avatar2CircleScale = useTransform(
     scrollY,
     [keyframe(0.5), keyframe(1.25)],
-    [0, 1],
+    ["0", "1"],
     {
       ease: [easeInOutCubic],
     }
@@ -107,7 +107,7 @@ export const Scene1 = (props) => {
   const avatar2IconScale = useTransform(
     scrollY,
     [keyframe(1), keyframe(1.25), keyframe(2.2), keyframe(2.8)],
-    [0, 1, 1, 0],
+    ["0", "1", "1", "0"],
     {
       ease: [easeOutCubic, linear, easeInOutCubic],
     }
@@ -117,7 +117,7 @@ export const Scene1 = (props) => {
   const avatar3CircleScale = useTransform(
     scrollY,
     [keyframe(1.25), keyframe(2), keyframe(2.6), keyframe(2.8)],
-    [0, 1, 1, 0],
+    ["0", "1", "1", "0"],
     {
       ease: [easeOutCubic, linear, easeInCubic],
     }
@@ -126,7 +126,7 @@ export const Scene1 = (props) => {
   const avatar3Scale = useTransform(
     scrollY,
     [keyframe(1.25), keyframe(2), keyframe(2.5), keyframe(2.8)],
-    [0, 1, 1, 0],
+    ["0", "1", "1", "0"],
     {
       ease: [easeInOutCubic, linear, easeInOutCubic],
     }
@@ -135,7 +135,7 @@ export const Scene1 = (props) => {
   const avatar3IconScale = useTransform(
     scrollY,
     [keyframe(1.75), keyframe(2), keyframe(2.2), keyframe(2.6)],
-    [0, 1, 1, 0],
+    ["0", "1", "1", "0"],
     {
       ease: [easeOutCubic, linear, easeInCubic],
     }

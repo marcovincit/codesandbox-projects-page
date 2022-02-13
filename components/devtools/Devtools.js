@@ -123,6 +123,11 @@ export const Devtools = () => {
             <Image
               layer
               alt="CodeSandbox Projects - Interface"
+              src="/images/screenshots/product/users.svg"
+            />
+            <Image
+              layer
+              alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/config-file.svg"
             />
           </ImageBaseLayer>

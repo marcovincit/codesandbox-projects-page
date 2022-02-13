@@ -9,7 +9,7 @@ export const Background = ({ active }) => {
   const [cursor, setCursor] = useState({ x: 300, y: 500 });
 
   // opacity
-  const opacity = useTransform(scrollY, [0, windowSize.height], [1, 0]);
+  const opacity = useTransform(scrollY, [0, windowSize.height], ["1", "0"]);
 
   // useEffect
   useEffect(() => {

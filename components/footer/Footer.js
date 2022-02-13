@@ -9,13 +9,28 @@ export const Footer = () => {
         Copyright © 2022 CodeSandbox BV.
       </Body>
       <Menu>
-        <Body size={3}>
+        <Body
+          size={3}
+          as="a"
+          href="https://github.com/codesandbox/codesandbox-client"
+          target="_blank"
+        >
           <GitHub />
         </Body>
-        <Body size={3}>
+        <Body
+          size={3}
+          as="a"
+          href="https://twitter.com/codesandbox"
+          target="_blank"
+        >
           <Twitter />
         </Body>
-        <Body size={3}>
+        <Body
+          size={3}
+          as="a"
+          href="https://discord.com/invite/5BpufEP7MH"
+          target="_blank"
+        >
           <Discord />
         </Body>
       </Menu>

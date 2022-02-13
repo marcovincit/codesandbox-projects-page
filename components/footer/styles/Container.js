@@ -6,8 +6,6 @@ export const Container = styled("footer", {
   alignItems: "center",
   padding: "3rem",
 
-  top: "-100%",
-
   "@large": {
     padding: "3rem",
   },
