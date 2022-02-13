@@ -86,7 +86,7 @@ export const Product = () => {
   const scene1YLarge = useTransform(
     scrollY,
     [keyframe(0), keyframe(1), keyframe(2.8), keyframe(4), keyframe(5)],
-    ["60rem", "70rem", "70rem", "calc(70rem  + 0vh)", "calc(0rem  + 48vh)"],
+    ["60rem", "70rem", "70rem", "calc(70rem  + 0vh)", "calc(10rem  +  43.1%)"],
     {
       ease: [easeInOutCubic, easeInOutCubic, easeInOutCubic, easeOutCubic],
     }
@@ -261,7 +261,7 @@ export const Product = () => {
         css={{
           zIndex: 200,
           "@large": {
-            marginTop: "-10rem",
+            transform: "translateY(-10rem)",
           },
         }}
       >
