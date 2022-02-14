@@ -165,26 +165,31 @@ export const Scene1 = (props) => {
           willChange: "opacity,transform",
           opacity: avatar3CircleScale,
           scale: avatar3CircleScale,
+          originX: "1249.78px",
+          originY: "25px",
         }}
       >
-        <motion.g
-          style={{
-            willChange: "transform",
-          }}
-        >
-          <circle cx={1246.8} cy={23} r={12} fill="#F90" />
-        </motion.g>
+        <circle cx={1246.8} cy={23} r={12} fill="#F90" />
 
         <motion.g
           style={{
             willChange: "transform",
             scale: avatar3Scale,
+            originX: "1246.8px",
+            originY: "23px",
           }}
         >
           <circle cx={1246.8} cy={23} r={10.5} fill="url(#user3)" />
         </motion.g>
 
-        <motion.g style={{ willChange: "transform", scale: avatar3IconScale }}>
+        <motion.g
+          style={{
+            willChange: "transform",
+            scale: avatar3IconScale,
+            originX: "1257.25px",
+            originY: "31px",
+          }}
+        >
           <circle cx={1257.25} cy={31.5} r={7.5} fill="#0F0E0E" />
           <path
             xmlns="http://www.w3.org/2000/svg"
@@ -204,6 +209,8 @@ export const Scene1 = (props) => {
           x: avatar2X,
           opacity: avatar2Opacity,
           scale: avatar2CircleScale,
+          originX: "1213.25px",
+          originY: "25px",
         }}
       >
         <circle cx={1210.5} cy={23} r={12} fill="#00B2FF" />
@@ -211,6 +218,8 @@ export const Scene1 = (props) => {
           style={{
             willChange: "transform",
             scale: avatar2Scale,
+            originX: "1210.5px",
+            originY: "23px",
           }}
           cx={1210.5}
           cy={23}
@@ -221,7 +230,14 @@ export const Scene1 = (props) => {
         />
 
         {/* VSCODE ICON */}
-        <motion.g style={{ willChange: "transform", scale: avatar2IconScale }}>
+        <motion.g
+          style={{
+            willChange: "transform",
+            scale: avatar2IconScale,
+            originX: "1220.5px",
+            originY: "31.5px",
+          }}
+        >
           <circle cx={1220.5} cy={31.5} r={7.5} fill="#0F0E0E" />
           <path
             fillRule="evenodd"
@@ -238,6 +254,8 @@ export const Scene1 = (props) => {
           willChange: "transform",
           x: avatar1X,
           scale: avatar1CircleScale,
+          originX: "1175px",
+          originY: "23px",
         }}
       >
         <circle cx={1175} cy={23} r={12} fill="#7B61FF" />
@@ -245,6 +263,8 @@ export const Scene1 = (props) => {
           style={{
             willChange: "transform",
             scale: avatar1Scale,
+            originX: "1175px",
+            originY: "23px",
           }}
           cx={1175}
           cy={23}
@@ -261,6 +281,8 @@ export const Scene1 = (props) => {
           willChange: "transform",
           x: devtoolsX,
           scale: devtoolsScale,
+          originX: "1111.5px",
+          originY: "24px",
         }}
         d="M1104.5 24h14m-7-7v14"
         stroke="#999"
