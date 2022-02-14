@@ -5,16 +5,17 @@ export const globalStyles = globalCss({
     fontFamily: "TWK Everett, Helvetica Neue, Helvetica, Arial sans-serif",
     fontWeight: 500,
     src: 'url("/fonts/TWKEverett-Medium-web.woff2") format("woff2"), url("/fonts/TWKEverett-Medium-web.woff") format("woff"),url("/fonts/TWKEverett-Medium-web.ttf") format("ttf")',
+    fontDisplay: "fallback",
   },
 
   "html, body": {
     background: "$background",
-
     color: "$support",
     padding: 0,
     margin: 0,
-    "font-family": "Inter, TWK Everett, Helvetica Neue, Arial sans-serif",
+    fontFamily: "Inter, TWK Everett, Helvetica Neue, Arial sans-serif",
     "-webkit-font-smoothing": "antialiased",
+    fontDisplay: "fallback",
     overscrollBehavior: "none",
   },
 
