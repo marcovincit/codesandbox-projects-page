@@ -7,7 +7,7 @@ import { Section, Container, Content } from "./styles";
 import { Logo } from "./Logo";
 import { easeInOutCubic } from "utils/easing";
 
-export function Hero() {
+export const Hero = () => {
   const { scrollY } = useViewportScroll();
 
   // container
@@ -113,4 +113,4 @@ export function Hero() {
       </Container>
     </Section>
   );
-}
+};

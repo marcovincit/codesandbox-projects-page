@@ -16,7 +16,7 @@ import {
 import { AppStore } from "./AppStore";
 import { easeInOutQuad } from "utils/easing";
 
-export function Tools() {
+export const Tools = () => {
   const { scrollY } = useViewportScroll();
 
   // container
@@ -328,4 +328,4 @@ export function Tools() {
       <FakeSection />
     </Section>
   );
-}
+};

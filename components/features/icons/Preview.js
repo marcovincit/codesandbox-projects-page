@@ -1,4 +1,4 @@
-export function Preview() {
+export const Preview = () => {
   return (
     <svg
       width="4.2rem"
@@ -35,4 +35,4 @@ export function Preview() {
       />
     </svg>
   );
-}
+};

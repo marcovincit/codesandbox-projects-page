@@ -17,7 +17,7 @@ import {
 
 import { BranchIcon, Avatar1, Avatar2, Avatar3 } from "./icons";
 
-export function Intro() {
+export const Intro = () => {
   const { scrollY } = useViewportScroll();
 
   // container
@@ -252,4 +252,4 @@ export function Intro() {
       <FakeSection />
     </MainSection>
   );
-}
+};
