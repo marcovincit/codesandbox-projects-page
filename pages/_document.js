@@ -10,6 +10,13 @@ class MyDocument extends Document {
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
+          <link
+            rel="preload"
+            href="/fonts/TWKEverett-Medium-web.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
