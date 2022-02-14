@@ -247,6 +247,6 @@
 <clipPath id="clip17_8_921">
 <rect width="608" height="1021" fill="white" transform="translate(218 60)"/>
 </clipPath>
-<image id="image0_8_921"  xlinkHref="images/screenshots/product/preview.png" />
+<image id="image0_8_921"  xlinkHref="https://projects-page-wine.vercel.app/images/screenshots/product/preview.png" />
 </defs>
 </svg>
