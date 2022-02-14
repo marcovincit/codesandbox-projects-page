@@ -12,6 +12,7 @@ export const Footer = () => {
         <Body
           size={3}
           as="a"
+          title="Go to Github"
           href="https://github.com/codesandbox/codesandbox-client"
           target="_blank"
         >
@@ -20,6 +21,7 @@ export const Footer = () => {
         <Body
           size={3}
           as="a"
+          title="Go to Twitter"
           href="https://twitter.com/codesandbox"
           target="_blank"
         >
@@ -28,6 +30,7 @@ export const Footer = () => {
         <Body
           size={3}
           as="a"
+          title="Join our Discord Server"
           href="https://discord.com/invite/5BpufEP7MH"
           target="_blank"
         >

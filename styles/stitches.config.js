@@ -12,7 +12,7 @@ export const { getCssText, globalCss, styled, css } = createStitches({
       primary: "#DCFF50",
       primary90: "#CEF144",
       secondary: "#7B61FF",
-      blue: "#00B2FF",
+      blue: "#0C86DF",
       gray: "#DBDBDE",
       surface: "#151515",
 
