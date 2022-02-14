@@ -245,6 +245,8 @@ export const Product = () => {
           }}
         >
           <Image
+            width={1440}
+            height={810}
             as={motion.img}
             alt="CodeSandbox Projects - Default"
             style={{
@@ -281,6 +283,8 @@ export const Product = () => {
           }}
         >
           <Image
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects - Default"
             src="images/screenshots/product/default.svg"
           />
@@ -303,6 +307,8 @@ export const Product = () => {
           }}
         >
           <Image
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects - Loading"
             src="images/screenshots/product/loading.svg"
           />
@@ -314,11 +320,15 @@ export const Product = () => {
             }}
           >
             <Image
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Default"
               src="images/screenshots/product/default.svg"
               layer
             />
             <Image
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - New Branch"
               src="images/screenshots/product/new-branch.svg"
               layer
