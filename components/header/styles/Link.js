@@ -4,7 +4,7 @@ import { Body } from "components/typography";
 export const Link = styled(Body, {
   display: "flex",
   gap: ".5rem",
-  alignItems: "center",
+  alignItems: "baseline",
   transition: "color .6s",
 
   mixBlendMode: "difference",
