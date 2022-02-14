@@ -1,15 +1,7 @@
 import { styled, keyframes } from "@stitches/react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useWindowSize } from "hooks/useWindowSize";
-import {
-  linear,
-  easeInQuad,
-  easeOutQuad,
-  easeInOutQuad,
-  easeInOutCubic,
-  easeOutCubic,
-  easeInCubic,
-} from "utils/easing";
+import { linear, easeInQuad, easeOutQuad, easeInOutQuad } from "utils/easing";
 
 // USER CURRENT CURSOR
 const currentCursorKeyframesX = keyframes({

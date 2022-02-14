@@ -1,4 +1,3 @@
-import { urlObjectKeys } from "next/dist/shared/lib/utils";
 import { styled } from "styles/stitches.config";
 
 export const Logo = styled("h1", {
@@ -28,16 +27,3 @@ export const Logo = styled("h1", {
     backgroundImage: `url("/images/logo-small.svg")`,
   },
 });
-
-// export function Logo() {
-//   return (
-//     <>
-//       <Image alt="CodeSandbox Projects Logo" src="/images/logo.svg" large />
-//       <Image
-//         alt="CodeSandbox Projects Logo Small"
-//         src="/images/logo-small.svg"
-//         small
-//       />
-//     </>
-//   );
-// }

@@ -5,10 +5,7 @@ export const ContentContainer = styled("div", {
   display: "flex",
   flexDirection: "column",
   willChange: "transform opacity",
-
   padding: "9rem 8rem 9rem 32rem",
-
-  // background: "rgba(255, 0, 0, 0.3)",
 
   "@large": {
     padding: "6.7rem 6rem 6.7rem 24rem",

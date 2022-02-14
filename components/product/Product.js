@@ -1,13 +1,7 @@
 import { styled } from "styles/stitches.config";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useWindowSize } from "hooks/useWindowSize";
-import {
-  linear,
-  easeInOutCubic,
-  easeInCubic,
-  easeOutCubic,
-} from "utils/easing";
-
+import { linear, easeInOutCubic, easeOutCubic } from "utils/easing";
 import { Image } from "./styles";
 import { Scene1 } from "./Scene1";
 import { Scene2 } from "./Scene2";

@@ -1,12 +1,7 @@
-import { styled, keyframes } from "@stitches/react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useWindowSize } from "hooks/useWindowSize";
-import { useEffect, useState } from "react/cjs/react.development";
 import {
   linear,
-  easeInQuad,
-  easeOutQuad,
-  easeInOutQuad,
   easeInOutCubic,
   easeOutCubic,
   easeInCubic,

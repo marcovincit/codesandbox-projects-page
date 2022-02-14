@@ -12,9 +12,10 @@ import {
   Image,
   ImageContainer,
   FakeSection,
+  AvatarsContainer,
 } from "./styles";
 
-import { BranchIcon } from "./icons";
+import { BranchIcon, Avatar1, Avatar2, Avatar3 } from "./icons";
 
 export function Intro() {
   const { scrollY } = useViewportScroll();
@@ -191,23 +192,11 @@ export function Intro() {
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Feature branch</Heading>
-            <div>
-              <img
-                alt="User 1"
-                width="35rem"
-                src="/images/screenshots/avatars/avatar1.svg"
-              />
-              <img
-                alt="User 2"
-                width="35rem"
-                src="/images/screenshots/avatars/avatar2.svg"
-              />
-              <img
-                alt="User 3"
-                width="35rem"
-                src="/images/screenshots/avatars/avatar3.svg"
-              />
-            </div>
+            <AvatarsContainer>
+              <Avatar1 />
+              <Avatar2 />
+              <Avatar3 />
+            </AvatarsContainer>
           </BranchLabel>
         </BranchSectionItem>
         <BranchSectionItem>
@@ -227,7 +216,7 @@ export function Intro() {
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Marco&apos;s branch</Heading>
-            <img width="35rem" src="/images/screenshots/avatars/avatar1.svg" />
+            <Avatar1 />
           </BranchLabel>
         </BranchSectionItem>
       </BranchSection>

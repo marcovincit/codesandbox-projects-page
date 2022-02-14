@@ -3,7 +3,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Section, SubSection } from "./styles";
 import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
-import { LogoIcon } from "components/logo";
+import { Square } from "./icons/Square";
 import { easeOutCubic } from "utils/easing";
 
 export const Future = () => {
@@ -61,7 +61,7 @@ export const Future = () => {
           "--progress": progress,
         }}
       >
-        <LogoIcon />
+        <Square />
         <Heading size={2} as="h2">
           Get ready for
           <br />

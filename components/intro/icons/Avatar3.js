@@ -1,44 +1,43 @@
 export const Avatar3 = (props) => (
   <svg
-    width={40}
-    height={40}
+    width="3.2rem"
+    height="3.2rem"
+    viewBox="0 0 36 36"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}
   >
-    <mask
-      id="a"
-      style={{
-        maskType: "alpha",
-      }}
-      maskUnits="userSpaceOnUse"
-      x={5}
-      y={5}
-      width={30}
-      height={30}
-    >
-      <circle cx={20} cy={20} r={15} fill="#C4C4C4" />
-    </mask>
-    <g mask="url(#a)">
-      <path fill="url(#b)" d="M4.998 5h30v30h-30z" />
-      <circle cx={20} cy={20} r={14} stroke="#F90" strokeWidth={2} />
-    </g>
-    <rect x={22} y={20} width={18} height={18} rx={9} fill="#0F0E0E" />
-    <path
-      d="m33.5 23.505-5-.005c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5c.55 0 1-.45 1-1v-9c0-.55-.45-.995-1-.995Zm0 8.995h-5v-7h5v7Z"
-      fill="#999"
+    <circle
+      cx={18}
+      cy={18}
+      r={15}
+      stroke="#FF9900"
+      strokeWidth={2}
+      fill="url(#user3branch)"
     />
+    <circle cx="27" cy="27" r="9" fill="#0F0E0E" />
+    <path
+      d="M29.875 21.0057L24.1458 21C23.5156 21 23 21.5156 23 22.1458V32.4583C23 33.0885 23.5156 33.6042 24.1458 33.6042H29.875C30.5052 33.6042 31.0208 33.0885 31.0208 32.4583V22.1458C31.0208 21.5156 30.5052 21.0057 29.875 21.0057ZM29.875 31.3125H24.1458V23.2917H29.875V31.3125Z"
+      fill="#999999"
+    />
+
     <defs>
       <pattern
-        id="b"
-        patternContentUnits="objectBoundingBox"
-        width={1}
-        height={1}
+        id="user3branch"
+        x={0}
+        y={0}
+        height="100%"
+        width="100%"
+        viewBox="0 0 24 24"
       >
-        <use xlinkHref="#c" transform="scale(.0052)" />
+        <image
+          x={0}
+          y={0}
+          width={24}
+          height={24}
+          xlinkHref="images/screenshots/avatars/user3.jpg"
+        />
       </pattern>
-      <image id="c" width={192} height={192} href="/images/product/user3.jpg" />
     </defs>
   </svg>
 );

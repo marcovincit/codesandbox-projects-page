@@ -8,7 +8,7 @@ export const SVG = styled("svg", {
   "@large": { width: "7rem", height: "7rem" },
 });
 
-export const LogoIcon = (props) => (
+export const Square = (props) => (
   <SVG viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg" {...props}>
     <rect
       style={{

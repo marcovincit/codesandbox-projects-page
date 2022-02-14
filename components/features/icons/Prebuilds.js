@@ -1,8 +1,8 @@
 export const Prebuilds = () => {
   return (
     <svg
-      width="42"
-      height="42"
+      width="4.2rem"
+      height="4.2rem"
       viewBox="0 0 42 42"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

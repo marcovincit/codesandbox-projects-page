@@ -4,10 +4,6 @@ export const Image = styled("img", {
   width: "auto",
   height: "75vh",
   maxHeight: "48vw",
-  // top: "42.2vw",
-  // left: "50%",
-  // position: "fixed",
-  // transform: "translateX(-50%)",
 
   pointerEvents: "none",
   zIndex: 0,

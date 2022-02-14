@@ -8,3 +8,4 @@ export { ImageContainer } from "./ImageContainer";
 export { Section } from "./Section";
 export { MainSection } from "./MainSection";
 export { FakeSection } from "./FakeSection";
+export { AvatarsContainer } from "./AvatarsContainer";

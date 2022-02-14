@@ -16,24 +16,6 @@ export const Sticky = styled("div", {
 
   pointerEvents: "none",
 
-  // "&:after": {
-  //   content: "",
-  //   position: "absolute",
-  //   top: 0,
-  //   left: 0,
-
-  //   opacity: "var(--shadow-opacity)",
-
-  //   width: "50%",
-  //   height: "100%",
-
-  //   background: "linear-gradient(90deg, rgba(9,9,9,1) 20%, rgba(9,9,9,0) 100%)",
-
-  //   "@medium": {
-  //     display: "none",
-  //   },
-  // },
-
   "@medium": {
     display: "none",
   },
