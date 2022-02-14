@@ -1,33 +1,9 @@
-import { styled } from "styles/stitches.config";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useWindowSize } from "hooks/useWindowSize";
 import { linear, easeInOutCubic, easeOutCubic } from "utils/easing";
-import { Image } from "./styles";
+import { Stage, Image } from "./styles";
 import { Scene1 } from "./Scene1";
 import { Scene2 } from "./Scene2";
-
-export const Stage = styled("div", {
-  width: "100vw",
-  height: "100vh",
-
-  pointerEvents: "none",
-
-  position: "fixed",
-  top: 0,
-  left: 0,
-
-  zIndex: 9999,
-
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-
-  lineHeight: 0,
-
-  "@medium": {
-    display: "none",
-  },
-});
 
 export const Product = () => {
   const { scrollY } = useViewportScroll();
