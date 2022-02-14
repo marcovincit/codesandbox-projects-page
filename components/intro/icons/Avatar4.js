@@ -1,4 +1,4 @@
-export const Avatar1 = (props) => (
+export const Avatar4 = (props) => (
   <svg
     width="3.2rem"
     height="3.2rem"
@@ -13,11 +13,11 @@ export const Avatar1 = (props) => (
       r={15}
       stroke="#7B61FF"
       strokeWidth={2}
-      fill="url(#user1Branch)"
+      fill="url(#user4)"
     />
     <defs>
       <pattern
-        id="user1Branch"
+        id="user4"
         x={0}
         y={0}
         height="100%"

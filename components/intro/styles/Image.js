@@ -10,7 +10,7 @@ export const Image = styled("img", {
   position: "relative",
 
   opacity: "var(--image-state)",
-  transform: "translateY(calc(var(--image-state)* -2%))",
+  transform: "translateY(calc(var(--image-state) * -2%))",
 
   transition: "opacity 150ms ease, transform 300ms ease",
 

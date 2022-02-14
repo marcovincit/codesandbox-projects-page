@@ -1,6 +1,6 @@
 import { styled } from "styles/stitches.config";
 
-export const HeadlineSection = styled("section", {
+export const HeadlineSection = styled("div", {
   minHeight: "100vh",
   display: "flex",
   flexDirection: "column",

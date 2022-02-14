@@ -22,6 +22,6 @@ export const Container = styled("div", {
     transition: "opacity 600ms",
 
     background:
-      "radial-gradient( circle farthest-side at calc(var(--cursor-x) * 100%) calc(var(--cursor-y) * 100%), var(--colors-secondary) 0%, transparent 100%)",
+      "radial-gradient(circle farthest-side at calc(var(--cursor-x) * 100%) calc(var(--cursor-y) * 100%), var(--colors-secondary) 0%, transparent 100%)",
   },
 });

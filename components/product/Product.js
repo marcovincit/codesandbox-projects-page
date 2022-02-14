@@ -248,7 +248,7 @@ export const Product = () => {
   );
 
   return (
-    <section id="product-presentation">
+    <div id="product-presentation">
       {/* SCENE 1 */}
       <Stage
         as={motion.div}
@@ -270,18 +270,17 @@ export const Product = () => {
         >
           <Image
             as={motion.img}
+            alt="CodeSandbox Projects - Default"
             style={{
-              willChange: "transform, opacity",
               opacity: scene1Opacity,
             }}
-            css={
-              {
-                // transform: "translateZ(0)",
-                // "backface-visibility": "hidden",
-                // "-webkit-font-smoothing": "subpixel-antialiased",
-                // "image-rendering": "-webkit-optimize-contrast",
-              }
-            }
+            css={{
+              willChange: "transform, opacity",
+              // transform: "translateZ(0)",
+              // "backface-visibility": "hidden",
+              // "-webkit-font-smoothing": "subpixel-antialiased",
+              // "image-rendering": "-webkit-optimize-contrast",
+            }}
             src="images/screenshots/product/default.svg"
           />
 
@@ -305,7 +304,10 @@ export const Product = () => {
             transformOrigin: scene2Origin,
           }}
         >
-          <Image src="images/screenshots/product/default.svg" />
+          <Image
+            alt="CodeSandbox Projects - Default"
+            src="images/screenshots/product/default.svg"
+          />
           <Scene2 />
         </motion.div>
       </Stage>
@@ -324,7 +326,10 @@ export const Product = () => {
             transition: "opacity 300ms",
           }}
         >
-          <Image src="images/screenshots/product/loading.svg" />
+          <Image
+            alt="CodeSandbox Projects - Loading"
+            src="images/screenshots/product/loading.svg"
+          />
           <motion.div
             style={{
               willChange: "opacity",
@@ -332,11 +337,19 @@ export const Product = () => {
               transition: "opacity 300ms",
             }}
           >
-            <Image src="images/screenshots/product/default.svg" layer />
-            <Image src="images/screenshots/product/new-branch.svg" layer />
+            <Image
+              alt="CodeSandbox Projects - Default"
+              src="images/screenshots/product/default.svg"
+              layer
+            />
+            <Image
+              alt="CodeSandbox Projects - New Branch"
+              src="images/screenshots/product/new-branch.svg"
+              layer
+            />
           </motion.div>
         </motion.div>
       </Stage>
-    </section>
+    </div>
   );
 };

@@ -15,7 +15,7 @@ import {
   AvatarsContainer,
 } from "./styles";
 
-import { BranchIcon, Avatar1, Avatar2, Avatar3 } from "./icons";
+import { BranchIcon, Avatar1, Avatar2, Avatar3, Avatar4 } from "./icons";
 
 export const Intro = () => {
   const { scrollY } = useViewportScroll();
@@ -216,7 +216,7 @@ export const Intro = () => {
           <BranchLabel>
             <BranchIcon />
             <Heading size={5}>Marco&apos;s branch</Heading>
-            <Avatar1 />
+            <Avatar4 />
           </BranchLabel>
         </BranchSectionItem>
       </BranchSection>
