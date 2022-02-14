@@ -201,7 +201,7 @@ export function Tools() {
           <ContentSubSection>
             <Heading
               size={4}
-              as={motion.p}
+              as={motion.h4}
               css={{
                 willChange: "opacity, transform",
                 position: "absolute",
@@ -216,14 +216,14 @@ export function Tools() {
               }}
               style={{ opacity: contentOpacity1, y: contentY1 }}
             >
-              We are redefining
+              Bringing Codesandbox
               <br />
-              collaborative code.
+              to your favorite IDE.
             </Heading>
 
             <Heading
               size={4}
-              as={motion.h3}
+              as={motion.h5}
               css={{
                 color: "$blue",
                 willChange: "opacity, transform",
@@ -263,7 +263,7 @@ export function Tools() {
           <ContentSubSection left>
             <Heading
               size={4}
-              as={motion.h3}
+              as={motion.h4}
               css={{
                 willChange: "opacity, transform",
                 position: "absolute",
@@ -284,7 +284,7 @@ export function Tools() {
             </Heading>
             <Heading
               size={4}
-              as={motion.h3}
+              as={motion.h5}
               css={{
                 color: "$primary",
                 willChange: "opacity, transform",

@@ -39,6 +39,9 @@ export const Body = styled("span", {
       // body3
       3: {
         fontSize: "1.4rem",
+        "@small": {
+          fontSize: "1.2rem",
+        },
       },
     },
   },

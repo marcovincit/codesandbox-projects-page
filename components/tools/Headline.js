@@ -16,7 +16,7 @@ export const Headline = () => {
             size={2}
             as="h3"
             css={{
-              color: "$support-text",
+              color: "$primary",
             }}
           >
             Use the tools

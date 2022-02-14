@@ -7,18 +7,37 @@ export const Background = ({ active }) => {
   const { scrollY } = useViewportScroll();
   const windowSize = useWindowSize();
   const [cursor, setCursor] = useState({ x: 300, y: 500 });
+  const [pageHeight, setPageHeight] = useState(0);
 
   // opacity
-  const opacity = useTransform(scrollY, [0, windowSize.height], ["1", "0"]);
+  const opacity = useTransform(
+    scrollY,
+    [
+      0,
+      windowSize.height * 2,
+      pageHeight - windowSize.height * 2,
+      pageHeight - windowSize.height,
+    ],
+    ["1", "0", "0", "1"]
+  );
 
   // useEffect
   useEffect(() => {
-    // if (!windowSize) return;
     const onMouseMove = (e) => {
       setCursor({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", onMouseMove);
     return () => window.removeEventListener("mousemove", onMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      setPageHeight(document.body.offsetHeight);
+    };
+
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (

@@ -12,13 +12,13 @@ export const { getCssText, globalCss, styled, css } = createStitches({
       primary: "#DCFF50",
       primary90: "#CEF144",
       secondary: "#7B61FF",
-      blue: "#427AE7",
+      blue: "#00B2FF",
       gray: "#DBDBDE",
       surface: "#151515",
 
       background: "#090909",
       title: "#F5F5F7",
-      support: "#7F7F80",
+      support: "rgba(255, 255, 255, 0.48)",
     },
   },
 });

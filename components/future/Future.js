@@ -1,16 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useSpring,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Section, SubSection } from "./styles";
 import { Heading, Body } from "components/typography";
 import { CTA, Arrow } from "components/cta";
 import { LogoIcon } from "components/logo";
-
-import { easeInOutCubic, easeOutCubic } from "utils/easing";
+import { easeOutCubic } from "utils/easing";
 
 export const Future = () => {
   const { scrollY } = useViewportScroll();
@@ -68,7 +62,7 @@ export const Future = () => {
         }}
       >
         <LogoIcon />
-        <Heading size={2} as="h1">
+        <Heading size={2} as="h2">
           Get ready for
           <br />
           the future.
