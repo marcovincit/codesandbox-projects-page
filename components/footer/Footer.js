@@ -13,6 +13,7 @@ export const Footer = () => {
           size={3}
           as="a"
           title="Go to Github"
+          rel="noreferrer noopener"
           href="https://github.com/codesandbox/codesandbox-client"
           target="_blank"
         >
@@ -22,6 +23,7 @@ export const Footer = () => {
           size={3}
           as="a"
           title="Go to Twitter"
+          rel="noreferrer noopener"
           href="https://twitter.com/codesandbox"
           target="_blank"
         >
@@ -31,6 +33,7 @@ export const Footer = () => {
           size={3}
           as="a"
           title="Join our Discord Server"
+          rel="noreferrer noopener"
           href="https://discord.com/invite/5BpufEP7MH"
           target="_blank"
         >
