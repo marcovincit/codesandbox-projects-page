@@ -103,11 +103,15 @@ export const Intro = () => {
       <Section position="right" style={{ paddingTop: 0 }}>
         <ImageContainer>
           <Image
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects"
             src="/images/screenshots/product/default.svg"
           />
           <Image
             layer
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects"
             src="/images/screenshots/product/users.svg"
           />
@@ -137,11 +141,15 @@ export const Intro = () => {
       <Section position="left">
         <ImageContainer>
           <Image
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects  - Preview"
             src="/images/screenshots/product/default.svg"
           />
           <Image
             layer
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects"
             src="/images/screenshots/product/users.svg"
           />
@@ -178,12 +186,16 @@ export const Intro = () => {
           <BranchImageContainer>
             <Image
               responsive
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Original Branch"
               src="/images/screenshots/product/default.svg"
             />
             <Image
               layer
               responsive
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Original Branch"
               src="/images/screenshots/product/users.svg"
             />
@@ -203,12 +215,16 @@ export const Intro = () => {
           <BranchImageContainer>
             <Image
               responsive
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Original Branch"
               src="/images/screenshots/product/default.svg"
             />
             <Image
               layer
               responsive
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Original Branch"
               src="/images/screenshots/product/new-branch.svg"
             />

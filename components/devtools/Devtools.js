@@ -117,21 +117,29 @@ export const Devtools = () => {
             }}
           >
             <Image
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/default.svg"
             />
             <Image
               layer
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/users.svg"
             />
             <Image
               layer
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/config-file.svg"
             />
           </ImageBaseLayer>
           <Image
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects - Command Pallet"
             as={motion.img}
             css={{
@@ -142,6 +150,8 @@ export const Devtools = () => {
             layer
           />
           <Image
+            width={1440}
+            height={810}
             alt="CodeSandbox Projects - Interface Devtools"
             as={motion.img}
             css={{
@@ -162,11 +172,15 @@ export const Devtools = () => {
         <Section>
           <ImageContainer>
             <Image
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/default.svg"
             />
             <Image
               layer
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/config-file.svg"
             />
@@ -191,11 +205,15 @@ export const Devtools = () => {
           <ImageContainer>
             <ImageBaseLayer>
               <Image
+                width={1440}
+                height={810}
                 alt="CodeSandbox Projects - Interface"
                 src="/images/screenshots/product/default.svg"
               />
               <Image
                 layer
+                width={1440}
+                height={810}
                 alt="CodeSandbox Projects - Interface"
                 src="/images/screenshots/product/config-file.svg"
               />
@@ -204,6 +222,8 @@ export const Devtools = () => {
             <Image
               layer
               center
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/command-palette.svg"
             />
@@ -228,16 +248,22 @@ export const Devtools = () => {
           <ImageContainer>
             <ImageBaseLayer>
               <Image
+                width={1440}
+                height={810}
                 alt="CodeSandbox Projects - Interface"
                 src="/images/screenshots/product/default.svg"
               />
               <Image
                 layer
+                width={1440}
+                height={810}
                 alt="CodeSandbox Projects - Original Branch"
                 src="/images/screenshots/product/users.svg"
               />
               <Image
                 layer
+                width={1440}
+                height={810}
                 alt="CodeSandbox Projects - Interface"
                 src="/images/screenshots/product/config-file.svg"
               />
@@ -246,6 +272,8 @@ export const Devtools = () => {
             <Image
               layer
               center
+              width={1440}
+              height={810}
               alt="CodeSandbox Projects - Interface"
               src="/images/screenshots/product/devtools.svg"
             />
