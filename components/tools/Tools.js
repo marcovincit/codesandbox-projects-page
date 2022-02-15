@@ -156,49 +156,67 @@ export const Tools = () => {
         }}
       >
         <MockupSection left>
-          <Image
-            width={752}
-            height={576}
-            alt="CodeSandbox for iOS - iPad"
-            as={motion.img}
-            css={{
-              marginRight: "4rem",
-              willChange: "transform",
-            }}
-            style={{
-              x: iPadX,
-            }}
-            src="/images/screenshots/tools/iPad.jpg"
-          />
-          <Phone
-            width={204}
-            height={412}
-            alt="CodeSandbox for iOS - iPhone"
-            as={motion.img}
-            css={{
-              willChange: "transform",
-            }}
-            style={{
-              x: iPhoneX,
-            }}
-            src="/images/screenshots/tools/iPhone.png"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/images/screenshots/tools/iPad.webp"
+            />
+            <Image
+              width={752}
+              height={576}
+              alt="CodeSandbox for iOS - iPad"
+              as={motion.img}
+              css={{
+                marginRight: "4rem",
+                willChange: "transform",
+              }}
+              style={{
+                x: iPadX,
+              }}
+              src="/images/screenshots/tools/iPad.jpg"
+            />
+          </picture>
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/images/screenshots/tools/iPhone.webp"
+            />
+            <Phone
+              width={204}
+              height={412}
+              alt="CodeSandbox for iOS - iPhone"
+              as={motion.img}
+              css={{
+                willChange: "transform",
+              }}
+              style={{
+                x: iPhoneX,
+              }}
+              src="/images/screenshots/tools/iPhone.png"
+            />
+          </picture>
         </MockupSection>
 
         <MockupSection>
-          <Image
-            width={752}
-            height={423}
-            as={motion.img}
-            css={{
-              willChange: "transform",
-            }}
-            style={{
-              x: VSCodeX,
-            }}
-            alt="CodeSandbox Extension for VSCode."
-            src="/images/screenshots/tools/VSCode.jpg"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/images/screenshots/tools/VSCode.webp"
+            />
+            <Image
+              width={752}
+              height={423}
+              as={motion.img}
+              css={{
+                willChange: "transform",
+              }}
+              style={{
+                x: VSCodeX,
+              }}
+              alt="CodeSandbox Extension for VSCode."
+              src="/images/screenshots/tools/VSCode.jpg"
+            />
+          </picture>
         </MockupSection>
       </SubSection>
 
@@ -255,12 +273,18 @@ export const Tools = () => {
           </ContentSubSection>
         </ContentSection>
         <MockupSection hideDesktop>
-          <Image
-            width={752}
-            height={423}
-            alt="CodeSandbox Extension for VSCode."
-            src="/images/screenshots/tools/VSCode.jpg"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/images/screenshots/tools/VSCode.webp"
+            />
+            <Image
+              width={752}
+              height={423}
+              alt="CodeSandbox Extension for VSCode."
+              src="/images/screenshots/tools/VSCode.jpg"
+            />
+          </picture>
         </MockupSection>
       </SubSection>
 
@@ -319,21 +343,33 @@ export const Tools = () => {
           </ContentSubSection>
         </ContentSection>
         <MockupSection left hideDesktop>
-          <Image
-            width={752}
-            height={576}
-            alt="CodeSandbox for iOS - iPad"
-            css={{
-              marginLeft: "4rem",
-            }}
-            src="/images/screenshots/tools/iPad.jpg"
-          />
-          <Phone
-            width={204}
-            height={412}
-            alt="CodeSandbox for iOS - iPhone"
-            src="/images/screenshots/tools/iPhone.png"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/images/screenshots/tools/iPad.webp"
+            />
+            <Image
+              width={752}
+              height={576}
+              alt="CodeSandbox for iOS - iPad"
+              css={{
+                marginLeft: "4rem",
+              }}
+              src="/images/screenshots/tools/iPad.jpg"
+            />
+          </picture>
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/images/screenshots/tools/iPhone.webp"
+            />
+            <Phone
+              width={204}
+              height={412}
+              alt="CodeSandbox for iOS - iPhone"
+              src="/images/screenshots/tools/iPhone.png"
+            />
+          </picture>
         </MockupSection>
       </SubSection>
 
