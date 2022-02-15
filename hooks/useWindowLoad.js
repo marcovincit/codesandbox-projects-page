@@ -5,7 +5,9 @@ export const useWindowLoad = () => {
 
   useEffect(() => {
     function handleLoaded() {
-      setWindowIsLoaded(true);
+      setTimeout(() => {
+        setWindowIsLoaded(true);
+      }, 1000);
     }
 
     window.addEventListener("load", handleLoaded);
