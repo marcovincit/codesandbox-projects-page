@@ -71,10 +71,25 @@ export const Streamlined = () => {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
+  // showContent
+
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    window.onload = function () {
+      setShowContent(true);
+    };
+  }, []);
+
   // return
 
   return (
-    <Section ref={container}>
+    <Section
+      ref={container}
+      style={{
+        opacity: showContent ? 1 : 0,
+      }}
+    >
       <SubSection style={{ opacity: marqueeSectionOpacity }}>
         <Square
           type="right"
