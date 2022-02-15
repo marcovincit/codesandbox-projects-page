@@ -53,8 +53,8 @@ export const Hero = () => {
       <Container as={motion.div} style={{ scale, opacity }}>
         <Content
           as={motion.div}
-          initial={{ opacity: 0, scale: 0.75 }}
-          transition={{ duration: 1.5, delay: 1.5, ease: easeInOutCubic }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 2.5, delay: 1.5, ease: easeInOutCubic }}
           animate={{ opacity: 1, scale: 1 }}
           style={{ transformOrigin: "50% 50%" }}
         >
@@ -68,9 +68,9 @@ export const Hero = () => {
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0.75,
+              scale: 0.9,
             }}
-            transition={{ duration: 1.5, delay: 1.5, ease: easeInOutCubic }}
+            transition={{ duration: 3, delay: 1.5, ease: easeInOutCubic }}
             animate={{ opacity: 1, scale: 1 }}
           >
             <Heading
@@ -89,7 +89,7 @@ export const Hero = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.75 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 2.5, delay: 1.5, ease: easeInOutCubic }}
             animate={{ opacity: 1, scale: 1 }}
           >
@@ -110,8 +110,8 @@ export const Hero = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.75 }}
-            transition={{ duration: 3, delay: 1.5, ease: easeInOutCubic }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 2, delay: 2, ease: easeInOutCubic }}
             animate={{ opacity: 1, scale: 1 }}
           >
             <CTA

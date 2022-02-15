@@ -231,21 +231,13 @@ export const Product = () => {
       initial={{
         opacity: 0,
       }}
-      transition={{ duration: 1, delay: 1 }}
+      transition={{ duration: 1, delay: 2 }}
       animate={{
         opacity: 1,
       }}
     >
       {/* SCENE 1 */}
       <Stage
-        as={motion.div}
-        initial={{
-          translateY: "20%",
-        }}
-        transition={{ duration: 2, delay: 1, ease: easeInOutCubic }}
-        animate={{
-          translateY: "0%",
-        }}
         css={{
           zIndex: 200,
           transformOrigin: "100% 100%",
@@ -255,33 +247,47 @@ export const Product = () => {
         }}
       >
         <motion.div
-          style={{
-            willChange: "transform, opacity",
-            scale: scene1Scale,
-            y: windowSize.width > 1440 ? scene1YxLarge : scene1YLarge,
-            x: scene1X,
-            z: 0,
+          as={motion.div}
+          initial={{
+            translateY: "20%",
+            scale: 1.2,
+          }}
+          transition={{ duration: 3, delay: 1, ease: easeInOutCubic }}
+          animate={{
+            translateY: "0%",
+            translateX: "0%",
+            scale: 1,
           }}
         >
-          <Image
-            width={1440}
-            height={810}
-            as={motion.img}
-            alt="CodeSandbox Projects - Default"
+          <motion.div
             style={{
-              opacity: scene1Opacity,
-            }}
-            css={{
               willChange: "transform, opacity",
-              // transform: "translateZ(0)",
-              // "backface-visibility": "hidden",
-              // "-webkit-font-smoothing": "subpixel-antialiased",
-              // "image-rendering": "-webkit-optimize-contrast",
+              scale: scene1Scale,
+              y: windowSize.width > 1440 ? scene1YxLarge : scene1YLarge,
+              x: scene1X,
+              z: 0,
             }}
-            src="images/screenshots/product/default.svg"
-          />
+          >
+            <Image
+              width={1440}
+              height={810}
+              as={motion.img}
+              alt="CodeSandbox Projects - Default"
+              style={{
+                opacity: scene1Opacity,
+              }}
+              css={{
+                willChange: "transform, opacity",
+                // transform: "translateZ(0)",
+                // "backface-visibility": "hidden",
+                // "-webkit-font-smoothing": "subpixel-antialiased",
+                // "image-rendering": "-webkit-optimize-contrast",
+              }}
+              src="images/screenshots/product/default.svg"
+            />
 
-          <Scene1 />
+            <Scene1 />
+          </motion.div>
         </motion.div>
       </Stage>
 
