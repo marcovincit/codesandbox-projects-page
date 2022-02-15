@@ -57,12 +57,6 @@ export const Streamlined = () => {
     [1, 0.8]
   );
 
-  const showContent = useTransform(
-    scrollY,
-    [containerTop - containerHeight - 1, containerTop - containerHeight],
-    [0, 1]
-  );
-
   // useEffect
 
   useEffect(() => {
@@ -77,14 +71,24 @@ export const Streamlined = () => {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
+  const [showContent, setShowContent] = useState(0);
+
+  useEffect(() => {
+    const postLoaded = () => {
+      setShowContent(1);
+    };
+
+    window.addEventListener("load", postLoaded);
+    return () => window.removeEventListener("load", postLoaded);
+  }, []);
+
   // return
 
   return (
     <Section
       ref={container}
-      as={motion.section}
       style={{
-        opacity: showContent,
+        display: showContent,
       }}
     >
       <SubSection style={{ opacity: marqueeSectionOpacity }}>
