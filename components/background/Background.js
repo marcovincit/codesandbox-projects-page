@@ -41,14 +41,20 @@ export const Background = ({ active }) => {
   }, []);
 
   return (
-    <Container
-      as={motion.div}
-      style={{
-        opacity,
-        "--is-active": active ? 0.8 : 0.4,
-        "--cursor-x": cursor.x / windowSize.width,
-        "--cursor-y": cursor.y / windowSize.height,
-      }}
-    ></Container>
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{ duration: 2, delay: 0.5 }}
+      animate={{ opacity: 1 }}
+    >
+      <Container
+        as={motion.div}
+        style={{
+          opacity,
+          "--is-active": active ? 0.8 : 0.4,
+          "--cursor-x": cursor.x / windowSize.width,
+          "--cursor-y": cursor.y / windowSize.height,
+        }}
+      ></Container>
+    </motion.div>
   );
 };

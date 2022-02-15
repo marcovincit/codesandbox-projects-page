@@ -23,20 +23,6 @@ export const Hero = () => {
     [1, 0.75],
     { ease: easeInOutCubic }
   );
-  //  scale
-  const scale2 = useTransform(
-    scrollY,
-    [containerTop, containerTop + containerHeight],
-    [1, 0.75],
-    { ease: easeInOutCubic }
-  );
-  //  scale
-  const scale3 = useTransform(
-    scrollY,
-    [containerTop, containerTop + containerHeight],
-    [1, 0.75],
-    { ease: easeInOutCubic }
-  );
 
   //  opacity
   const opacity = useTransform(
@@ -63,8 +49,15 @@ export const Hero = () => {
   return (
     <Section ref={container}>
       <Background active={backgroundIsActive} />
+
       <Container as={motion.div} style={{ scale, opacity }}>
-        <Content>
+        <Content
+          as={motion.div}
+          initial={{ opacity: 0, scale: 0.75 }}
+          transition={{ duration: 1.5, delay: 1.5, ease: easeInOutCubic }}
+          animate={{ opacity: 1, scale: 1 }}
+          style={{ transformOrigin: "50% 50%" }}
+        >
           <Logo>
             <span>
               CodeSandbox Projects - The best online IDE editor alternative to
@@ -72,43 +65,65 @@ export const Hero = () => {
             </span>
           </Logo>
 
-          <Heading
-            size={2}
-            as={motion.h2}
-            css={{
-              willChange: "transform",
-              "@medium": { transform: "initial!important" },
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.75,
             }}
-            style={{ scale: scale2 }}
+            transition={{ duration: 1.5, delay: 1.5, ease: easeInOutCubic }}
+            animate={{ opacity: 1, scale: 1 }}
           >
-            Development
-            <br />
-            reimagined.
-          </Heading>
+            <Heading
+              size={2}
+              as={motion.h2}
+              css={{
+                willChange: "transform",
+                "@medium": { transform: "initial!important" },
+              }}
+              style={{ scale }}
+            >
+              Development
+              <br />
+              reimagined.
+            </Heading>
+          </motion.div>
 
-          <Body
-            size={1}
-            as={motion.p}
-            css={{
-              maxWidth: "50rem",
-              willChange: "transform",
-              "@medium": { transform: "initial!important" },
-              "@small": { maxWidth: "32rem" },
-            }}
-            style={{ scale: scale3 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.75 }}
+            transition={{ duration: 2.5, delay: 1.5, ease: easeInOutCubic }}
+            animate={{ opacity: 1, scale: 1 }}
           >
-            Experience the future of web development and build projects anywhere
-            and anytime with your team.
-          </Body>
-          <CTA
-            as="a"
-            href="#"
-            target="_blank"
-            onMouseEnter={() => setBackgroundIsActive(1)}
-            onMouseLeave={() => setBackgroundIsActive(0)}
+            <Body
+              size={1}
+              as={motion.p}
+              css={{
+                maxWidth: "50rem",
+                willChange: "transform",
+                "@medium": { transform: "initial!important" },
+                "@small": { maxWidth: "32rem" },
+              }}
+              style={{ scale }}
+            >
+              Experience the future of web development and build projects
+              anywhere and anytime with your team.
+            </Body>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.75 }}
+            transition={{ duration: 3, delay: 1.5, ease: easeInOutCubic }}
+            animate={{ opacity: 1, scale: 1 }}
           >
-            Early access <Arrow />
-          </CTA>
+            <CTA
+              as="a"
+              href="#"
+              target="_blank"
+              onMouseEnter={() => setBackgroundIsActive(1)}
+              onMouseLeave={() => setBackgroundIsActive(0)}
+            >
+              Early access <Arrow />
+            </CTA>
+          </motion.div>
         </Content>
       </Container>
     </Section>

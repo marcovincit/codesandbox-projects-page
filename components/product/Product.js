@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import { useWindowSize, useWindowLoad } from "hooks";
+import { useWindowSize } from "hooks";
 import { linear, easeInOutCubic, easeOutCubic } from "utils/easing";
 import { Stage, Image } from "./styles";
 import { Scene1 } from "./Scene1";
@@ -10,7 +10,6 @@ export const Product = () => {
   const { scrollY } = useViewportScroll();
 
   const windowSize = useWindowSize();
-  const windowIsLoaded = useWindowLoad();
 
   // keyframe
   const keyframe = (value) => {
@@ -225,21 +224,31 @@ export const Product = () => {
     ["0", "1"]
   );
 
-  // showContent
-  const [showContent, setShowContent] = useState(0);
-
   return (
-    <div
+    <motion.div
       id="product-presentation"
-      style={{
-        opacity: windowIsLoaded ? "1" : "0",
+      as={motion.div}
+      initial={{
+        opacity: 0,
+      }}
+      transition={{ duration: 1, delay: 1 }}
+      animate={{
+        opacity: 1,
       }}
     >
       {/* SCENE 1 */}
       <Stage
         as={motion.div}
+        initial={{
+          translateY: "20%",
+        }}
+        transition={{ duration: 2, delay: 1, ease: easeInOutCubic }}
+        animate={{
+          translateY: "0%",
+        }}
         css={{
           zIndex: 200,
+          transformOrigin: "100% 100%",
           "@large": {
             transform: "translateY(-10rem)",
           },
@@ -346,6 +355,6 @@ export const Product = () => {
           </motion.div>
         </motion.div>
       </Stage>
-    </div>
+    </motion.div>
   );
 };

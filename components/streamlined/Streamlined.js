@@ -1,12 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Section, SubSection, Text, Square, Title } from "./styles";
-import { useWindowSize, useWindowLoad } from "hooks";
 
 export const Streamlined = () => {
   const { scrollY } = useViewportScroll();
-
-  const windowIsLoaded = useWindowLoad();
 
   // container
   const container = useRef(null);
@@ -79,8 +76,13 @@ export const Streamlined = () => {
   return (
     <Section
       ref={container}
-      style={{
-        opacity: windowIsLoaded ? "1" : "0",
+      as={motion.section}
+      initial={{
+        opacity: 0,
+      }}
+      transition={{ duration: 1, delay: 1 }}
+      animate={{
+        opacity: 1,
       }}
     >
       <SubSection style={{ opacity: marqueeSectionOpacity }}>
