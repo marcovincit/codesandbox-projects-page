@@ -2,7 +2,8 @@ import { styled } from "styles/stitches.config";
 
 export const Heading = styled("span", {
   color: "$title",
-  fontFamily: "TWK Everett",
+  fontFamily: "TWK Everett, Helvetica Neue, Helvetica, Arial sans-serif",
+  fontDisplay: "swap",
   fontSize: "9.6rem",
   fontWeight: 500,
   lineHeight: "100%",

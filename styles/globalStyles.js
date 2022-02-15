@@ -2,10 +2,9 @@ import { globalCss } from "./stitches.config";
 
 export const globalStyles = globalCss({
   "@font-face": {
-    fontFamily: "TWK Everett, Helvetica Neue, Helvetica, Arial sans-serif",
+    fontFamily: "TWK Everett",
     fontWeight: 500,
     src: 'url("/fonts/TWKEverett-Medium-web.woff2") format("woff2"), url("/fonts/TWKEverett-Medium-web.woff") format("woff"),url("/fonts/TWKEverett-Medium-web.ttf") format("ttf")',
-    fontDisplay: "swap",
   },
 
   "html, body": {
@@ -13,7 +12,7 @@ export const globalStyles = globalCss({
     color: "$support",
     padding: 0,
     margin: 0,
-    fontFamily: "Inter, TWK Everett, Helvetica Neue, Arial sans-serif",
+    fontFamily: "Inter, Helvetica Neue, Arial sans-serif",
     "-webkit-font-smoothing": "antialiased",
     fontDisplay: "swap",
     // overscrollBehavior: "none",
