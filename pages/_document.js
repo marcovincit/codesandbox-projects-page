@@ -17,11 +17,11 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin
           />
-          <link
+          {/* <link
             rel="preload"
             as="image"
             href="images/screenshots/product/default.svg"
-          />
+          /> */}
           <link
             rel="preload"
             as="image"
