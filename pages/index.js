@@ -1,6 +1,5 @@
 import {
   Hero,
-  Background,
   Intro,
   Streamlined,
   Header,
@@ -16,7 +15,6 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Background />
       <Hero />
       <Product />
       <Intro />
