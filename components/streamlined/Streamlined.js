@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Section, SubSection, Text, Square, Title } from "./styles";
+import { useWindowSize, useWindowLoad } from "hooks";
 
 export const Streamlined = () => {
   const { scrollY } = useViewportScroll();
+
+  const windowIsLoaded = useWindowLoad();
 
   // container
   const container = useRef(null);
@@ -71,24 +74,13 @@ export const Streamlined = () => {
     return () => window.removeEventListener("resize", onResize);
   }, [container]);
 
-  const [showContent, setShowContent] = useState(0);
-
-  useEffect(() => {
-    const postLoaded = () => {
-      setShowContent(1);
-    };
-
-    window.addEventListener("load", postLoaded);
-    return () => window.removeEventListener("load", postLoaded);
-  }, []);
-
   // return
 
   return (
     <Section
       ref={container}
       style={{
-        display: showContent,
+        opacity: windowIsLoaded ? "1" : "0",
       }}
     >
       <SubSection style={{ opacity: marqueeSectionOpacity }}>
