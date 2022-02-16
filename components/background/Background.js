@@ -43,7 +43,7 @@ export const Background = ({ active }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      transition={{ duration: 2, delay: 0.5 }}
+      transition={{ duration: 1.5, delay: 0.5 }}
       animate={{ opacity: 1 }}
     >
       <Container
