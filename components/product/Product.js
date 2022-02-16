@@ -248,7 +248,7 @@ export const Product = () => {
         <motion.div
           initial={{
             translateY: "20%",
-            scale: 1.2,
+            scale: 3,
           }}
           transition={{ duration: 3, delay: 1, ease: easeInOutCubic }}
           animate={{
