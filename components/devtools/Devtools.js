@@ -194,8 +194,8 @@ export const Devtools = () => {
               Preconfigured environments.
             </Heading>
             <Heading as="p" size={4}>
-              We detect your environment <br /> so you don't need to fiddle with{" "}
-              <br />
+              We detect your environment <br /> so you don&apos;t need to fiddle
+              with <br />
               configuration files.
             </Heading>
           </ContentContainer>
