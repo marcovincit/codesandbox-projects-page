@@ -227,7 +227,6 @@ export const Product = () => {
   return (
     <motion.div
       id="product-presentation"
-      as={motion.div}
       initial={{
         opacity: 0,
       }}
@@ -247,7 +246,6 @@ export const Product = () => {
         }}
       >
         <motion.div
-          as={motion.div}
           initial={{
             translateY: "20%",
             scale: 1.2,
