@@ -18,7 +18,7 @@ export const { getCssText, globalCss, styled, css } = createStitches({
 
       background: "#090909",
       title: "#F5F5F7",
-      support: "rgba(255, 255, 255, 0.48)",
+      support: "rgba(255, 255, 255, 0.6)",
     },
   },
 });
