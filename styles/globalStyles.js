@@ -5,6 +5,7 @@ export const globalStyles = globalCss({
     fontFamily: "TWK Everett",
     fontWeight: 500,
     src: 'url("/fonts/TWKEverett-Medium-web.woff2") format("woff2"), url("/fonts/TWKEverett-Medium-web.woff") format("woff"),url("/fonts/TWKEverett-Medium-web.ttf") format("ttf")',
+    fontDisplay: "swap",
   },
 
   "html, body": {

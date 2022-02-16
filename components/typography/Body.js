@@ -3,7 +3,7 @@ import { styled } from "styles/stitches.config";
 export const Body = styled("span", {
   color: "$support",
   fontFamily: "Inter, Helvetica Neue, Helvetica, Arial sans-serif",
-  fontDisplay: "swap",
+
   fontSize: "1.8rem",
   fontWeight: 400,
   lineHeight: "140%",
