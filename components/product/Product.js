@@ -246,7 +246,6 @@ export const Product = () => {
         }}
       >
         <motion.div
-          as={motion.div}
           initial={{
             translateY: "20%",
             scale: 1.2,
