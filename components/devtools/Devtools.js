@@ -191,11 +191,11 @@ export const Devtools = () => {
             style={{ opacity: contentOpacity1, y: contentY1 }}
           >
             <Heading as="h3" size={4} css={{ color: "$primary" }}>
-              Your environment
-              <br /> ready in seconds.
+              Preconfigured environments.
             </Heading>
             <Heading as="p" size={4}>
-              Jump straight into <br /> your code with auto <br />
+              We detect your environment <br /> so you don't need to fiddle with{" "}
+              <br />
               configuration files.
             </Heading>
           </ContentContainer>
