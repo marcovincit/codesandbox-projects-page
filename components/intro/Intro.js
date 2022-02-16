@@ -176,7 +176,7 @@ export const Intro = () => {
             not about code.
           </Heading>
           <Heading as="p" size={4} css={{ color: "$primary" }}>
-            Get everybody on <br /> the same page.
+            Get everybody on <br /> the same page. <br /> Literally.
           </Heading>
         </ContentContainer>
       </Section>

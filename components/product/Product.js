@@ -5,6 +5,7 @@ import { linear, easeInOutCubic, easeOutCubic } from "utils/easing";
 import { Stage, Image } from "./styles";
 import { Scene1 } from "./Scene1";
 import { Scene2 } from "./Scene2";
+import { Scene3 } from "./Scene3";
 
 export const Product = () => {
   const { scrollY } = useViewportScroll();
@@ -349,13 +350,15 @@ export const Product = () => {
               src="images/screenshots/product/default.svg"
               layer
             />
-            <Image
+            {/* <Image
               width={1440}
               height={810}
               alt="CodeSandbox Projects - New Branch"
               src="images/screenshots/product/new-branch.svg"
               layer
-            />
+            /> */}
+
+            <Scene3 />
           </motion.div>
         </motion.div>
       </Stage>
