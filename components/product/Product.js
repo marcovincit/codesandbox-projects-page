@@ -227,7 +227,6 @@ export const Product = () => {
   return (
     <motion.div
       id="product-presentation"
-      as={motion.div}
       initial={{
         opacity: 0,
       }}
