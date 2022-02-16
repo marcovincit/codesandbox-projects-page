@@ -1,6 +1,6 @@
 import { Container, Menu, Link } from "./styles";
 import { Back } from "./icons";
-import { Avatar } from "components";
+import { Avatar } from "./styles";
 
 export const Header = () => {
   return (
