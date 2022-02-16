@@ -96,7 +96,15 @@ export const Intro = () => {
 
   // return
   return (
-    <MainSection ref={container}>
+    <MainSection
+      ref={container}
+      as={motion.section}
+      initial={{
+        opacity: 0,
+      }}
+      transition={{ duration: 0.5, delay: 2.5 }}
+      animate={{ opacity: 1 }}
+    >
       <FakeSection css={{ height: "400vh" }} />
 
       {/* Not only share code. */}
