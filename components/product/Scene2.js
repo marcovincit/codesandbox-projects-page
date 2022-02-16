@@ -191,6 +191,8 @@ export const Scene2 = (props) => {
       <motion.g
         style={{
           willChange: "transform, opacity",
+          originX: "772.796px",
+          originY: "215.112px",
           x: cursorX,
           y: cursorY,
           scale: cursorScale,
